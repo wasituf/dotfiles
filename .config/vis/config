@@ -1,5 +1,5 @@
 ##Refresh rate of the visualizers. A really high refresh rate may cause screen tearing. Default is 20.
-visualizer.fps=30
+visualizer.fps=20
 
 ##Sets the audio sources to use. Currently available ones are "mpd" and "alsa"Sets the audio sources to use.
 ##Currently available ones are "mpd", "pulse" and "alsa". Defaults to "mpd".
@@ -39,7 +39,7 @@ audio.stereo.enabled=false
 #visualizer.spectrum.character=#
 
 ##Spectrum bar width. Defaults to 2.
-visualizer.spectrum.bar.width=3
+visualizer.spectrum.bar.width=2
 
 ##The amount of space between each bar in the spectrum visualizer. Defaults to 1. It's possible to set this to
 ##zero to have no space between bars
@@ -54,10 +54,10 @@ visualizer.spectrum.bar.spacing=1
 
 ##Configures how fast the falloff character falls. This is an exponential falloff so values usually look
 ##best 0.9+ and small changes in this value can have a large effect. Defaults to 0.95
-visualizer.spectrum.falloff.weight=0.96
+visualizer.spectrum.falloff.weight=0.95
 
 ##Margins in percent of total screen for spectrum visualizer. All margins default to 0
-visualizer.spectrum.top.margin=0.10
+visualizer.spectrum.top.margin=0.25
 #visualizer.spectrum.bottom.margin=0.10
 #visualizer.spectrum.right.margin=0.10
 #visualizer.spectrum.left.margin=0.10
@@ -67,7 +67,7 @@ visualizer.spectrum.top.margin=0.10
 
 ##This configures the sgs smoothing effect on the spectrum visualizer. More points spreads out the smoothing
 ##effect and increasing passes runs the smoother multiple times on reach run. Defaults are points=3 and passes=1
-visualizer.sgs.smoothing.points=3
+visualizer.sgs.smoothing.points=2
 #visualizer.sgs.smoothing.passes=1
 
 
