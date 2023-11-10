@@ -68,13 +68,13 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 sudo nixos-rebuild switch && reboot
 ```
 
-- After rebooting, log in to your user session and copy _symlinks/nixos/flake.nix_ to /etc/nixos<br>
+- After rebooting, log in to your user session and copy _symlinks/nixos/flake.nix_ from _~/dotfiles_ to _/etc/nixos_<br>
 
 ```bash
 sudo cp ~/dotfiles/symlinks/nixos/configuration.nix /etc/nixos
 ```
 
-- This is probably a good time to say that I use [Lanzaboote](https://github.com/nix-community/lanzaboote) - a wip tool that enables secure boot support in NixOS. As you may understand, this is very not stable and might **lock you out** of your machine (fully breaking your sysetm). So a note of caution, unless you strictly know that you need secure boot, comment out / delete the following lines from flake.nix:<br>
+- This is probably a good time to say that I use [Lanzaboote](https://github.com/nix-community/lanzaboote) - a wip tool that enables secure boot support in NixOS. Obviously, this is not very stable and might **brick** of your system. So a **note of caution** - unless you strictly need secure boot, comment out/delete the following lines from flake.nix:<br>
 
 ```nix
 {
@@ -85,7 +85,7 @@ sudo cp ~/dotfiles/symlinks/nixos/configuration.nix /etc/nixos
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-        # lanzaboote.url = "github:nix-community/lanzaboote";
+        # lanzaboote.url = "github:nix-community/lanzaboote";   <-- here
     };
 
     outputs = {
@@ -102,7 +102,7 @@ sudo cp ~/dotfiles/symlinks/nixos/configuration.nix /etc/nixos
                 specialArgs = { inherit inputs outputs; };
                 modules = [
                     ./configuration.nix
-                    # lanzaboote.nixosModules.lanzaboote
+                    # lanzaboote.nixosModules.Lanzaboote    <-- and here
                 ];
             };
         };
@@ -110,7 +110,8 @@ sudo cp ~/dotfiles/symlinks/nixos/configuration.nix /etc/nixos
 }
 ```
 
-- If you have assessed the risks and absolutely cannot live without secure boot, you can install lanzaboote using the following guide: [Lanzaboote Quick Start Guide](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md). If you're interested in learning more about secure boot in NixOS, check out this page from the NixOS wiki: [Secure Boot](https://nixos.wiki/wiki/Secure_Boot).
+> If you absolutely cannot live without secure boot, you can install lanzaboote using the following guide: [Lanzaboote Quick Start Guide](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md). If you're interested in learning more about secure boot in NixOS, check out this page from the NixOS wiki: [Secure Boot](https://nixos.wiki/wiki/Secure_Boot).
+
 - Now rebuild NixOS one more time. This should automatically detect the flake.nix file:
 
 ```bash
