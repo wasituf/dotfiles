@@ -1,0 +1,11 @@
+#!/run/current-system/sw/bin/bash
+
+# Set Colemak layout
+setxkbmap -layout "us(colemak_dh)" -option "caps:ctrl_modifier"
+
+# Remap AltGr to Alt
+xmodmap -e 'keycode 108 = Alt_L'
+
+# Use xcape to make Caps Lock act as both Control and Escape
+xcape -e 'Control_L=Escape;Control_R=Escape;Caps_Lock=Escape'
+

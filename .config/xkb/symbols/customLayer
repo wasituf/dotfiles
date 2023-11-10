@@ -1,0 +1,9 @@
+partial alphanumeric_keys modifier_keys
+xkb_symbols "Fn" {
+    key <AC07> { [ NoSymbol, NoSymbol, Left, NoSymbol ] };
+    key <AC09> { [ NoSymbol, NoSymbol, Right, NoSymbol ] };
+    key <AD08> { [ NoSymbol, NoSymbol, Up, NoSymbol ] };
+    key <AC08> { [ NoSymbol, NoSymbol, Down, NoSymbol ] };
+    key <AC10> { [ NoSymbol, NoSymbol, BackSpace, NoSymbol ] };
+    key <AD10> { [ NoSymbol, NoSymbol, Delete, NoSymbol ] };
+};

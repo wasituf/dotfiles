@@ -1,0 +1,6 @@
+#!/run/current-system/sw/bin/bash
+
+# Toggle kitty padding when starting/quitting a vim instance
+kitty @ set-spacing padding=0
+tmuxinator $*
+kitty @ set-spacing padding=default

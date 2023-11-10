@@ -1,0 +1,37 @@
+#!/run/current-system/sw/bin/bash
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(find ~/dev ~/exercism/*/ ~/game_dev ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+root=${TMUXINATOR_ROOT:-"~/"}
+session_name=$(basename "$selected" | tr ' ' '_')
+
+# Dynamically generate tmuxinator project file
+cat <<EOF >~/.config/tmuxinator/sessionizer.yml
+name: $session_name
+root: $selected
+
+on_project_start: rm ~/.config/tmuxinator/sessionizer.yml
+startup_window: editor
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim
+  - server:
+      layout: main-vertical
+      panes:
+        - ~/.config/scripts/auto-server $selected
+  - terminal:
+EOF
+
+# Run tmuxinator with the dynamically generated project file
+tmuxinator start sessionizer

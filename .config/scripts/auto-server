@@ -1,0 +1,79 @@
+#!/run/current-system/sw/bin/bash
+
+directory=$1
+
+if [[ -z $directory ]]; then
+  echo "Error: Directory not provided."
+  exit 1
+fi
+
+# === Node.js based stuff ===
+
+# Check for package.json
+if [[ ! -f "$directory/package.json" ]]; then
+  printf "╔════════════════════════════════════════════════════════════╗\n║ No package.json found. Running next check...               ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+else
+  printf "╔════════════════════════════════════════════════════════════╗\n║ Found package.json. Setting up project...                  ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+  package_manager=""
+
+  if [ -e "bun.lockb" ]; then
+    package_manager="bun"
+  elif [ -e "yarn.lock" ]; then
+    package_manager="yarn"
+  else
+    package_manager="npm"
+  fi
+
+  dev_script=$(jq -r '.scripts.dev' "$directory/package.json")
+
+  # Check for node_modules
+  if [[ ! -d "$directory/node_modules" ]]; then
+    printf "╔════════════════════════════════════════════════════════════╗\n║ No node_modules found. Installing dependencies...          ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+    if ! $package_manager install; then
+      printf "╔════════════════════════════════════════════════════════════╗\n║ Error: Failed to install node dependencies.                ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+      exit 1
+    fi
+  else
+    printf "╔════════════════════════════════════════════════════════════╗\n║ All dependencies are installed. Running dev server...      ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+  fi
+
+  # Check for 'dev' script
+  if [[ "$dev_script" != "null" ]]; then
+    if ! $package_manager run dev; then
+      printf "╔════════════════════════════════════════════════════════════╗\n║ Error: Failed to run dev server.                           ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+      exit 1
+    fi
+  else
+    printf "╔════════════════════════════════════════════════════════════╗\n║ No dev script found. Cancelling operation...               ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+  fi
+
+  exit
+fi
+
+# === GoLang based stuff ===
+
+# Check for go.mod
+if [[ ! -f "$directory/go.mod" ]]; then
+  printf "╔════════════════════════════════════════════════════════════╗\n║ No go.mod found. Running next check...                     ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+else
+  printf "╔════════════════════════════════════════════════════════════╗\n║ Found go.mod. Installing dependencies...                   ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+  if ! go install; then
+    printf "╔════════════════════════════════════════════════════════════╗\n║ Error: Dependency installation failed.                     ║\n╚════════════════════════════════════════════════════════════╝\n"
+
+    exit 1
+  fi
+
+  exit
+fi
+
+# === Nothing found ===
+printf "╔════════════════════════════════════════════════════════════╗\n║ No relevant tech stack found. Cancelling operation...      ║\n╚════════════════════════════════════════════════════════════╝\n"

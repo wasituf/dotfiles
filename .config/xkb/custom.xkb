@@ -1,0 +1,19 @@
+xkb_keymap {
+	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
+
+	xkb_types     { include "complete" };
+
+	xkb_compat    { include "complete" };
+
+	xkb_symbols   {
+	    // Define inclutions
+	    include "pc+us(colemak_dh)+us:2+inet(evdev)+group(win_space_toggle)+capslock(escape)+in(ben)"
+
+            // Right Alt acts like standard Alt
+            key <RALT> { [ Alt_L ] };
+
+	    key <I212> { [ F4 ] };
+	};
+
+	xkb_geometry  { include "pc(pc104)"	};
+};
