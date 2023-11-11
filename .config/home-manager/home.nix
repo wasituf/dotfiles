@@ -160,9 +160,9 @@
       border_width = 2;
       focused_border_color = "#b4befe";
       normal_border_color = "#18222A";
-      window_gap = 9;
-      right_padding = 2;
-      left_padding = 2;
+      window_gap = 10;
+      right_padding = 1;
+      left_padding = 1;
       split_ratio = 0.52;
       borderless_monocle = true;
       gapless_monocle = true;
@@ -321,12 +321,12 @@
       gdvim = "nvim --listen /tmp/godot.pipe";
       pfetch = "echo '\n\n\n\n\n\n\n\n\n\n\n\n' && pfetch && echo '\n\n\n\n\n\n\n\n\n\n\n\n'";
       tmux = "sh $HOME/.config/scripts/tmux-padding";
-      tmuxinator = "sh $HOME/.config/scripts/tmuxinator-padding";
+      # tmuxinator = "sh $HOME/.config/scripts/tmuxinator-padding";
       dotfiles = "git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME";
 
       snix = "sudo nix-channel --update && sudo nix-collect-garbage -d && sudo nixos-rebuild switch && sudo cp /etc/nixos/configuration.nix $HOME/symlinks/etc/nixos && reboot";
       shome = "nix-channel --update && nix-collect-garbage -d && home-manager switch";
-      tdot = "tmuxinator start dotfiles";
+      tdot = "kitten @ set-spacing padding=0\ntmuxinator start dotfiles\nkitten @ set-spacing padding=default";
     };
     initExtra = ''
       export PATH=$HOME/.config/scripts:$PATH

@@ -34,4 +34,6 @@ windows:
 EOF
 
 # Run tmuxinator with the dynamically generated project file
+kitten @ set-spacing padding=0
 tmuxinator start sessionizer
+kitten @ set-spacing padding=default
