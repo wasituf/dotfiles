@@ -15,6 +15,7 @@
 # Screenshots
 
 <details>
+    <summary>Open fold to see...</summary>
     <div align="center" style="display: flex;justify-content: space-between;align-items: center;">
         <img src="/assets/screenshot_1.png" alt="screenshot" />
         <img src="/assets/screenshot_2.png" alt="screenshot" />
