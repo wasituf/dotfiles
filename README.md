@@ -12,13 +12,14 @@
 
 <br />
 
-# Screenshots
-
-<div align="center" style="display: flex;justify-content: space-between;align-items: center;">
-    <img src="/assets/screenshot_1.png" alt="screenshot" />
-    <img src="/assets/screenshot_2.png" alt="screenshot" />
-    <img src="/assets/screenshot_3.png" alt="screenshot" />
-</div>
+<details>
+<summary><h1>Screenshots</h1></summary>
+    <div align="center" style="display: flex;justify-content: space-between;align-items: center;">
+        <img src="/assets/screenshot_1.png" alt="screenshot" />
+        <img src="/assets/screenshot_2.png" alt="screenshot" />
+        <img src="/assets/screenshot_3.png" alt="screenshot" />
+    </div>
+</details>
 
 # Introduction
 
