@@ -29,7 +29,8 @@
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "/run/current-system/sw/bin/mount /dev/disk/by-uuid/EDFE-F1E4 /media";
+      ExecStart = "/run/current-system/sw/bin/mount -o uid=1000,gid=100 /dev/disk/by-uuid/EDFE-F1E4 /media";
+      User = "root";
     };
   };
 

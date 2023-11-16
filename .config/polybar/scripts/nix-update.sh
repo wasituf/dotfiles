@@ -28,22 +28,28 @@ if [[ "$confirm" =~ ^[Yy]$ ]]; then
   read -p "Updating Nix channels and rebuilding NixOS. Press [Enter] to continue..."
 
   # Update all channels
-  sudo nix-channel --update
-  nix-channel --update
+  cd $HOME/.config/home-manager
   nix flake update
-  echo "->> Updated all channels and flakes <<-"
-  # Update Nixpkgs and home-manager -- rebuild NixOS
+  cd $HOME/.config/polybar/scripts
+  echo "->> Updated flakes <<-"
+
+  # Update home-manager 
   nix-collect-garbage -d && home-manager switch
   echo "->> Upgraded to latest Home-Manager version <<-"
+
+  # Update NixOS
   sudo nix-collect-garbage -d && sudo nixos-rebuild switch 
-  sudo cp -i /etc/nixos/configuration.nix ~/symlinks/etc/nixos/
-  sudo cp -i /etc/nixos/flake.nix ~/symlinks/etc/nixos/
   echo "->> Updated all pkgs & switched to latest NixOS version <<-"
 
+  # Copy configuration files to git directory
+  sudo cp /etc/nixos/configuration.nix $HOME/symlinks/etc/nixos/
+  sudo cp /etc/nixos/flake.nix $HOME/symlinks/etc/nixos/
+  echo "->> Copied configuration to git directory <<-"
+
   # Check if the temporary file exists
-  if [ -f "~/.config/polybar/scripts/latest_commit_temp.txt" ]; then
+  if [ -f "$HOME/.config/polybar/scripts/latest_commit_temp.txt" ]; then
     # Move the temporary file to replace latest_commit.txt
-    sudo cp ~/.config/polybar/scripts/latest_commit_temp.txt ~/.config/polybar/scripts/latest_commit.txt
+    sudo cp $HOME/.config/polybar/scripts/latest_commit_temp.txt $HOME/.config/polybar/scripts/latest_commit.txt
     echo "->> Current commit hash has been updated. <<-"
   else
     echo "Error: latest_commit_temp.txt not found. Run the notify-script first."

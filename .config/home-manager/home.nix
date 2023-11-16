@@ -160,9 +160,11 @@
       border_width = 2;
       focused_border_color = "#b4befe";
       normal_border_color = "#18222A";
-      window_gap = 10;
+      window_gap = 11;
       right_padding = 1;
       left_padding = 1;
+      top_padding = 1;
+      bottom_padding = 1;
       split_ratio = 0.52;
       borderless_monocle = true;
       gapless_monocle = true;

@@ -6,15 +6,6 @@ option=$1
 
 # Store ffmpeg options in an array
 ffmpeg_options=(
-  -video_size 1920x1080
-  -framerate 60
-  -f x11grab
-  -i :0.0
-  -c:v h264_nvenc
-  -preset slow
-  # -qp 0
-  -b:v 15M
-  -vf format=yuv420p
 )
 
 if [ -e "$flag_file" ]; then
@@ -43,17 +34,39 @@ else
     audio_source=""
     case "$option" in
       "system")
-        ffmpeg_option+=(-f pulse -i alsa_output.pci-0000_29_00.6.analog-stereo.monitor)
+        ffmpeg_option+=(
+          -f pulse 
+          -i alsa_output.pci-0000_29_00.6.analog-stereo.monitor
+        )
         ;;
       "mic")
-        ffmpeg_options+=(-f pulse -i alsa_input.pci-0000_29_00.6.analog-stereo)
+        ffmpeg_options+=(
+          -f pulse 
+          -i alsa_input.pci-0000_29_00.6.analog-stereo
+        )
         ;;
       "both")
-        ffmpeg_options+=(-f pulse -i alsa_output.pci-0000_29_00.6.analog-stereo.monitor -f pulse -i alsa_input.pci-0000_29_00.6.analog-stereo)
+        ffmpeg_options+=(
+          -f pulse 
+          -i alsa_output.pci-0000_29_00.6.analog-stereo.monitor
+          -i alsa_input.pci-0000_29_00.6.analog-stereo
+        )
         ;;
       "silent")
         ;;
     esac
+
+    # Add options
+    ffmpeg_options+=(
+    -video_size 1920x1080
+    -framerate 60
+    -f x11grab
+    -i :0.0
+    -c:v h264_nvenc
+    -preset slow
+    -b:v 15M
+    -vf format=yuv420p
+  )
 
     # Add output path
     path="$HOME/Recordings/$(date +%F_%T).mkv"
