@@ -44,7 +44,7 @@ Before we dive in, I have to warn you this is pretty dense. So, for you employed
 
 This section will get you up and running with the very basics of this configuration without breaking anything in the process. 🤞
 
-I will assume you have NixOS up and running. If not, check out the [Official NixOS Installation Manual](https://nixos.org/manual/nixos/unstable/). **Note of caution** - This manual is for NixOS unstable version. If you don't want secure boot (or other experimental featurs), you can install the stable version. To learn more about channels in NixOS, check out [Nix Channels](https://nixos.wiki/wiki/Nix_channels).
+I will assume you have NixOS up and running. If not, check out the [Official NixOS Installation Manual](https://nixos.org/manual/nixos/unstable/). **Note of caution** - This manual is for the unstable version of NixOs. If you don't want secure boot (or other experimental features), you can install the stable version. To learn more about channels in NixOS, check out [Nix Channels](https://nixos.wiki/wiki/Nix_channels).
 
 ## First things first 🧨
 
