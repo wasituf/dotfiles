@@ -364,6 +364,7 @@
       source ~/catppuccin-mocha-zsh-syntax-highlighting.zsh
     '';
     initExtraFirst = ''
+      echo '\n\n /\_/\ \n( ^_^ )\n > ^ <'
     '';
   };
 
