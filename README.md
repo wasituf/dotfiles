@@ -36,7 +36,7 @@ Before we dive in, I have to warn you this is pretty dense. So, for you employed
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Getting Started](#getting-started)
-  - [First things first](#first-things-first)
+  - [First things first](#first-things-first-🧨)
   - [Implementing configuration.nix](#configurationnix)
   -
 
