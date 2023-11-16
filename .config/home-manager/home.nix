@@ -28,7 +28,7 @@
     nitrogen                # Desktop Wallpaper
     obsidian                # Markdown Editor / Knowledge Base
     pcmanfm                 # GUI File Mananger
-    polybar                 # Desktop Statusbar
+    # polybar                 # Desktop Statusbar
     rofi                    # Applets & Menus
     spotify                 # Music Streaming
 
@@ -177,8 +177,6 @@
       bsp-layout set tall III -- --master-size 0.65 &
       bsp-layout set tall IV -- --master-size 0.65 &
       bash $HOME/.config/scripts/esc-mod &
-      bash $HOME/.config/polybar/forest/placeholder.sh &
-      sleep 1
       bash $HOME/.config/polybar/forest/launch.sh &
       '';
   };
@@ -231,6 +229,16 @@
     enable = true;
     inactiveInterval = 5;
     lockCmd = "dm-tool switch-to-greeter";
+  };
+
+  # Polybar
+  services.polybar = {
+    enable = true;
+    package = pkgs.polybar.override {
+      pulseSupport = true;
+      mpdSupport = true;
+    };
+    script = "polybar main &";
   };
 
   services.xidlehook = {
