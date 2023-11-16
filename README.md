@@ -25,11 +25,11 @@
 
 # Introduction
 
-This is my personal configuration of [NixOS](https://nixos.org/) along with all the software configurations I use everyday. Its important to understand that NixOS is a very complex linux distro and can be extremely difficult at times. I am by no means an advanced linux user, I am an enthusiast. So, most the scripts and configs are either bits and pieces I got from reddit or my pair programming efforts with chatGPT. Obviously, this config is made to work for **me** and **my workflow** and might not work for **you**. I haven't done any extensive tests to check for hardware compatibility either. But still, I'll actively try to make the config more reusable and easily customizable to fit everyone's needs.
+This is my personal configuration of [NixOS](https://nixos.org/) along with all other configurations I use everyday. Obviously, this config is made to work for **me** and **my workflow** and might not work for **you**. I haven't done any extensive tests to check for hardware compatibility either. But still, I will actively try to make the config more easily customizable.
 
-This documentation covers much more than just the visual configuration. It includes all the technical configuration as well. All of it is based on my workflow, which consists of 3 main layers. The first layer is NixOS along with [ bspwm ](https://github.com/baskerville/bspwm). This layer enables a declarative approach to configurations, and also tiling windows, and worksapces. The second layer broadly consists of [ kitty ](https://sw.kovidgoyal.net/kitty/) (terminal emulator) and [ tmux ](https://github.com/tmux/tmux/wiki) (terminal multiplexer). This enables tiling in the terminal, along with terminal sessions, windows and panes, and easy switching between them. The final layer of my workflow is my text editor - [ neovim ](https://github.com/neovim/neovim). This is where I get most of my work done. This philosophy of layers is taken from this [video](https://youtu.be/bdumjiHabhQ?si=F1usS9Mii9wbbcpG) by @theprimeagen (definitely worth a watch).
+This configuration is based on my workflow, which consists of 3 main layers. The first layer is NixOS along with [ bspwm ](https://github.com/baskerville/bspwm). This layer enables a declarative approach to configurations, and also tiling windows 💪. The second layer broadly consists of [ kitty ](https://sw.kovidgoyal.net/kitty/) (terminal emulator) and [ tmux ](https://github.com/tmux/tmux/wiki) (terminal multiplexer). This enables tiling in the terminal, and terminal sessions and windows, along with easy switching between them. The final layer is my text editor - [ neovim ](https://github.com/neovim/neovim) 😎. This philosophy of layers is taken from this [video](https://youtu.be/bdumjiHabhQ?si=F1usS9Mii9wbbcpG) by @theprimeagen (definitely worth a watch).
 
-Before we dive in, I have warn you this is pretty dense, and thats because I like verbosity. But for you employed folks out there, I have a [table of contents](#table-of-contents). Feel free to jump to specific sections and implement the parts of the configuration you're interested in. If a previous section is required, I'll hint it in the subheadings of each section.
+Before we dive in, I have to warn you this is pretty dense. So, for you employed folks out there, I have a [table of contents](#table-of-contents). Feel free to jump to specific sections and implement the parts of the configuration you're interested in. If a previous section is required, I'll hint it in the subheadings of each section.
 
 # Table of contents
 
@@ -42,16 +42,13 @@ Before we dive in, I have warn you this is pretty dense, and thats because I lik
 
 # Getting Started
 
-This section will get you up and running with the very basics of this configuration without breaking anything in the process. If followed correctly this should work 🤞.
+This section will get you up and running with the very basics of this configuration without breaking anything in the process. 🤞
 
-These are the most crucial steps to get the configuration working. Follow closely and ⚠️ **don't** change anything unless _you know what you're doing._
+I will assume you have NixOS up and running. If not, check out the [Official NixOS Installation Manual](https://nixos.org/manual/nixos/unstable/). **Note of caution** - This manual is for NixOS unstable version. If you don't want secure boot (or other experimental featurs), you can install the stable version. To learn more about channels in NixOS, check out [Nix Channels](https://nixos.wiki/wiki/Nix_channels).
 
-I will assume you have NixOS up and running. If not, check out the [Official NixOS Installation Manual](https://nixos.org/manual/nixos/unstable/). **Note of caution**: This manual is for NixOS unstable version as we will be relying on some features from the unstable channel for our configuration. To learn more about channels in NixOS, check out [Nix Channels](https://nixos.wiki/wiki/Nix_channels).
+## First things first 🧨
 
-## First things first 🥇
-
-- First things first you have to clone into or download this repository on your machine. This can be done in one of two ways:
-  If you have [git](https://git-scm.com/) installed, then from your terminal run:
+- First, have to clone into or download this repository on your machine. This can be done in one of two ways - If you have [git](https://git-scm.com/) installed, then from your terminal run:
 
 ```bash
 git clone https://github.com/wasituf/dotfiles.git ~/
