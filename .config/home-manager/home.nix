@@ -144,7 +144,7 @@
 
     rules = {
       "Galculator".state = "floating";
-      "com.github.rafostar.Clapper".state = "floating";
+      # "com.github.rafostar.Clapper".state = "floating";
       "Kitty".desktop = "^1";
       "Brave-browser".desktop = "^2";
       "Spotify".desktop = "^10";
