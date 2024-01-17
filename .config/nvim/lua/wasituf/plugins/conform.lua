@@ -6,10 +6,10 @@ return {
 		require("conform").setup({
 			-- Map of filetype to formatters
 			formatters_by_ft = {
-				javascript = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				javascriptreact = { { "prettierd", "prettier" } },
-				typescriptreact = { { "prettierd", "prettier" } },
+				javascript = { { "prettierd", "prettier" }, "eslint_d" },
+				typescript = { { "prettierd", "prettier" }, "eslint_d" },
+				javascriptreact = { { "prettierd", "prettier" }, "eslint_d" },
+				typescriptreact = { { "prettierd", "prettier" }, "eslint_d" },
 				vue = { { "prettierd", "prettier" } },
 				markdown = { { "prettierd", "prettier" } },
 				css = { { "prettierd", "prettier" } },
@@ -21,14 +21,10 @@ return {
 				graphql = { { "prettierd", "prettier" } },
 				html = { { "prettierd", "prettier" } },
         gdscript = { { "gdformat" } },
-        -- go = { "goimports", "gofumpt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
-				timeout_ms = 500,
-			},
-			format_after_save = {
-				lsp_fallback = true,
+				timeout_ms = 2000,
 			},
 			log_level = vim.log.levels.ERROR,
 			notify_on_error = true,
@@ -45,7 +41,7 @@ return {
         "--no-semi", 
         "--single-quote", 
         "--jsx-single-quote", 
-        "--arrow-parens avoid", 
+        "--arrow-parens always", 
         "--prosewrap always", 
         "--end-of-line lf", 
       }),
@@ -56,7 +52,7 @@ return {
         "--no-semi", 
         "--single-quote", 
         "--jsx-single-quote", 
-        "--arrow-parens avoid", 
+        "--arrow-parens always", 
         "--prosewrap always", 
         "--end-of-line lf", 
       }),

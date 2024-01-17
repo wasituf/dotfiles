@@ -75,9 +75,10 @@
     go                              # GoLang Toolkit
 
     # Node utilities
-    nodejs_18                       # JavaScript Runtime
-    nodePackages.webtorrent-cli     # CLI Torrent Client
+    nodePackages.nodejs             # JavaScript Runtime
     nodePackages.browser-sync       # HTML Live Server
+    nodePackages.webtorrent-cli     # CLI Torrent Client
+    eslint_d                        # ESlint something
 
 
     # ==================================

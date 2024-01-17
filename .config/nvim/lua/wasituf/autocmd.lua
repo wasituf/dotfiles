@@ -18,6 +18,7 @@ vim.api.nvim_create_autocmd("BufWinEnter",{
 -- AUTOCMD: format
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
+  group = format,
   callback = function()
     local params = vim.lsp.util.make_range_params()
     params.context = {only = {"source.organizeImports"}}
@@ -37,4 +38,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end
     vim.lsp.buf.format({async = false})
   end
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  group = format,
+  callback = function()
+    require("conform").format({ bufnr = vim.api.nvim_get_current_buf() })
+  end,
 })
