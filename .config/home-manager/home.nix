@@ -90,6 +90,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
+    permittedInsecurePackages = pkgs.lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0";
   };
 
   # Disable spotify desktop entry (for adblock)
@@ -124,7 +125,7 @@
 
   home.keyboard = null;
 
-  # Bpwm
+  # Bspwm
   xsession.windowManager.bspwm = {
     enable = true;
 
@@ -146,15 +147,18 @@
     rules = {
       "Galculator".state = "floating";
       # "com.github.rafostar.Clapper".state = "floating";
-      "Kitty".desktop = "^1";
+      "Kitty" = {
+          desktop = "^1";
+          state = "fullscreen";
+        };
       "Brave-browser".desktop = "^2";
       "Spotify".desktop = "^10";
       "obsidian" = {
         desktop = "^3";
       };
-      "Pcmanfm".state = "floating";
+      # "Pcmanfm".state = "floating";
       "loupe".state = "floating";
-      "xArchiver".state = "floating";
+      "Xarchiver".state = "floating";
     };
 
     settings = {
@@ -202,7 +206,7 @@
     ];
     fade = true;
     opacityRules = [
-      "90:class_g = 'obsidian'"
+      "95:class_g = 'obsidian'"
     ];
     vSync = true;
     settings = {
