@@ -29,6 +29,7 @@
     obsidian                # Markdown Editor / Knowledge Base
     pcmanfm                 # GUI File Mananger
     # polybar                 # Desktop Statusbar
+    retroarch               # Emulator for retro games
     rofi                    # Applets & Menus
     spotify                 # Music Streaming
 
