@@ -29,9 +29,18 @@
     obsidian                # Markdown Editor / Knowledge Base
     pcmanfm                 # GUI File Mananger
     # polybar                 # Desktop Statusbar
-    retroarch               # Emulator for retro games
     rofi                    # Applets & Menus
     spotify                 # Music Streaming
+    yuzuPackages.mainline   # Yuzu Switch Emulator
+
+    # Retroarch & cores
+    retroarch               # Libretro based emulator
+    libretro.mgba           # GBA core (optimal)
+    libretro.desmume        # DS core (optimal)
+    libretro.melonds        # DS core (wip)
+    libretro.bsnes-mercury  # SNES core (accuracy profile)
+    libretro.snes9x         # SNES core (good performance)
+    libretro.dolphin        # Gamecube+Wii core
 
 
     # ==================================
