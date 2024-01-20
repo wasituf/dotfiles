@@ -34,14 +34,17 @@
     yuzuPackages.mainline   # Yuzu Switch Emulator
 
     # Retroarch & cores
-    retroarch               # Libretro based emulator
-    libretro.mgba           # GBA core (optimal)
-    libretro.desmume        # DS core (optimal)
-    libretro.melonds        # DS core (wip)
-    libretro.bsnes-mercury  # SNES core (accuracy profile)
-    libretro.snes9x         # SNES core (good performance)
-    libretro.dolphin        # Gamecube+Wii core
-    libretro.mame           # Arcade core
+    (retroarch.override {
+        cores = with libretro; [
+          mgba
+          desmume
+          melonds
+          bsnes-mercury
+          snes9x
+          dolphin
+          mame
+        ];
+      })
 
 
     # ==================================
