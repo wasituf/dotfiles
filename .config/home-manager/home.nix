@@ -41,6 +41,7 @@
     libretro.bsnes-mercury  # SNES core (accuracy profile)
     libretro.snes9x         # SNES core (good performance)
     libretro.dolphin        # Gamecube+Wii core
+    libretro.mame           # Arcade core
 
 
     # ==================================
