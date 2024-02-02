@@ -162,7 +162,7 @@
   users.users.wasituf = {
     isNormalUser = true;
     description = "Wasit Uzayer Faraizi";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
   };
 
@@ -202,38 +202,52 @@
       siji
       noto-fonts-emoji
       dejavu_fonts
-      roboto
 
       weather-icons
 
-      merriweather
-      merriweather-sans
-      open-sans
-      montserrat
-      lato
-      raleway
-      work-sans
+      barlow
+      comfortaa
+      crimson
+      dosis
+      eb-garamond
       fira
       fira-code
-      inconsolata
-      libre-baskerville
-      oxygenfonts
-      source-code-pro
-      eb-garamond
-      crimson
-      comfortaa
+      helvetica-neue-lt-std
       ibm-plex
+      inconsolata
+      inter
       jost
-      dosis
+      lato
       liberation_ttf
+      libre-baskerville
+      libre-bodoni
+      libre-caslon
+      libre-franklin
+      manrope
+      merriweather
+      merriweather-sans
+      montserrat
+      open-sans
+      overpass
+      oxygenfonts
+      raleway
+      source-code-pro
+      raleway
+      rubik
+      roboto
+      roboto-mono
+      roboto-serif
+      roboto-slab
+      ubuntu_font_family
+      work-sans
       (nerdfonts.override { fonts = [ "CascadiaCode" "JetBrainsMono" "Iosevka" ]; })
     ];
 
     fontconfig = {
       defaultFonts = {
         serif = [ "merriweather" ];
-	sansSerif = [ "CascadiaCode" ];
-	monospace = [ "Inconsolata" ];
+        sansSerif = [ "CascadiaCode" ];
+        monospace = [ "Inconsolata" ];
       };
     };
   };
@@ -276,6 +290,9 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Enable the Docker daemon.
+  virtualisation.docker.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

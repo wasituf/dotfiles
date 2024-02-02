@@ -20,6 +20,7 @@
     audacity                # Audio Editing
     blender                 # 3D Modelling
     brave                   # Brave Browser
+    google-chrome                  # Chrome Browser
     chromium                # Chromium Browser
     galculator              # Calculator Program
     gimp                    # Image Manupulation Tool
@@ -65,6 +66,7 @@
     libnotify               # Notification library
     maim                    # CLI Screenshot utility
     neofetch                # System Information
+    openssl                 # Generate secrets and keys
     p7zip                   # File Archiving/Extracting
     psmisc                  # Useful Utilities (like - killall)
     ripgrep                 # Live Grep

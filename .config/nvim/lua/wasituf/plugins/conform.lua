@@ -20,6 +20,7 @@ return {
 				yaml = { { "prettierd", "prettier" } },
 				graphql = { { "prettierd", "prettier" } },
 				html = { { "prettierd", "prettier" } },
+        astro = { "prettier" },
         gdscript = { { "gdformat" } },
 			},
 			format_on_save = {
@@ -32,8 +33,9 @@ return {
 
 		-- You can set formatters_by_ft and formatters directly
     local util = require("conform.util")
+
     local prettierd = require("conform.formatters.prettierd")
-    require("conform").formatters.prettierd = vim.tbl_deep_extend("force", prettierd, {
+    prettierd = vim.tbl_deep_extend("force", prettierd, {
       args = util.extend_args(prettierd.args, { 
         "--print-width 80", 
         "--indent 2", 
@@ -46,6 +48,38 @@ return {
         "--end-of-line lf", 
       }),
       range_args = util.extend_args(prettierd.range_args, { 
+        "--print-width 80", 
+        "--indent 2", 
+        "--tab-width 2", 
+        "--no-semi", 
+        "--single-quote", 
+        "--jsx-single-quote", 
+        "--arrow-parens always", 
+        "--prosewrap always", 
+        "--end-of-line lf", 
+      }),
+    })
+
+    local prettier = require("conform.formatters.prettier")
+    prettier = {
+      options = {
+        astro = "astro",
+      }
+    }
+
+    prettier = vim.tbl_deep_extend("force", prettier, {
+      args = util.extend_args(prettier.args, { 
+        "--print-width 80", 
+        "--indent 2", 
+        "--tab-width 2", 
+        "--no-semi", 
+        "--single-quote", 
+        "--jsx-single-quote", 
+        "--arrow-parens always", 
+        "--prosewrap always", 
+        "--end-of-line lf", 
+      }),
+      range_args = util.extend_args(prettier.range_args, { 
         "--print-width 80", 
         "--indent 2", 
         "--tab-width 2", 
