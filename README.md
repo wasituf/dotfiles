@@ -133,3 +133,34 @@ sudo nixos-rebuild switch --flake '/etc/nixos#your-username'
 After the first steps, you should have the flake installed and the channels configured. The next step is to switch to our new configuration.nix file. This is should be done carefully and incrementally as not to break anything. The most common problem you'll face will be missing files, so lets tackle that first.
 
 By now, you should have this repository cloned/downloaded, the next step is to put the files in the correct paths on your system.
+
+## Neovim
+
+### Plugins
+
+| Name                  | Description                                                                    | ✅  |
+| --------------------- | ------------------------------------------------------------------------------ | --- |
+| auto-session          | Automatic session management.                                                  | ✅  |
+| bufferline.nvim       | GUI-like bufferline tabs.                                                      | ✅  |
+| nvim-cmp              | Completion plugin for Neovim.                                                  | ✅  |
+| catppuccin/nvim       | Catppuccin colorscheme for Neovim.                                             | ✅  |
+| conform.nvim          | Lightweight formatter plugin for Neovim.                                       | ✅  |
+| flash.nvim            | Easier code navigation.                                                        | ✅  |
+| lsp-zero.nvim         | Easy lsp setup.                                                                | ✅  |
+| lualine.nvim          | Fast and easily configurable statusline.                                       | ✅  |
+| mason.nvim            | Package manager for LSP servers.                                               | ✅  |
+| mini.nvim             | Small and minimal plugins for Neovim.                                          | ✅  |
+| nvim-navic            | Plugin for showing code context.                                               | ✅  |
+| nvim-tree.lua         | File explorer tree for Neovim.                                                 | ✅  |
+| nvim-treesitter       | Incremental parsing library for Neovim.                                        | ✅  |
+| nvim-ufo              | Good-looking folds for Neovim.                                                 | ✅  |
+| smart-splits.nvim     | Universal pane navigation and resizing.                                        | ✅  |
+| telescope.nvim        | Extendable fuzzy finder for Neovim.                                            | ✅  |
+| todo-comments.nvim    | Highlight, list and search todo comments.                                      | ✅  |
+| trouble.nvim          | Pretty diagnostics list for Neovim.                                            | ✅  |
+| undotree              | Undo history visualizer for Neovim.                                            | ✅  |
+| web-tools             | Neovim wrapper for [browser-sync](https://github.com/BrowserSync/browser-sync) | ✅  |
+| which-key.nvim        | Popup key bindings for Neovim.                                                 | ✅  |
+| nvim-autopairs        | Autopairs for Neovim.                                                          | ✅  |
+| indent-blankline.nvim | Indent guides for Neovim.                                                      | ✅  |
+| vim-illuminate        | Highlight matching words from word under cursor                                | ✅  |
