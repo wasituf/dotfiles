@@ -64,6 +64,9 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "format file" })
 vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-e>", "<cmd>cprev<CR>zz")
 
+-- backspace whole word
+vim.keymap.set("i", "<C-Backspace>", "<Esc>vbc")
+
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "replace all" })
 vim.keymap.set("n", "<leader>ch", "<cmd>!chmod +x %<CR>", { silent = true, desc = "chmod" })
 
