@@ -161,6 +161,6 @@ By now, you should have this repository cloned/downloaded, the next step is to p
 | undotree              | Undo history visualizer for Neovim.                                            | ✅  |
 | web-tools             | Neovim wrapper for [browser-sync](https://github.com/BrowserSync/browser-sync) | ✅  |
 | which-key.nvim        | Popup key bindings for Neovim.                                                 | ✅  |
-| nvim-autopairs        | Autopairs for Neovim.                                                          | ✅  |
-| indent-blankline.nvim | Indent guides for Neovim.                                                      | ✅  |
-| vim-illuminate        | Highlight matching words from word under cursor                                | ✅  |
+| nvim-autopairs        | Autopairs for Neovim.                                                          | ❌  |
+| indent-blankline.nvim | Indent guides for Neovim.                                                      | ❌  |
+| vim-illuminate        | Highlight matching words from word under cursor                                | ❌  |
