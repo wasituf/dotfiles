@@ -162,7 +162,7 @@
   users.users.wasituf = {
     isNormalUser = true;
     description = "Wasit Uzayer Faraizi";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     packages = with pkgs; [];
   };
 
@@ -254,6 +254,9 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
+    # Packages for virtualisation. Remove if not using virt-manager.
+    virt-manager
+    virtiofsd
   ];
 
   # Allow unfree packages
@@ -293,6 +296,9 @@
 
   # Enable the Docker daemon.
   virtualisation.docker.enable = true;
+
+  # Enable libvirtd
+  virtualisation.libvirtd.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

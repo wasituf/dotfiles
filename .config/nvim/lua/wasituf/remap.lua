@@ -66,7 +66,10 @@ vim.keymap.set("n", "<C-e>", "<cmd>cprev<CR>zz")
 
 -- backspace whole word
 -- *Doesn't work with with tmux+kitty
-vim.keymap.set("i", "<C-Backspace>", "<Esc>vbc")
+-- vim.keymap.set("i", "<C-Backspace>", "<Esc>vbc")
+--
+-- This could be a temporary solution
+vim.keymap.set("i", "<C-o>", "<Esc>vbc")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "replace all" })
 vim.keymap.set("n", "<leader>ch", "<cmd>!chmod +x %<CR>", { silent = true, desc = "chmod" })
