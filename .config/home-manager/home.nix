@@ -20,7 +20,8 @@
     audacity                # Audio Editing
     blender                 # 3D Modelling
     brave                   # Brave Browser
-    google-chrome                  # Chrome Browser
+    google-chrome           # Chrome Browser
+    calibre                 # Ebook reader
     chromium                # Chromium Browser
     galculator              # Calculator Program
     gimp                    # Image Manupulation Tool
@@ -56,6 +57,7 @@
     bsp-layout              # BSPWM Layout Management
     cli-visualizer          # CLI Audio Visualizer
     curl                    # HTTP Client
+    docker-compose          # Compose plugin for docker
     exercism                # Exercism cli tool
     ffmpeg_6-full           # Minimal ffmpeg Utilities
     gcc                     # C Compiler
@@ -63,6 +65,7 @@
     htop                    # Task Manager Equivalent
     httpie                  # HTTP Client
     jq                      # CLI JSON Processor
+    lazydocker              # Terminal UI for docker
     libnotify               # Notification library
     maim                    # CLI Screenshot utility
     neofetch                # System Information
@@ -92,6 +95,7 @@
 
     # Node utilities
     nodePackages.nodejs             # JavaScript Runtime
+    nodePackages.live-server        # CLI HTML live server
     nodePackages.browser-sync       # HTML Live Server
     nodePackages.webtorrent-cli     # CLI Torrent Client
     eslint_d                        # ESlint something
