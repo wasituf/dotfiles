@@ -128,8 +128,27 @@
   source $HOME/.config/bspwm/bspwmrc
   '';
 
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
   # Video Drivers
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Nvidia Settings
+  hardware.nvidia = {
+    # Modesetting is required.
+    modesetting.enable = true;
+
+    open = false;
+
+    # Enable the Nvidia settings menu,
+	  # accessible via `nvidia-settings`.
+    nvidiaSettings = true;
+  };
 
   # Sound Settings
   sound.enable = false;
@@ -295,7 +314,10 @@
   services.openssh.enable = true;
 
   # Enable the Docker daemon.
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true;
+  };
 
   # Enable libvirtd
   virtualisation.libvirtd.enable = true;
