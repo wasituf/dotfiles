@@ -135,19 +135,29 @@
     driSupport32Bit = true;
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # Video Drivers
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Kernel version
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Nvidia Settings
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
 
+    # Whether to use (new) open drivers or closed ones
     open = false;
 
     # Enable the Nvidia settings menu,
 	  # accessible via `nvidia-settings`.
     nvidiaSettings = true;
+
+    # Which driver package to use
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
   # Sound Settings
@@ -173,9 +183,14 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "colemak_dh";
+    xkb = {
+      layout = "us";
+      variant = "colemak_dh";
+    };
   };
+
+  # Use xkb keymap for console
+  console.useXkbConfig = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wasituf = {
@@ -273,13 +288,13 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
+    # Nvidia cuda support
+    cudatoolkit
+
     # Packages for virtualisation. Remove if not using virt-manager.
     virt-manager
     virtiofsd
   ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Garbage collection / optimisation
   nix.settings.auto-optimise-store = true;
@@ -290,8 +305,15 @@
   };
 
   # Flatpak Support
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+    };
+  };
   services.flatpak.enable = true;
 
   # Enable qt and theme qt to gtk
@@ -325,6 +347,10 @@
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
+
+  networking.firewall.allowedTCPPorts = [ 8188 ];
+  networking.firewall.allowedUDPPorts = [ 8188 ];
+
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

@@ -359,7 +359,7 @@
       # tmuxinator = "sh $HOME/.config/scripts/tmuxinator-padding";
       dotfiles = "git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME";
 
-      snix = "sudo nix-channel --update && sudo nix-collect-garbage -d && sudo nixos-rebuild switch && sudo cp /etc/nixos/configuration.nix $HOME/symlinks/etc/nixos && reboot";
+      snix = "sudo nix flake update && sudo nix-collect-garbage -d && sudo nixos-rebuild switch && sudo cp /etc/nixos/configuration.nix $HOME/symlinks/etc/nixos && reboot";
       shome = "nix-channel --update && nix-collect-garbage -d && home-manager switch";
       tdot = "kitten @ set-spacing padding=0\ntmuxinator start dotfiles\nkitten @ set-spacing padding=default";
     };
