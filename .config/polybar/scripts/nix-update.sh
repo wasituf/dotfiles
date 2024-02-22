@@ -27,15 +27,20 @@ if [[ "$confirm" =~ ^[Yy]$ ]]; then
 
   read -p "Updating Nix channels and rebuilding NixOS. Press [Enter] to continue..."
 
-  # Update all channels
+  # Update home-manager flake
   cd $HOME/.config/home-manager
   nix flake update
   cd $HOME/.config/polybar/scripts
-  echo "->> Updated flakes <<-"
+  echo "->> Updated home-manager flake <<-"
 
   # Update home-manager 
   nix-collect-garbage -d && home-manager switch
   echo "->> Upgraded to latest Home-Manager version <<-"
+
+  # Update NixOS flake
+  cd /etc/nixos
+  sudo nix flake update
+  exho "->> Updated nixos flake <<-"
 
   # Update NixOS
   sudo nix-collect-garbage -d && sudo nixos-rebuild switch 
