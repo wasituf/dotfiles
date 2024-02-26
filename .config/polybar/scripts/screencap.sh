@@ -69,7 +69,7 @@ else
   )
 
     # Add output path
-    path="$HOME/Recordings/$(date +%F_%T).mkv"
+    path="$HOME/Recordings/$(date +%F_%T).mp4"
     ffmpeg_options+=("$path")
 
     # Start Recording
