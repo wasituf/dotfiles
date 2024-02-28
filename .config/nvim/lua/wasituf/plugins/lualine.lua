@@ -28,7 +28,7 @@ return {
         icons_enabled = true,
         theme = custom_catppuccin,
         component_separators = { '' },
-        section_separators = { left = '', right = '' },
+        section_separators = { left = '█', right = '█' },
         disabled_filetypes = {
           statusline = { 'NvimTree', 'Trouble' },
           winbar = { 'NvimTree', 'Trouble' },
