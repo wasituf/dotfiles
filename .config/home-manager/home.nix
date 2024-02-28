@@ -30,7 +30,7 @@
     nitrogen                # Desktop Wallpaper
     obsidian                # Markdown Editor / Knowledge Base
     pcmanfm                 # GUI File Mananger
-    rofi                    # Applets & Menus
+    rofi-rbw-x11            # Bitwarden menu
     spotify                 # Music Streaming
 
     # ==================================
@@ -394,6 +394,27 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  # Rofi
+  programs.rofi = {
+    enable = true;
+    plugins = [
+      pkgs.rofi-calc                 # NL based calculator
+    ];
+    extraConfig = {
+      kb-move-end = "Control+p";
+      kb-row-up = "Up,Control+e";
+    };
+  };
+
+  programs.rbw = {
+      enable = true;
+      settings = {
+        email = "wasit.allin1@gmail.com";
+        lock_timeout = 120;
+        pinentry = "tty";
+      };
   };
 
   # Kitty
