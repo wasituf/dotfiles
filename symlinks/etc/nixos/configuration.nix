@@ -289,7 +289,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     # Nvidia cuda support
-    cudatoolkit
+    # cudatoolkit
 
     # Packages for virtualisation. Remove if not using virt-manager.
     virt-manager

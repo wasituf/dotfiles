@@ -18,9 +18,9 @@
     # GUI Packages and Utilities
     # ==================================
     audacity                # Audio Editing
-    blender                 # 3D Modelling
+    # blender                 # 3D Modelling
     brave                   # Brave Browser
-    google-chrome           # Chrome Browser
+    # google-chrome           # Chrome Browser
     calibre                 # Ebook reader
     chromium                # Chromium Browser
     galculator              # Calculator Program
@@ -30,24 +30,8 @@
     nitrogen                # Desktop Wallpaper
     obsidian                # Markdown Editor / Knowledge Base
     pcmanfm                 # GUI File Mananger
-    # polybar                 # Desktop Statusbar
     rofi                    # Applets & Menus
     spotify                 # Music Streaming
-    yuzuPackages.mainline   # Yuzu Switch Emulator
-
-    # Retroarch & cores
-    (retroarch.override {
-        cores = with libretro; [
-          mgba
-          desmume
-          melonds
-          bsnes-mercury
-          snes9x
-          dolphin
-          mame
-        ];
-      })
-
 
     # ==================================
     # CLI Packages and Utilities
@@ -73,6 +57,7 @@
     p7zip                   # File Archiving/Extracting
     psmisc                  # Useful Utilities (like - killall)
     ripgrep                 # Live Grep
+    silicon                 # Image from source code
     sxhkd                   # Desktop Hotkeys / Behaviors
     tldr                    # Help pages
     tokei                   # Utility for counting code
@@ -98,7 +83,7 @@
     nodePackages.live-server        # CLI HTML live server
     nodePackages.browser-sync       # HTML Live Server
     nodePackages.webtorrent-cli     # CLI Torrent Client
-    eslint_d                        # ESlint something
+    eslint_d                        # ESlint something (probably important)
 
 
     # ==================================
