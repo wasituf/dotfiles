@@ -31,6 +31,7 @@
     obsidian                # Markdown Editor / Knowledge Base
     pcmanfm                 # GUI File Mananger
     rofi-rbw-x11            # Bitwarden menu
+    rofimoji                # Emoji menu
     spotify                 # Music Streaming
 
     # ==================================
@@ -69,7 +70,6 @@
     xcape                   # Key Remapping
     xclip                   # X11 Clipboard
     xdotool                 # Utility for Xorg
-
 
     # ==================================
     # Runtimes Packages & Toolkits
@@ -400,11 +400,15 @@
   programs.rofi = {
     enable = true;
     plugins = [
-      pkgs.rofi-calc                 # NL based calculator
+      pkgs.rofi-calc                # NL based calculator
     ];
     extraConfig = {
       kb-move-end = "Control+p";
+      kb-accept-entry = "Control+j,Return,KP_Enter";
+
       kb-row-up = "Up,Control+e";
+      kb-row-right = "Control+i";
+      kb-row-left = "Control+m";
     };
   };
 
@@ -413,8 +417,17 @@
       settings = {
         email = "wasit.allin1@gmail.com";
         lock_timeout = 120;
-        pinentry = "tty";
+        pinentry = "gtk2";
       };
+  };
+
+  # Btop
+  programs.btop = {
+    enable = true;
+    settings = {
+      color_theme = "catppuccin_mocha";
+      theme_background = false;
+    };
   };
 
   # Kitty

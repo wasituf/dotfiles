@@ -22,6 +22,9 @@ return {
 				html = { { "prettierd", "prettier" } },
         astro = { "prettier" },
         gdscript = { { "gdformat" } },
+        bash = { "shfmt" },
+        shell = { "shfmt" },
+        sh = { "shfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

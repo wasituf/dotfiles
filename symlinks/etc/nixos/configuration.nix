@@ -216,7 +216,6 @@
     ohMyZsh.plugins = [ 
       "common-aliases" 
       "command-not-found" 
-      "sudo" 
       "tmux"
       "tmuxinator"
       "z"
@@ -234,7 +233,7 @@
       fantasque-sans-mono
       material-icons
       siji
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       dejavu_fonts
 
       weather-icons

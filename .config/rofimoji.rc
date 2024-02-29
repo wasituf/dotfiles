@@ -1,0 +1,6 @@
+files = [emojis, nerd_font, arrows, fontawesome6, block_elements, letterlike_symbols, mathematical_operators]
+skin-tone = black
+max-recent = 0
+no-frecency = True
+hidden-descriptions = True
+prompt = ''

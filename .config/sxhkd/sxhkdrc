@@ -10,6 +10,10 @@ alt + Return
 alt + p
     bash $HOME/.config/polybar/forest/scripts/launcher.sh
 
+# ReLight
+alt + l
+    cd $HOME/.config/scripts/relight && bash $HOME/.config/scripts/relight/launch.sh
+
 # system menu
 alt + XF86LaunchB
     bash $HOME/.config/polybar/forest/scripts/powermenu.sh
