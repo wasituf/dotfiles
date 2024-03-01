@@ -80,22 +80,6 @@ show_menu() {
 	echo "Selected Option: $selected_option"
 }
 
-# Function to handle the submenu for "tldr"
-tldr_submenu() {
-	# Define options for 'tldr' submenu
-	# Similar structure as silicon_menu
-	# ...
-	show_menu
-}
-
-# Function to handle the submenu for "httpie"
-httpie_submenu() {
-	# Define options for 'httpie' submenu
-	# Similar structure as silicon_menu
-	# ...
-	show_menu
-}
-
 # Function to handle the submenu based on the selected option
 handle_submenu() {
 	case $1 in
@@ -109,13 +93,13 @@ handle_submenu() {
 		emoji
 		;;
 	"🖨️ Silicon")
-		silicon_submenu
+		silicon
 		;;
 	"📖 Tldr")
-		tldr_submenu
+		tldr
 		;;
 	"📡 Httpie")
-		httpie_submenu
+		httpie
 		;;
 	esac
 }

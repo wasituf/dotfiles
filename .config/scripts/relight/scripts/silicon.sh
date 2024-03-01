@@ -1,6 +1,6 @@
 #!/run/current-system/sw/bin/bash
 
-silicon_submenu() {
+silicon() {
 	highlight() {
 		hl_prompt() {
 			rofi -dmenu -no-config -i -no-fixed-num-lines -mesg "Format: 1 | 1-4" -p "" -theme ./rofi/prompt.rasi &
