@@ -341,7 +341,7 @@
       gdvim = "nvim --listen /tmp/godot.pipe";
       pfetch = "echo '\n\n\n\n\n\n\n\n\n\n\n\n' && pfetch && echo '\n\n\n\n\n\n\n\n\n\n\n\n'";
       tmux = "sh $HOME/.config/scripts/tmux-padding";
-      ta = tmux attach;
+      ta = "tmux attach";
       # tmuxinator = "sh $HOME/.config/scripts/tmuxinator-padding";
       dotfiles = "git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME";
 
