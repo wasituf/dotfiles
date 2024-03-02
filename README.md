@@ -159,7 +159,7 @@ By now, you should have this repository cloned/downloaded, the next step is to p
 | todo-comments.nvim    | Highlight, list and search todo comments.                                      | ✅  |
 | trouble.nvim          | Pretty diagnostics list for Neovim.                                            | ✅  |
 | undotree              | Undo history visualizer for Neovim.                                            | ✅  |
-| web-tools             | Neovim wrapper for [browser-sync](https://github.com/BrowserSync/browser-sync) | ✅  |
+| web-tools             | Neovim wrapper for [browser-sync](https://github.com/BrowserSync/browser-sync) | ❌  |
 | which-key.nvim        | Popup key bindings for Neovim.                                                 | ✅  |
 | nvim-autopairs        | Autopairs for Neovim.                                                          | ❌  |
 | indent-blankline.nvim | Indent guides for Neovim.                                                      | ❌  |
