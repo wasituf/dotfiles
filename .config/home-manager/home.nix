@@ -161,20 +161,21 @@
       "obsidian" = {
         desktop = "^3";
       };
+      "Rofi".state = "floating";
       # "Pcmanfm".state = "floating";
       "loupe".state = "floating";
       "Xarchiver".state = "floating";
     };
 
     settings = {
-      border_width = 2;
+      border_width = 0;
       focused_border_color = "#b4befe";
       normal_border_color = "#18222A";
-      window_gap = 11;
+      window_gap = 13;
       right_padding = 1;
       left_padding = 1;
       top_padding = 1;
-      bottom_padding = 1;
+      bottom_padding = 2;
       split_ratio = 0.52;
       borderless_monocle = true;
       gapless_monocle = true;
@@ -226,10 +227,14 @@
       shadow-offset-x = -20;
       shadow-offset-y = -10;
       shadow-exclude = [
-        "!focused"
+        # "!focused"
         "class_g = 'Polybar'"
       ];
       inactive-dim = 0.2;
+      focus-exclude = [
+        "class_g = 'Rofi'"
+        "class_g = 'Chromium-browser'"
+      ];
     };
   };
 
