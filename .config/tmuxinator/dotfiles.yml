@@ -1,0 +1,36 @@
+# /home/wasituf/.config/tmuxinator/dotfiles.yml
+
+name: dotfiles
+root: ~/.config
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+startup_window: misc
+
+windows:
+  - hm:
+      layout: main-vertical
+      root: ~/.config/home-manager/
+      panes:
+        - nvim ./home.nix
+        -
+  - nixos:
+      layout: main-vertical
+      root: /etc/nixos/
+      panes:
+        - sudo -E nvim
+        -
+  - tmux:
+      layout: main-vertical
+      root: ~/.config/home-manager
+      panes:
+        - nvim ./tmux.nix
+        -
+  - nvim:
+      layout: main-vertical
+      root: ~/.config/nvim
+      panes:
+        - nvim ./
+  - misc:
+      layout: main-vertical
+      panes:
+        - nvim ./
