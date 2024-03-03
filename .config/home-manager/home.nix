@@ -203,12 +203,9 @@
     enable = true;
     package = pkgs.picom-next;
     backend = "glx";
-    shadow = false;
-    shadowOpacity = 0.0;
-    shadowOffsets = [
-      0
-      0
-    ];
+    shadow = true;
+    shadowOpacity = 0.8;
+    inactiveOpacity = 0.85;
     fade = true;
     opacityRules = [
       "95:class_g = 'obsidian'"
@@ -226,6 +223,13 @@
       rounded-corners-exclude = [
         "class_g = 'Polybar'"
       ];
+      shadow-offset-x = -20;
+      shadow-offset-y = -10;
+      shadow-exclude = [
+        "!focused"
+        "class_g = 'Polybar'"
+      ];
+      inactive-dim = 0.2;
     };
   };
 
@@ -341,7 +345,7 @@
       gdvim = "nvim --listen /tmp/godot.pipe";
       pfetch = "echo '\n\n\n\n\n\n\n\n\n\n\n\n' && pfetch && echo '\n\n\n\n\n\n\n\n\n\n\n\n'";
       tmux = "sh $HOME/.config/scripts/tmux-padding";
-      ta = tmux attach;
+      ta = "tmux attach";
       # tmuxinator = "sh $HOME/.config/scripts/tmuxinator-padding";
       dotfiles = "git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME";
 
