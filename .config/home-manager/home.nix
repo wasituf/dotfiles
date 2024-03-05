@@ -65,6 +65,7 @@
     tree                    # Recursive Directory Listing
     unzip                   # Zip File Archiving/Extracting
     unrar                   # Rar File Archiving/Extracting
+    ventoy                  # Bootable USB creation
     wpm                     # CLI Typing Test
     xarchiver               # File Archiving/Extracting
     xcape                   # Key Remapping
