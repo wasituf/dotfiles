@@ -513,9 +513,11 @@
       bold_font = " JetBrainsMono NFM Bold";
       italic_font = "JetBrainsMono NFM Italic";
       bold_italic_font = "JetBrainsMono NFM Bold Italic";
+      font_features = "JetBrainsMonoNFM-Regular ss02 +zero +cv15";
+      
 
       font_size = "11";
-      adjust_line_height = "100%";
+      modify_font = "cell_height 100%";
 
       cursor_beam_thickness = "1.0";
       cursor_blink_interval = "0.6";
