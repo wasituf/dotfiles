@@ -78,6 +78,7 @@
     bun                             # JavaScript Runtime & Toolkit
     corepack                        # Utilities for yarn
     go                              # GoLang Toolkit
+    rustup                          # Install rust toolchains
 
     # Node utilities
     nodePackages.nodejs             # JavaScript Runtime
@@ -387,6 +388,13 @@
     initExtraFirst = ''
       echo '\n\n /\_/\ \n( ^_^ )\n > ^ <'
     '';
+  };
+
+  # Dir-env
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true; 
+    nix-direnv.enable = true;
   };
 
   # Neovim
