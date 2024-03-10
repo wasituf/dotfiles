@@ -214,10 +214,22 @@
     ohMyZsh.enable = true;
     ohMyZsh.theme = "refined";
     ohMyZsh.plugins = [ 
+      "bun"
+      "colemak"
       "common-aliases" 
       "command-not-found" 
+      "direnv"
+      "docker"
+      "docker-compose"
+      "gcloud"
+      "git"
+      "gitfast"
+      "golang"
+      "httpie"
+      "rust"
       "tmux"
       "tmuxinator"
+      "vi-mode"
       "z"
       ];
     syntaxHighlighting.enable = true;
