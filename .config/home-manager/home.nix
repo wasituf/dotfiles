@@ -484,6 +484,15 @@
         defaultFgColor = [ "#cdd6f4" ];
         searchingActiveBorderColor = [ "#f9e2af" ];
       };
+      
+      keybinding = {
+        universal = {
+          prevItem-alt = "e";
+          nextItem-alt = "n";
+          scrollUpMain-alt1 = "E";
+          scrollDownMain-alt1 = "N";
+        };
+      };
     };
   };
 
