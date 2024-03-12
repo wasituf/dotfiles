@@ -410,120 +410,24 @@
     '';
   };
 
-  # Helix
-  # programs.helix = {
-  #   enable = true;
-  #   extraPackages = with pkgs; [
-  #     nodePackages."@astrojs/language-server"
-  #     nodePackages.typescript
-  #   ];
-  #   languages = {
-  #     language-server.astro-ls = with pkgs; {
-  #       command = "${nodePackages."astrojs/language-server/bin"}";
-  #       args = [ "--stdout" ];
-  #       config = {
-  #         typescript = {
-  #           tsdk = "${nodePackages.typescript}/lib/node_modules/typescript/lib";
-  #         };
-  #         environment = "node";
-  #       };
-  #     };
-  #
-  #     language = [{
-  #       name = "astro";
-  #       auto-format = true;
-  #       language-servers = [ "astro-ls" ];
-  #     }];
-  #   };
-  #   settings = {
-  #     theme = "catppuccin_mocha";
-  #     editor = {
-  #       line-number = "relative";
-  #       cursorline = true;
-  #       color-modes = true;
-  #
-  #       cursor-shape = {
-  #         insert = "bar";
-  #         normal = "block";
-  #         select = "underline";
-  #       };
-  #
-  #       indent-guides = {
-  #         render = true;
-  #       };
-  #     };
-  #     keys = {
-  #       normal = {
-  #         m = "move_char_left";
-  #         n = "move_visual_line_down";
-  #         N = "join_selections";
-  #         A-N = "join_selections_space";
-  #         e = "move_visual_line_up";
-  #         E = "keep_selections";
-  #         A-E = "remove_selections";
-  #         i = "move_char_right";
-  #
-  #         j = "move_next_word_end";
-  #         J = "move_next_long_word_end";
-  #         A-j = "select_next_sibling";
-  #         k = "search_next";
-  #         K = "search_prev";
-  #         # l = "";
-  #         h = "insert_mode";
-  #         A-h = "shrink_selection";
-  #         H = "insert_at_line_start";
-  #
-  #         C-y = "half_page_up";
-  #         C-u = "half_page_down";
-  #
-  #         z = {
-  #           n = "scroll_down";
-  #           e = "scroll_up";
-  #           C-y = "half_page_up";
-  #           C-u = "half_page_down";
-  #         };
-  #
-  #         g = {
-  #           n = "move_line_down";
-  #           e = "move_line_up";
-  #         };
-  #
-  #         space.w = ":w";
-  #         space.q = ":q";
-  #       };
-  #
-  #       select = {
-  #         m = "move_char_left";
-  #         n = "move_visual_line_down";
-  #         N = "join_selections";
-  #         A-N = "join_selections_space";
-  #         e = "move_visual_line_up";
-  #         E = "keep_selections";
-  #         A-E = "remove_selections";
-  #         i = "move_char_right";
-  #
-  #         j = "move_next_word_end";
-  #         J = "move_next_long_word_end";
-  #         A-j = "select_next_sibling";
-  #         k = "search_next";
-  #         K = "search_prev";
-  #         # l = "";
-  #         h = "insert_mode";
-  #         A-h = "shrink_selection";
-  #         H = "insert_at_line_start";
-  #
-  #         C-y = "half_page_up";
-  #         C-u = "half_page_down";
-  #       };
-  #
-  #       insert = {
-  #         C-o = "delete_word_backward";
-  #       };
-  #     };
-  #   };
-  #   themes = {
-  #   };
-  # };
+  # Zathura
+  programs.zathura = {
+    enable = true;
+    mappings = {
+      n = "scroll down";
+      e = "scroll up";
+      m = "scroll left";
+      i = "scroll right";
+    };
+    options = {
+      adjust-open = "width";
+      continuous-hist-save = "true";
+      database = "sqlite";
+    };
+    extraConfig = ''
+      include catppuccin-mocha
+    '';
+  };
 
   # Fzf
   programs.fzf = {
