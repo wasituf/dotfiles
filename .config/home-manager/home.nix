@@ -81,6 +81,11 @@
     go                              # GoLang Toolkit
     rustup                          # Install rust toolchains
 
+    # Gleam
+    gleam                           # The gleam binary
+    erlang                          # The erlang binary
+    rebar3                          # Erlang build tool
+
     # Node utilities
     nodePackages.nodejs             # JavaScript Runtime
     nodePackages.live-server        # CLI HTML live server
