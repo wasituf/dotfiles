@@ -25,6 +25,8 @@ return {
         bash = { "shfmt" },
         shell = { "shfmt" },
         sh = { "shfmt" },
+        lua = { "stylua" },
+        gleam = { "gleam" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

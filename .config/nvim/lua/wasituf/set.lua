@@ -34,6 +34,6 @@ vim.opt.colorcolumn = "80"
 vim.showtabline = 0
 
 -- Markdown Preview
-vim.g.mkdp_auto_start = 1
+vim.g.mkdp_auto_start = 0
 vim.g.mkdp_browser = "chromium"
 vim.g.mkdp_theme = "dark"

@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
+  pattern = "\\.go$",
   group = format,
   callback = function()
     require("conform").format({ bufnr = vim.api.nvim_get_current_buf() })
