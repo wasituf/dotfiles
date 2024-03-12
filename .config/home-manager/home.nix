@@ -587,8 +587,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      # background_opacity = "0.55";
-      background_opacity = "0.9";
+      background_opacity = "0.95";
       foreground = "#CAD3F5";
       background = "#1E1E2E";
       selection_foreground = "#1E1E2E";
