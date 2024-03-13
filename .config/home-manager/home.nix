@@ -23,7 +23,6 @@
     # google-chrome           # Chrome Browser
     calibre                 # Ebook reader
     chromium                # Chromium Browser
-    ferdium                 # All-in-one Messaging Client
     galculator              # Calculator Program
     gimp                    # Image Manupulation Tool
     godot_4                 # FOSS Game Engine
