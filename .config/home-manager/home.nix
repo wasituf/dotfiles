@@ -20,6 +20,7 @@
     # ==================================
     audacity                # Audio Editing
     # blender                 # 3D Modelling
+    bottles                 # Wineprefix Manager
     brave                   # Brave Browser
     # google-chrome           # Chrome Browser
     calibre                 # Ebook reader
@@ -68,6 +69,7 @@
     unzip                   # Zip File Archiving/Extracting
     unrar                   # Rar File Archiving/Extracting
     ventoy                  # Bootable USB creation
+    winetricks              # Install DLLs for Wine
     wpm                     # CLI Typing Test
     xarchiver               # File Archiving/Extracting
     xcape                   # Key Remapping
@@ -104,10 +106,11 @@
     # ==================================
     # Wayland Packages
     # ==================================
-    swww                    # CLI Wallpaper selector
-    tofi                    # Rofi replacement for wayland
-    waypaper                # GUI Wallpaper Manager
-    wl-clipboard            # Wayland Clipboard
+    swww                            # CLI Wallpaper selector
+    tofi                            # Rofi replacement for wayland
+    waypaper                        # GUI Wallpaper Manager
+    wineWowPackages.waylandFull     # Wine with Wayland Support
+    wl-clipboard                    # Wayland Clipboard
   ];
 
   nixpkgs.config = {
@@ -473,12 +476,12 @@
   };
 
   programs.rbw = {
-      enable = true;
-      settings = {
-        email = "wasit.allin1@gmail.com";
-        lock_timeout = 120;
-        pinentry = "gtk2";
-      };
+    enable = true;
+    settings = {
+      email = "wasit.allin1@gmail.com";
+      lock_timeout = 120;
+      pinentry = pkgs.pinentry-gtk2;
+    };
   };
 
   # Btop
