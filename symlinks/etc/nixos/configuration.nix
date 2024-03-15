@@ -72,41 +72,17 @@
   services.xserver = {
     enable = true;
 
-    displayManager.lightdm.greeters.mini = {
+    displayManager.sddm = {
       enable = true;
-      user = "wasituf";
-      extraConfig = ''
-      [greeter]
-      show-password-label = false
-      invalid-password-text =
-      show-input-cursor = false
-      password-alignment = left
-      password-input-width = 20
-      show-sys-info = false
+      settings = {
 
-      [greeter-hotkeys]
-      mod-key = meta
-      shutdown-key = s
-      restart-key = r
-      
-      [greeter-theme]
-      text-color = "#680A2C"
-      error-color = "#FF0000"
-      background-image = "/etc/nixos/lock-screen-wp.jpg"
-      background-image-size = cover
-      window-color = "#499DC9"
-      border-color = "#680A2C"
-      border-width = 2px
-      layout-space = 8
-      password-character = 🙈
-      password-background-color = "#499DC9"
-      password-border-width = 0px
-      password-border-radius = 0
-      '';
+      };
+      theme = "where_is_my_sddm_theme";
+      wayland.enable = true;
     };
 
     windowManager.bspwm.enable = true;
-    displayManager.defaultSession = "none+bspwm";
+    displayManager.defaultSession = "hyprland";
 
     # Disable mouse acceleration
     libinput = {
@@ -119,6 +95,8 @@
     };
   };
 
+  programs.hyprland.enable = true;
+
   # Enable dconf
   programs.dconf.enable = true;
  
@@ -127,6 +105,12 @@
   ${pkgs.bspwm}/bin/bspc wm -r
   source $HOME/.config/bspwm/bspwmrc
   '';
+
+  # Environment variables
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
 
   # Enable OpenGL
   hardware.opengl = {
@@ -142,6 +126,7 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
   # Kernel version
+  boot.initrd.kernelModules = [ "nvidia" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Nvidia Settings
@@ -171,6 +156,23 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+  };
+
+  # Keyd
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            capslock = "overload(control, esc)";
+            esc = "capslock";
+            rightalt = "leftalt";
+          };
+        };
+      };
+    };
   };
 
   # Jellyfin server
@@ -301,6 +303,7 @@
   environment.systemPackages = with pkgs; [
     # Nvidia cuda support
     # cudatoolkit
+    where-is-my-sddm-theme
 
     # Packages for virtualisation. Remove if not using virt-manager.
     virt-manager

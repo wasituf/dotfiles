@@ -3,6 +3,7 @@
 {
   imports = 
     [
+      ./hyprland.nix
       ./tmux.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -99,6 +100,14 @@
     # ==================================
     xorg.xkbcomp            # Keyboard Layout Mapping
     xorg.xmodmap            # Keyboard Remapping Utility
+
+    # ==================================
+    # Wayland Packages
+    # ==================================
+    swww                    # CLI Wallpaper selector
+    tofi                    # Rofi replacement for wayland
+    waypaper                # GUI Wallpaper Manager
+    wl-clipboard            # Wayland Clipboard
   ];
 
   nixpkgs.config = {
@@ -110,6 +119,11 @@
   xdg.desktopEntries.spotify.name = "Spotify";
   xdg.desktopEntries.spotify.exec = "spotify";
   xdg.desktopEntries.spotify.noDisplay = true;
+
+  # Disable brave desktop entry (for -use-gl=egl)
+  xdg.desktopEntries.brave-browser.name = "Brave Web Browser";
+  xdg.desktopEntries.brave-browser.exec = "brave";
+  xdg.desktopEntries.brave-browser.noDisplay = true;
 
   # Gtk theme
   gtk = {
