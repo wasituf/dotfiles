@@ -176,8 +176,25 @@
   };
 
   # Jellyfin server
-  services.jellyfin.enable = true;
-  services.jellyfin.openFirewall = true;
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+    user = "wasituf";
+  };
+
+  # Calibre web
+  services.calibre-web = {
+    enable = true;
+    user = "wasituf";
+    # default port: 8083
+    # listen.port = 3927;
+    openFirewall = true;
+    options = {
+      calibreLibrary = "/media/calibre/library";
+      enableBookConversion = true;
+      enableBookUploading = true;
+    };
+  };
 
   systemd.services.mpd.environment = {
     XDG_RUNTIME_DIR = "/run/user/1000";
