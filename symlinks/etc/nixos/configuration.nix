@@ -95,6 +95,7 @@
     };
   };
 
+  security.polkit.enable = true;
   programs.hyprland.enable = true;
 
   # Enable dconf
@@ -179,13 +180,17 @@
   services.jellyfin = {
     enable = true;
     openFirewall = true;
-    user = "wasituf";
+  };
+
+  # Jellyseer
+  services.jellyseerr = {
+    enable = true;
+    openFirewall = true;
   };
 
   # Calibre web
   services.calibre-web = {
     enable = true;
-    user = "wasituf";
     # default port: 8083
     # listen.port = 3927;
     openFirewall = true;
@@ -378,9 +383,9 @@
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-
-  networking.firewall.allowedTCPPorts = [ 8188 ];
-  networking.firewall.allowedUDPPorts = [ 8188 ];
+  
+  networking.firewall.allowedTCPPorts = [ 8096 ];
+  networking.firewall.allowedUDPPorts = [ 8096 ];
 
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
