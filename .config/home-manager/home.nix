@@ -20,7 +20,6 @@
     # ==================================
     audacity                # Audio Editing
     # blender                 # 3D Modelling
-    bottles                 # Wineprefix Manager
     brave                   # Brave Browser
     # google-chrome           # Chrome Browser
     calibre                 # Ebook reader
@@ -69,7 +68,6 @@
     unzip                   # Zip File Archiving/Extracting
     unrar                   # Rar File Archiving/Extracting
     ventoy                  # Bootable USB creation
-    winetricks              # Install DLLs for Wine
     wpm                     # CLI Typing Test
     xarchiver               # File Archiving/Extracting
     xcape                   # Key Remapping
@@ -109,7 +107,6 @@
     swww                            # CLI Wallpaper selector
     tofi                            # Rofi replacement for wayland
     waypaper                        # GUI Wallpaper Manager
-    wineWowPackages.waylandFull     # Wine with Wayland Support
     wl-clipboard                    # Wayland Clipboard
   ];
 
