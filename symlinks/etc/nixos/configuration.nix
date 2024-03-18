@@ -188,6 +188,43 @@
     openFirewall = true;
   };
 
+  # Transmission
+  services.transmission = {
+    enable = true;
+    openFirewall = true;
+    home = "/home/wasituf/";
+    group = "users";
+    user = "wasituf";
+    settings = {
+      download-dir = "/media/Netflix";
+      incomplete-dir-enabled = false;
+    };
+  };
+
+  # Sonarr
+  services.sonarr = {
+    enable = true;
+    group = "users";
+    user = "wasituf";
+    openFirewall = true;
+    dataDir = "/home/wasituf/.config/Sonnar/";
+  };
+
+  # Radarr
+  services.radarr = {
+    enable = true;
+    group = "users";
+    user = "wasituf";
+    openFirewall = true;
+    dataDir = "/home/wasituf/.config/Radarr/";
+  };
+
+  # Prowlarr
+  services.prowlarr = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # Calibre web
   services.calibre-web = {
     enable = true;
