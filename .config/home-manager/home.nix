@@ -42,6 +42,7 @@
     bc                      # Software Calculator
     bsp-layout              # BSPWM Layout Management
     cli-visualizer          # CLI Audio Visualizer
+    codeium                 # Codeium language server
     curl                    # HTTP Client
     docker-compose          # Compose plugin for docker
     exercism                # Exercism cli tool
