@@ -31,7 +31,7 @@ return {
 				["<C-l>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-;>"] = cmp.mapping.abort(), -- abort completion
 
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        ["<C-n>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
@@ -45,7 +45,7 @@ return {
           end
         end, { "i", "s" }),
 
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+        ["<C-e>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
           elseif luasnip.jumpable(-1) then

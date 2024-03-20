@@ -52,7 +52,9 @@ return {
             return str:sub(1,3) 
           end
         end }},
-        lualine_b = {},
+        lualine_b = {
+          "vim.api.nvim_call_function('codeium#GetStatusString', {})",
+        },
         lualine_c = {'branch', 'diff', 'diagnostics'},
         lualine_x = {'filetype'},
         lualine_y = {{'progress', fmt = function(str) return str .. ' ' end, }},
