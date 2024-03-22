@@ -207,7 +207,7 @@
     group = "users";
     user = "wasituf";
     openFirewall = true;
-    dataDir = "/home/wasituf/.config/Sonnar/";
+    dataDir = "/home/wasituf/.config/Sonarr/";
   };
 
   # Radarr
