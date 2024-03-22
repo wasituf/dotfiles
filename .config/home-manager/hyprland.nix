@@ -28,7 +28,7 @@
           kb_layout = us
           kb_variant = colemak_dh
 
-          follow_mouse = 1
+          follow_mouse = 0
           sensitivity = -0.5
           accel_profile = flat
         }
