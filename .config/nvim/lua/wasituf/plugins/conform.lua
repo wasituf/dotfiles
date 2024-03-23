@@ -26,8 +26,6 @@ return {
         shell = { "shfmt" },
         sh = { "shfmt" },
         lua = { "stylua" },
-        nix = { "nixpkgs-fmt" },
-        gleam = { "gleam" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

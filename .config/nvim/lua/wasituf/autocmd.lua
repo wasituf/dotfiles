@@ -1,6 +1,7 @@
 -- AUGROUPS
 local au_folds = vim.api.nvim_create_augroup("folds", {clear = true})
 local au_format = vim.api.nvim_create_augroup("format", {clear = true})
+local au_quirks = vim.api.nvim_create_augroup("quirks", {clear = true})
 
 -- AUTOCMD: folds
 vim.api.nvim_create_autocmd("BufWinLeave",{
@@ -46,4 +47,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     require("conform").format({ bufnr = vim.api.nvim_get_current_buf() })
   end,
+})
+
+-- AUTOCMD: exit insert mode on bufenter/insertenter
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  group = quirks,
+  callback = function()
+    if vim.fn.mode() == "i" then
+      vim.cmd("stopinsert")
+    end
+  end
 })

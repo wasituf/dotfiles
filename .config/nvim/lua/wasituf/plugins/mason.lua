@@ -27,7 +27,6 @@ return {
         "cssls",
         "emmet_ls",
         "eslint",
-        "gleam",
         "gopls",
         "graphql",
         "html",

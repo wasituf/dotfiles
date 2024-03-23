@@ -37,3 +37,6 @@ vim.showtabline = 0
 vim.g.mkdp_auto_start = 0
 vim.g.mkdp_browser = "chromium"
 vim.g.mkdp_theme = "dark"
+
+-- Nerd Font
+vim.g.have_nerd_font = true
