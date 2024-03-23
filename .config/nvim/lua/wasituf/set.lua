@@ -40,3 +40,17 @@ vim.g.mkdp_theme = "dark"
 
 -- Nerd Font
 vim.g.have_nerd_font = true
+
+-- Show mode in cmdline
+vim.opt.showmode = false
+
+-- Case insensitive searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Decrease update time
+vim.opt.updatetime = 250
+
+-- Decrease mapped sequence wait time
+-- Displays which-key popup sooner
+vim.opt.timeoutlen = 300
