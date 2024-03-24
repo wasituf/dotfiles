@@ -27,16 +27,16 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
+-- Decrease update time
 vim.opt.updatetime = 50
+
+-- Decrease mapped sequence wait time
+-- Displays which-key popup sooner
+vim.opt.timeoutlen = 300
 
 vim.opt.colorcolumn = "80"
 
 vim.showtabline = 0
-
--- Markdown Preview
-vim.g.mkdp_auto_start = 0
-vim.g.mkdp_browser = "chromium"
-vim.g.mkdp_theme = "dark"
 
 -- Nerd Font
 vim.g.have_nerd_font = true
@@ -48,9 +48,7 @@ vim.opt.showmode = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Decrease update time
-vim.opt.updatetime = 250
-
--- Decrease mapped sequence wait time
--- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+-- Markdown Preview
+vim.g.mkdp_auto_start = 0
+vim.g.mkdp_browser = "chromium"
+vim.g.mkdp_theme = "dark"
