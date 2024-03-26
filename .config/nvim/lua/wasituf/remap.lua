@@ -87,3 +87,6 @@ vim.keymap.set({"n", "v"}, "<M-y>", ":bnext<CR>", { silent = true, desc = "buffe
 
 -- nvim-tree
 vim.keymap.set("n", "<leader>p.", "<cmd>NvimTreeToggle<CR>", { desc = "nvim-tree: toggle" })
+
+-- neogit
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "neogit: toggle" })
