@@ -27,6 +27,10 @@ return {
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
 			},
+      window = {
+        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+      },
 			mapping = cmp.mapping.preset.insert({
 				["<C-l>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-;>"] = cmp.mapping.abort(), -- abort completion
