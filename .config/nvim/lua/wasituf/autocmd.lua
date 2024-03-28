@@ -9,14 +9,13 @@ vim.api.nvim_create_autocmd("BufWinLeave",{
     command = 'if expand("%:p") != "" | mkview | endif',
     group = folds
 })
-
 vim.api.nvim_create_autocmd("BufWinEnter",{
     pattern = "*",
     command = 'silent! loadview',
     group = folds
 })
 
--- AUTOCMD: format
+-- AUTOCMD: go
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   group = format,
@@ -28,7 +27,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     -- argument after params if you find that you have to write the file
     -- twice for changes to be saved.
     -- E.g., vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
-    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 2000)
     for cid, res in pairs(result or {}) do
       for _, r in pairs(res.result or {}) do
         if r.edit then
@@ -41,11 +40,21 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end
 })
 
+-- AUTOCMD: conform
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "\\.go$",
   group = format,
   callback = function()
     require("conform").format({ bufnr = vim.api.nvim_get_current_buf() })
+  end,
+})
+
+-- AUTOCMD: tailwind-tools
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.astro", "*.svelte", "*.html", "*.css", "*.js", "*.ts", "*.jsx", "*.tsx", "*.php", "*.vue" },
+  group = format,
+  callback = function()
+    vim.cmd("TailwindSort")
   end,
 })
 

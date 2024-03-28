@@ -2,6 +2,7 @@ return {
 	'hrsh7th/nvim-cmp',
 	dependencies = {
     'L3MON4D3/LuaSnip',
+    'luckasRanarison/tailwind-tools.nvim',
     'onsails/lspkind.nvim',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -87,6 +88,7 @@ return {
 			}),
 			formatting = {
         format = lspkind.cmp_format({
+          before = require("tailwind-tools.cmp").lspkind_format,
           mode = 'symbol_text', 					
           maxwidth = 50, 					
           ellipsis_char = '...', 

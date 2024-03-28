@@ -90,3 +90,8 @@ vim.keymap.set("n", "<leader>p.", "<cmd>NvimTreeToggle<CR>", { desc = "nvim-tree
 
 -- neogit
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "neogit: toggle" })
+
+-- tailwind-tools
+vim.keymap.set("n", "<leader>tt", "<cmd>TailwindConcealToggle<CR>", { desc = "tailwind-tools: toggle conceal" })
+vim.keymap.set("n", "<leader>tf", "<cmd>TailwindSortSelection<CR>", { desc = "tailwind-tools: sort selected classes" })
+vim.keymap.set("n", "<leader>tF", "<cmd>TailwindSort<CR>", { desc = "tailwind-tools: sort classes in buffer" })
