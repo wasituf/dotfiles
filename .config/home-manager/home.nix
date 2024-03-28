@@ -419,16 +419,16 @@
     nix-direnv.enable = true;
   };
 
-  # Neovim
   programs.neovim = {
     enable = true;
+    package = pkgs.neovim-nightly;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    # extraLuaConfig = builtins.readFile "$HOME/.config/neovim/init.lua";
     extraLuaConfig = ''
       require("wasituf")
     '';
+    extraLuaPackages = ps: [ ps.magick ];
   };
 
   # Zathura
