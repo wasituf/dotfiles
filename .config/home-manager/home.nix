@@ -19,9 +19,7 @@
     # GUI Packages and Utilities
     # ==================================
     audacity                # Audio Editing
-    # blender                 # 3D Modelling
     brave                   # Brave Browser
-    # google-chrome           # Chrome Browser
     calibre                 # Ebook reader
     chromium                # Chromium Browser
     galculator              # Calculator Program
@@ -48,10 +46,13 @@
     exercism                # Exercism cli tool
     ffmpeg_6-full           # Minimal ffmpeg Utilities
     gcc                     # C Compiler
+    gh                      # Github CLI tool
     git                     # Version Management
     glow                    # TUI Markdown Render
+    gnumake                 # Generation of Executables
     htop                    # Task Manager Equivalent
     httpie                  # HTTP Client
+    imagemagick             # Image Magick
     jq                      # CLI JSON Processor
     lazydocker              # Terminal UI for docker
     libnotify               # Notification library
@@ -69,6 +70,7 @@
     unzip                   # Zip File Archiving/Extracting
     unrar                   # Rar File Archiving/Extracting
     ventoy                  # Bootable USB creation
+    wget                    # HTTP Client
     wpm                     # CLI Typing Test
     xarchiver               # File Archiving/Extracting
     xcape                   # Key Remapping
@@ -93,7 +95,6 @@
     nodePackages.live-server        # CLI HTML live server
     nodePackages.browser-sync       # HTML Live Server
     nodePackages.webtorrent-cli     # CLI Torrent Client
-    eslint_d                        # ESlint something (probably important)
 
 
     # ==================================
@@ -428,6 +429,10 @@
     extraLuaConfig = ''
       require("wasituf")
     '';
+    extraPackages = with pkgs; [
+      eslint_d
+      tree-sitter
+    ];
     extraLuaPackages = ps: [ ps.magick ];
   };
 

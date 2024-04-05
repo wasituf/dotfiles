@@ -10,8 +10,8 @@ return {
     require('mini.indentscope').setup({
       draw = {
         delay = 1,
-        -- animation = require('mini.indentscope').gen_animation.quadratic({ easing = 'out', duration = 100, unit = 'total' })
-        animation = require('mini.indentscope').gen_animation.none()
+        animation = require('mini.indentscope').gen_animation.quadratic({ easing = 'out', duration = 100, unit = 'total' })
+        -- animation = require('mini.indentscope').gen_animation.none()
       },
       mappings = {
         -- Textobjects

@@ -6,10 +6,11 @@
     historyLimit = 10000;
     keyMode = "vi";
     mouse = true;
-    newSession = true;
+    newSession = false;
     prefix = "C-Space";
     shell = "${pkgs.zsh}/bin/zsh";
-    terminal = "xterm-256color";
+    terminal = "screen-256color";
+    escapeTime = 10;
     plugins = with pkgs;
       [
         {
@@ -90,6 +91,9 @@
       bind-key -T copy-mode-vi 'M-e' select-pane -U
       bind-key -T copy-mode-vi 'M-i' select-pane -R
       bind-key -T copy-mode-vi 'M-\' select-pane -l
+
+      # image.nvim
+      set -gq allow-passthrough on
 
       # Switch Windows
       bind -n M-U previous-window

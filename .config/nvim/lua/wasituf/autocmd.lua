@@ -6,12 +6,12 @@ local au_quirks = vim.api.nvim_create_augroup("quirks", {clear = true})
 -- AUTOCMD: folds
 vim.api.nvim_create_autocmd("BufWinLeave",{
     pattern = "*",
-    command = 'if expand("%:p") != "" | mkview | endif',
+    command = "if expand('%:p') != '' | mkview | endif",
     group = folds
 })
 vim.api.nvim_create_autocmd("BufWinEnter",{
     pattern = "*",
-    command = 'silent! loadview',
+    command = "silent! loadview",
     group = folds
 })
 
@@ -53,9 +53,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.astro", "*.svelte", "*.html", "*.css", "*.js", "*.ts", "*.jsx", "*.tsx", "*.php", "*.vue" },
   group = format,
-  callback = function()
-    vim.cmd("TailwindSort")
-  end,
+  command = "TailwindSort",
+  -- callback = function()
+  --   vim.cmd("TailwindSort")
+  -- end,
 })
 
 -- AUTOCMD: exit insert mode on bufenter/insertenter
