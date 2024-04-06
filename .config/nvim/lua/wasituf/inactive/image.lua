@@ -1,3 +1,4 @@
+-- Doesn't work currently
 return {
   "3rd/image.nvim",
   lazy = true,

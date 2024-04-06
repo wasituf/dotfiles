@@ -5,7 +5,7 @@ return {
   opts = {
     document_color = {
       enabled = true, -- can be toggled by commands
-      kind = "inline", -- "inline" | "foreground" | "background"
+      kind = "foreground", -- "inline" | "foreground" | "background"
       inline_symbol = "󰝤 ", -- only used in inline mode
       debounce = 200, -- in milliseconds, only applied in insert mode
     },
