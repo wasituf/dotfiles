@@ -2,7 +2,7 @@ return {
 	'hrsh7th/nvim-cmp',
 	dependencies = {
     'L3MON4D3/LuaSnip',
-    'luckasRanarison/tailwind-tools.nvim',
+    -- 'luckasRanarison/tailwind-tools.nvim',
     'onsails/lspkind.nvim',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -36,7 +36,7 @@ return {
 				["<C-l>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-;>"] = cmp.mapping.abort(), -- abort completion
 
-        ["<C-n>"] = cmp.mapping(function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
@@ -50,7 +50,7 @@ return {
           end
         end, { "i", "s" }),
 
-        ["<C-e>"] = cmp.mapping(function(fallback)
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
           elseif luasnip.jumpable(-1) then
@@ -79,6 +79,7 @@ return {
 				end,
 			},
 			sources = cmp.config.sources({
+        -- { name = "codeium", priority = 9 },
 				{ name = "nvim_lsp", priority = 9 },	
 				{ name = "luasnip", priority = 8 },	
         { name = "nerdfont", priority = 7 },
@@ -88,8 +89,8 @@ return {
 			}),
 			formatting = {
         format = lspkind.cmp_format({
-          before = require("tailwind-tools.cmp").lspkind_format,
-          mode = 'symbol_text', 					
+          -- before = require("tailwind-tools.cmp").lspkind_format,
+          -- mode = 'symbol_text', 					
           maxwidth = 50, 					
           ellipsis_char = '...', 
         }),
