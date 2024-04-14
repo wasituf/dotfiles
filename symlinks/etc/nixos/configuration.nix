@@ -72,17 +72,7 @@
   services.xserver = {
     enable = true;
 
-    displayManager.sddm = {
-      enable = true;
-      settings = {
-
-      };
-      theme = "where_is_my_sddm_theme";
-      wayland.enable = true;
-    };
-
     windowManager.bspwm.enable = true;
-    displayManager.defaultSession = "hyprland";
 
     # Disable mouse acceleration
     libinput = {
@@ -93,6 +83,19 @@
         transformationMatrix = "0.5 0 0 0 0.5 0 0 0 1";
       };
     };
+  };
+
+  services.displayManager = {
+    sddm = {
+      enable = true;
+      extraPackages = with pkgs; [
+        where-is-my-sddm-theme
+      ];
+      theme = "where_is_my_sddm_theme";
+      wayland.enable = true;
+    };
+
+    defaultSession = "hyprland";
   };
 
   security.polkit.enable = true;
@@ -362,7 +365,6 @@
   environment.systemPackages = with pkgs; [
     # Nvidia cuda support
     # cudatoolkit
-    where-is-my-sddm-theme
 
     # Packages for virtualisation. Remove if not using virt-manager.
     virt-manager
