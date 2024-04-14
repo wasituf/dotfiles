@@ -422,7 +422,7 @@
 
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
+    package = pkgs.neovim-unwrapped;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -433,7 +433,6 @@
       eslint_d
       tree-sitter
     ];
-    extraLuaPackages = ps: [ ps.magick ];
   };
 
   # Zathura
