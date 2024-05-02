@@ -9,11 +9,11 @@
   };
 
   outputs = {nixpkgs, home-manager, self, ...}@inputs:
-    let
-      overlays = [
-        inputs.neovim-nightly-overlay.overlay
-      ]; 
-    in
+    # let
+    #   overlays = [
+    #     inputs.neovim-nightly-overlay.overlay
+    #   ]; 
+    # in
     {
     # Standalone home-manager configuration entrypoint
     homeConfigurations = {
@@ -21,9 +21,9 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           ./home.nix
-          {
-            nixpkgs.overlays = overlays;
-          }
+          # {
+          #   nixpkgs.overlays = overlays;
+          # }
         ];
       };
     };

@@ -71,31 +71,49 @@
   # Display the Desktop Environment
   services.xserver = {
     enable = true;
-
-    windowManager.bspwm.enable = true;
-
-    # Disable mouse acceleration
-    libinput = {
+    # Session commands
+    displayManager.sessionCommands = ''
+      ${pkgs.bspwm}/bin/bspc wm -r
+      source $HOME/.config/bspwm/bspwmrc
+    '';
+    # Video drivers
+    videoDrivers = [ "nvidia" ];
+    windowManager.bspwm = {
       enable = true;
+      # sxhkd.configFile = "$HOME/.config/sxhkd/sxhkdrc";
+    };
+    # Configure keymap in X11
+    xkb = {
+      layout = "us";
+      variant = "colemak_dh";
+    };
 
-      mouse = {
-        accelProfile = "flat";
-        transformationMatrix = "0.5 0 0 0 0.5 0 0 0 1";
-      };
+    # Gnome display manager
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+  };
+
+  # Disable mouse acceleration
+  services.libinput = {
+    enable = true;
+
+    mouse = {
+      accelProfile = "flat";
+      transformationMatrix = "0.5 0 0 0 0.5 0 0 0 1";
     };
   };
 
   services.displayManager = {
-    sddm = {
-      enable = true;
-      extraPackages = with pkgs; [
-        where-is-my-sddm-theme
-      ];
-      theme = "where_is_my_sddm_theme";
-      wayland.enable = true;
-    };
+    # sddm = {
+    #   enable = true;
+    #   package = pkgs.kdePackages.sddm;
+    #   theme = "where_is_my_sddm_theme";
+    #   wayland.enable = true;
+    # };
 
-    defaultSession = "hyprland";
+    defaultSession = "none+bspwm";
   };
 
   security.polkit.enable = true;
@@ -104,12 +122,6 @@
   # Enable dconf
   programs.dconf.enable = true;
  
-  # SessionCommands
-  services.xserver.displayManager.sessionCommands = ''
-  ${pkgs.bspwm}/bin/bspc wm -r
-  source $HOME/.config/bspwm/bspwmrc
-  '';
-
   # Environment variables
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -125,9 +137,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Video Drivers
-  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Kernel version
   boot.initrd.kernelModules = [ "nvidia" ];
@@ -245,14 +254,6 @@
     XDG_RUNTIME_DIR = "/run/user/1000";
   };
 
-  # Configure keymap in X11
-  services.xserver = {
-    xkb = {
-      layout = "us";
-      variant = "colemak_dh";
-    };
-  };
-
   # Use xkb keymap for console
   console.useXkbConfig = true;
 
@@ -363,8 +364,9 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    # Nvidia cuda support
     # cudatoolkit
+
+    where-is-my-sddm-theme
 
     # Packages for virtualisation. Remove if not using virt-manager.
     virt-manager
