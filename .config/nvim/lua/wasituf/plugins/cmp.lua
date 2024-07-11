@@ -33,7 +33,7 @@ return {
         completion = cmp.config.window.bordered(),
       },
 			mapping = cmp.mapping.preset.insert({
-				["<C-l>"] = cmp.mapping.complete(), -- show completion suggestions
+				["<C-i>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-;>"] = cmp.mapping.abort(), -- abort completion
 
         ["<Tab>"] = cmp.mapping(function(fallback)

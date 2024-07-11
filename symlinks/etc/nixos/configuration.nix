@@ -138,10 +138,9 @@
   };
 
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Allow unfree packages
@@ -211,7 +210,7 @@
 
   # Transmission
   services.transmission = {
-    enable = true;
+    enable = false; # TODO: enable after propagating changes
     openFirewall = true;
     home = "/home/wasituf/";
     group = "users";

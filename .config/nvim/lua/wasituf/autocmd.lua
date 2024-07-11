@@ -53,10 +53,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.astro", "*.svelte", "*.html", "*.css", "*.js", "*.ts", "*.jsx", "*.tsx", "*.php", "*.vue" },
   group = format,
-  command = "TailwindSort",
-  -- callback = function()
-  --   vim.cmd("TailwindSort")
-  -- end,
+  command = "silent! TailwindSort | redraw!",
 })
 
 -- AUTOCMD: exit insert mode on bufenter/insertenter

@@ -9,21 +9,29 @@
   };
 
   outputs = {nixpkgs, home-manager, self, ...}@inputs:
-    # let
-    #   overlays = [
-    #     inputs.neovim-nightly-overlay.overlay
-    #   ]; 
-    # in
+    let
+      overlays = [
+        (final: prev: {
+          python3 = prev.python3.override {
+            packageOverrides = pfinal: pprev: {
+              xlib = pprev.xlib.overridePythonAttrs (oldAttrs: {
+                doCheck = false;
+              });
+            };
+          };
+        })
+      ]; 
+    in
     {
     # Standalone home-manager configuration entrypoint
     homeConfigurations = {
       "wasituf@nixos" = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          overlays = overlays;
+        };
         modules = [
           ./home.nix
-          # {
-          #   nixpkgs.overlays = overlays;
-          # }
         ];
       };
     };

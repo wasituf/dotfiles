@@ -22,6 +22,7 @@
     brave                   # Brave Browser
     calibre                 # Ebook reader
     chromium                # Chromium Browser
+    discord                 # All-in-one vc and chat 
     galculator              # Calculator Program
     gimp                    # Image Manupulation Tool
     godot_4                 # FOSS Game Engine
@@ -32,6 +33,7 @@
     rofi-rbw-x11            # Bitwarden menu
     rofimoji                # Emoji menu
     spotify                 # Music Streaming
+    steam                   # Steam Client
 
     # ==================================
     # CLI Packages and Utilities
@@ -57,7 +59,7 @@
     lazydocker              # Terminal UI for docker
     libnotify               # Notification library
     maim                    # CLI Screenshot utility
-    neofetch                # System Information
+    # neofetch                # System Information
     openssl                 # Generate secrets and keys
     p7zip                   # File Archiving/Extracting
     psmisc                  # Useful Utilities (like - killall)
@@ -94,7 +96,7 @@
     nodePackages.nodejs             # JavaScript Runtime
     nodePackages.live-server        # CLI HTML live server
     nodePackages.browser-sync       # HTML Live Server
-    nodePackages.webtorrent-cli     # CLI Torrent Client
+    # nodePackages.webtorrent-cli     # CLI Torrent Client
 
 
     # ==================================
