@@ -9,7 +9,14 @@ return {
     config = function () 
         local configs = require("nvim-treesitter.configs")
 
-        require('nvim-ts-autotag').setup()
+        require('nvim-ts-autotag').setup({
+          autotag = { 
+            enable = true,
+            enable_rename = true,
+            enable_close = true,
+            enable_close_on_slash = true,
+          },
+        })
 
         configs.setup({
             ensure_installed = { 
@@ -37,12 +44,6 @@ return {
             auto_install = true,
             highlight = { enable = true },
             indent = { enable = true },  
-            autotag = { 
-                enable = true,
-                enable_rename = true,
-                enable_close = true,
-                enable_close_on_slash = true,
-            },
         })
     end
 }

@@ -7,9 +7,6 @@ return {
     vim.o.timeoutlen = 500
   end,
   opts = {
-    triggers_blacklist = {
-      n = { 'v', 'vi', 'vl', 'vk', 'vj', 'vh', 'vm', 'vn', 've' },
-      v = { 'i', 'k', 'l', 'j', 'h', 'm', 'n', 'e' }
-    }
-  }
+    preset = "helix",
+  },
 }

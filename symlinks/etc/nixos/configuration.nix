@@ -166,10 +166,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
-  # Sound Settings
-  sound.enable = false;
-  # hardware.pulseaudio.enable = false;
-  # nixpkgs.config.pulseaudio = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
