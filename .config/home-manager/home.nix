@@ -42,6 +42,7 @@
     bc                      # Software Calculator
     bsp-layout              # BSPWM Layout Management
     cli-visualizer          # CLI Audio Visualizer
+    # cloudflare-warp         # Cloudflare WARP client
     codeium                 # Codeium language server
     curl                    # HTTP Client
     docker-compose          # Compose plugin for docker
@@ -59,7 +60,6 @@
     lazydocker              # Terminal UI for docker
     libnotify               # Notification library
     maim                    # CLI Screenshot utility
-    # neofetch                # System Information
     openssl                 # Generate secrets and keys
     p7zip                   # File Archiving/Extracting
     psmisc                  # Useful Utilities (like - killall)

@@ -11,15 +11,15 @@
   outputs = {nixpkgs, home-manager, self, ...}@inputs:
     let
       overlays = [
-        (final: prev: {
-          python3 = prev.python3.override {
-            packageOverrides = pfinal: pprev: {
-              xlib = pprev.xlib.overridePythonAttrs (oldAttrs: {
-                doCheck = false;
-              });
-            };
-          };
-        })
+        # (final: prev: {
+        #   python3 = prev.python3.override {
+        #     packageOverrides = pfinal: pprev: {
+        #       xlib = pprev.xlib.overridePythonAttrs (oldAttrs: {
+        #         doCheck = false;
+        #       });
+        #     };
+        #   };
+        # })
       ]; 
     in
     {

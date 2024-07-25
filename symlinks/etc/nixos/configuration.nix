@@ -192,6 +192,12 @@
     };
   };
 
+  # Cloudflare WARP
+  services.cloudflare-warp = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # Jellyfin server
   services.jellyfin = {
     enable = true;
@@ -206,7 +212,7 @@
 
   # Transmission
   services.transmission = {
-    enable = false; # TODO: enable after propagating changes
+    enable = true;
     openFirewall = true;
     home = "/home/wasituf/";
     group = "users";
@@ -305,6 +311,12 @@
     autosuggestions.enable = true;
   };
   environment.shells = with pkgs; [ zsh ];
+
+  # Codeium executable work-around
+  programs.nix-ld = {
+    enable = true;
+    libraries = [];
+  };
 
   fonts = {
     enableDefaultPackages = true;
