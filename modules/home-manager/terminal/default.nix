@@ -1,0 +1,8 @@
+{ ... }:
+{
+  imports = [
+    ./emulators
+    ./nixvim
+    ./programs
+  ];
+}

@@ -1,0 +1,12 @@
+session_name: home-manager
+start_directory: $HOME/hm
+windows:
+  - window_name: editor
+    focus: true
+    panes:
+      - shell_command:
+          - nvim .
+  - window_name: terminal
+    panes:
+      - shell_command:
+          - clear

@@ -1,0 +1,13 @@
+session_name: dots
+start_directory: $HOME/dotfiles
+windows:
+  - window_name: editor
+    focus: true
+    panes:
+      - shell_command:
+          - nvim
+  - window_name: terminal
+    panes:
+      - shell_command:
+          - clear
+

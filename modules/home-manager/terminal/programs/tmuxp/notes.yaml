@@ -1,0 +1,12 @@
+session_name: notes
+start_directory: $HOME/notes
+windows:
+  - window_name: main
+    focus: true
+    panes:
+      - shell_command:
+          - nvim .
+  - window_name: scratch
+    panes:
+      - shell_command:
+          - nvim scratch.md

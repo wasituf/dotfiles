@@ -1,0 +1,242 @@
+#+TITLE: Emacs Configuration
+#+STARTUP: showall
+#+PROPERTY: header-args:elisp :lexical t
+
+* Table of Contents
+- [[#core-settings][Core Settings]]
+  - [[#ui-tweaks][UI Tweaks]]
+- [[#themes][Themes]]
+- [[#evil-mode][Evil mode]]
+- [[#lsp][LSP]]
+  - [[#lsp-mode][Lsp Mode]]
+  - [[#formatting][Formatting]]
+- [[#org][Org]]
+- [[#miscellaneous-packages][Miscellaneous Packages]]
+  - [[#doom-modeline][Doom Modeline]]
+  - [[#magit][Magit]]
+  - [[#toc-table-of-contents][Toc (Table of Contents)]]
+  - [[#which-key][Which Key]]
+- [[#keymaps][Keymaps]]
+
+
+* Core Settings
+#+begin_src elisp
+  ;; Basic settings
+  (setq inhibit-startup-screen t
+   make-backup-files nil
+   auto-save-default nil
+   visible-bell t)
+
+  ;; Set the default tab width
+  (setq-default tab-width 2)
+
+  ;; Use spaces instead of tabs
+  (setq-default indent-tabs-mode nil)
+
+  (setq scroll-preserve-screen-position nil)
+#+end_src
+
+** UI Tweaks
+Streamline the Emacs interface for a cleaner look.
+
+#+begin_src elisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(global-display-line-numbers-mode t)
+(global-hl-line-mode t)
+(set-fringe-mode 0)
+(blink-cursor-mode -1)
+
+(set-face-attribute 'default nil :family "JetBrainsMono NF" :height 110)
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono NF-11"))
+
+;; Set a more minimal startup screen
+(setq inhibit-startup-screen t
+ inhibit-startup-message t
+ initial-scratch-message "")
+
+;; Set a cleaner title bar
+(setq frame-title-format "Emacs")
+#+end_src
+
+
+* Themes
+All theme packages supported by my nix emacs module. [ kanagawa, catppuccin, rose-pine ]
+Also enables autothemer for rose-pine-theme.
+
+#+begin_src elisp
+(use-package autothemer)
+
+(use-package catppuccin-theme)
+(use-package kanagawa-themes)
+; (use-package rose-pine-theme)
+#+end_src
+
+
+* Evil mode
+Use evil-mode for vim bindings
+
+#+begin_src elisp
+  (use-package evil
+    :config
+    (evil-mode 1))
+#+end_src
+
+
+* LSP
+Language servers support and formatting with format-all.
+
+** Lsp Mode
+#+begin_src elisp
+(use-package lsp-mode
+ :commands lsp
+ :hook ((python-mode . lsp)
+   (javascript-mode . lsp)))
+#+end_src
+
+
+** Formatting
+#+begin_src elisp
+(use-package format-all
+ :hook (prog-mode . format-all-mode))
+#+end_src
+
+
+* Org
+Org support for emacs.
+
+#+begin_src elisp
+;; Modern org
+(use-package org-modern)
+(with-eval-after-load 'org (global-org-modern-mode))
+
+;; <s and <q (aka org-tempo) support
+(use-package yasnippet-snippets)
+(use-package yasnippet
+  :config (yas-global-mode 1))
+#+end_src
+
+
+* Miscellaneous Packages
+
+** Doom Modeline
+Nice statusline for emacs. Meant to be together.
+
+#+begin_src elisp
+(use-package all-the-icons)
+
+(use-package doom-modeline
+  :init
+  (doom-modeline-mode 1)
+  :config
+  ;; Refresh mode line when creating new frames
+  (add-hook 'after-make-frame-functions
+    (lambda (_frame)
+      (doom-modeline-refresh-bars))))
+
+(doom-modeline-mode 1)
+#+end_src
+
+
+** Magit
+Git porcelain for emacs.
+
+#+begin_src elisp
+(use-package magit
+ :config
+ (global-set-key (kbd "C-x g") 'magit-status))
+#+end_src
+
+
+** Scroll-on-jump
+Scroll animations.
+#+begin_src elisp
+  (use-package scroll-on-jump
+    :config
+    (setq scroll-on-jump-duration 0.4)
+    (setq scroll-on-jump-curve 'linear))
+
+  (with-eval-after-load 'evil
+    (scroll-on-jump-advice-add evil-undo)
+    (scroll-on-jump-advice-add evil-redo)
+    (scroll-on-jump-advice-add evil-jump-item)
+    (scroll-on-jump-advice-add evil-jump-forward)
+    (scroll-on-jump-advice-add evil-jump-backward)
+    (scroll-on-jump-advice-add evil-ex-search-next)
+    (scroll-on-jump-advice-add evil-ex-search-previous)
+    (scroll-on-jump-advice-add evil-forward-paragraph)
+    (scroll-on-jump-advice-add evil-backward-paragraph)
+    (scroll-on-jump-advice-add evil-goto-mark)
+
+    ;; Actions that themselves scroll.
+    (scroll-on-jump-with-scroll-advice-add evil-goto-line)
+    (scroll-on-jump-with-scroll-advice-add evil-scroll-down)
+    (scroll-on-jump-with-scroll-advice-add evil-scroll-up)
+    (scroll-on-jump-with-scroll-advice-add evil-scroll-line-to-center)
+    (scroll-on-jump-with-scroll-advice-add evil-scroll-line-to-top)
+    (scroll-on-jump-with-scroll-advice-add evil-scroll-line-to-bottom))
+
+  (with-eval-after-load 'goto-chg
+    (scroll-on-jump-advice-add goto-last-change)
+    (scroll-on-jump-advice-add goto-last-change-reverse))
+#+end_src
+
+
+** Toc (Table of Contents)
+Automatically generate table of contents for org files.
+#+begin_src elisp
+    (use-package toc-org
+      :config
+      (add-hook 'org-mode-hook 'toc-org-mode))
+#+end_src
+
+
+** Which Key
+Show available commands on key press.
+
+#+begin_src elisp
+(use-package which-key)
+
+(which-key-mode)
+(setq which-key-idle-delay 0.3)
+#+end_src
+
+
+* Keymaps
+
+- Use general for easier syntax (e.g. for evil keymaps)
+#+begin_src elisp
+  (use-package general)
+
+  ;; Create leader key
+  (general-create-definer leader
+    :prefix "SPC")
+
+  ;; Define general keymaps
+  (general-define-key
+   :states '(normal visual)
+   "m" 'evil-backward-char
+   "n" 'evil-next-line
+   "e" 'evil-previous-line
+   "i" 'evil-forward-char
+   "h" 'evil-insert
+   "l" 'evil-forward-word-end)
+
+  ;; Window navigation
+  (general-define-key
+   :states '(normal visual)
+   "M-m" 'evil-window-left
+   "M-n" 'evil-window-down
+   "M-e" 'evil-window-up
+   "M-i" 'evil-window-right)
+
+  ;; Scrolling and buffer navigation
+  (general-define-key
+   :states '(normal visual)
+   "C-n" 'evil-scroll-down
+   "C-e" 'evil-scroll-up
+   "I" 'next-buffer
+   "M" 'previous-buffer)
+#+end_src
+

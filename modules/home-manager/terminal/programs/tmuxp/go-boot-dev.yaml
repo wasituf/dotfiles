@@ -1,0 +1,14 @@
+session_name: go-boot-dev
+start_directory: $HOME/dev/personal/go-boot-dev
+windows:
+  - window_name: main
+    layout: main-vertical
+    options:
+      main-pane-width: 67%
+    focus: true
+    panes:
+      - shell_command:
+          - nvim .
+        focus: true
+      - shell_command:
+          - clear
