@@ -70,6 +70,7 @@
         ghostty.enable = true;
       };
       programs = {
+        bat.enable = true;
         btop.enable = true;
         eza.enable = true;
         tmux = {
