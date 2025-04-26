@@ -6,7 +6,7 @@
 }:
 with lib;
 let
-  cfg = config.modules.nixvim;
+  cfg = config.modules.terminal.nixvim;
 in
 {
   imports = [
@@ -19,7 +19,7 @@ in
     ./plugins
   ];
 
-  options.modules.nixvim = {
+  options.modules.terminal.nixvim = {
     enable = mkEnableOption "nixvim";
     colorscheme = mkOption {
       type = types.enum [

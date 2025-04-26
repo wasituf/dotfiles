@@ -1,10 +1,10 @@
 { lib, config, ... }:
 with lib;
 let
-  cfg = config.modules.eza;
+  cfg = config.modules.terminal.programs.eza;
 in
 {
-  options.modules.eza = {
+  options.modules.terminal.programs.eza = {
     enable = mkEnableOption "eza";
   };
 

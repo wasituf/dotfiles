@@ -5,10 +5,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.ghostty;
+  cfg = config.modules.terminal.emulators.ghostty;
 in
 {
-  options.modules.ghostty = {
+  options.modules.terminal.emulators.ghostty = {
     enable = mkEnableOption "ghostty";
     theme = mkOption {
       type = types.enum [

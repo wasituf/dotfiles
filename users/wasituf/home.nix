@@ -45,36 +45,39 @@
   modules = {
     # Hyprland
     hyprland.enable = true;
+    # scripts
+    scripts.enable = true;
 
     # services
     services = {
       swww.enable = true;
     };
 
-    # scripts
-    scripts.enable = true;
-
     # desktop
     desktop = {
+      emacs = {
+        enable = true;
+        enableDaemon = true;
+      };
       spicetify.enable = true;
       tofi.enable = true;
+      zathura.enable = true;
     };
-    emacs = {
-      enable = true;
-      enableDaemon = true;
-    };
-    zathura.enable = true;
 
     # terminal
     terminal = {
-      btop.enable = true;
-    };
-    eza.enable = true;
-    ghostty.enable = true;
-    nixvim.enable = true;
-    tmux = {
-      enable = true;
-      theme = "kanagawa";
+      emulators = {
+        ghostty.enable = true;
+      };
+      programs = {
+        btop.enable = true;
+        eza.enable = true;
+        tmux = {
+          enable = true;
+          theme = "kanagawa";
+        };
+      };
+      nixvim.enable = true;
     };
 
     # system

@@ -1,10 +1,10 @@
 { lib, config, ... }:
 with lib;
 let
-  cfg = config.modules.gitui;
+  cfg = config.modules.terminal.programs.gitui;
 in
 {
-  options.modules.gitui = {
+  options.modules.terminal.programs.gitui = {
     enable = mkEnableOption "gitui";
   };
 

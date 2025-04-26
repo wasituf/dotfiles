@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.emacs;
+  cfg = config.modules.desktop.emacs;
 in
 {
-  options.modules.emacs = {
+  options.modules.desktop.emacs = {
     enable = mkEnableOption "emacs";
     enableDaemon = mkEnableOption "Enable the emacs daemon.";
     colorscheme = mkOption {

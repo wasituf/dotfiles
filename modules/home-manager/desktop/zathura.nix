@@ -5,10 +5,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.zathura;
+  cfg = config.modules.desktop.zathura;
 in
 {
-  options.modules.zathura = {
+  options.modules.desktop.zathura = {
     enable = mkEnableOption "zathura";
   };
 

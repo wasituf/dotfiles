@@ -7,10 +7,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.tmux;
+  cfg = config.modules.terminal.programs.tmux;
 in
 {
-  options.modules.tmux = {
+  options.modules.terminal.programs.tmux = {
     enable = mkEnableOption "tmux";
     theme = mkOption {
       type = types.enum [

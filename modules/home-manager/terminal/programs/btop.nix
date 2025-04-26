@@ -1,10 +1,10 @@
 { config, lib, ... }:
 with lib;
 let
-  cfg = config.modules.terminal.btop;
+  cfg = config.modules.terminal.programs.btop;
 in
 {
-  options.modules.terminal.btop = {
+  options.modules.terminal.programs.btop = {
     enable = mkEnableOption "btop";
   };
 
