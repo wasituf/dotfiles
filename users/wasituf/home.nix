@@ -30,12 +30,15 @@
     xfce.thunar-vcs-plugin
 
     # misc
+    duf
+    fd
     gum
-    waytrogen
     mpvpaper
-    zip
-    rar
+    nitch
     p7zip
+    rar
+    waytrogen
+    zip
 
     # tooling
     libgcc
@@ -64,13 +67,11 @@
       enable = true;
       enableDaemon = true;
     };
-    fuzzel.enable = false;
     zathura.enable = true;
 
     # terminal
     eza.enable = true;
     ghostty.enable = true;
-    gitui.enable = true;
     nixvim.enable = true;
     tmux = {
       enable = true;
