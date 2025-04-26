@@ -52,7 +52,7 @@
 
     # services
     services = {
-      hyprpaper.enable = true;
+      swww.enable = true;
     };
 
     # scripts
