@@ -66,6 +66,9 @@
     zathura.enable = true;
 
     # terminal
+    terminal = {
+      btop.enable = true;
+    };
     eza.enable = true;
     ghostty.enable = true;
     nixvim.enable = true;
