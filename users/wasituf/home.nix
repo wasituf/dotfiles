@@ -24,10 +24,6 @@
 
     # file managers
     nautilus
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    xfce.thunar-volman
-    xfce.thunar-vcs-plugin
 
     # misc
     duf
