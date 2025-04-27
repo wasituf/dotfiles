@@ -90,10 +90,6 @@ in
             src = pkgs.fishPlugins.fish-you-should-use.src;
           }
           {
-            name = "fzf";
-            src = pkgs.fishPlugins.fzf.src;
-          }
-          {
             name = "forgit";
             src = pkgs.fishPlugins.forgit.src;
           }
@@ -122,6 +118,7 @@ in
           tkss = "tmux kill-session -t";
           tksv = "tmux kill-server";
           sesh = "tmux-sessionizer";
+          ft = "flake-init";
         };
       };
     })
