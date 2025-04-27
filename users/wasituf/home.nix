@@ -28,7 +28,6 @@
     # misc
     duf
     fd
-    gum
     jq
     mpvpaper
     nitch

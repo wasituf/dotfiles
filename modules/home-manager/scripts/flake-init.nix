@@ -18,7 +18,7 @@ with lib;
           if [[ $# -eq 1 ]]; then
           	selected=$1
           else
-          	selected=$(nix flake show --json github:wasituf/ft | jq -r '.templates | to_entries[] | "\(.key): \(.value.description)"' | gum filter)
+          	selected=$(nix flake show --json github:wasituf/ft | jq -r '.templates | to_entries[] | "\(.key): \(.value.description)"' | fzf)
           fi
 
           if [[ -z $selected ]]; then
