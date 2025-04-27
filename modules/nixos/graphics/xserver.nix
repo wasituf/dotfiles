@@ -12,11 +12,6 @@ in
     services.xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
-      xkb = {
-        layout = "us";
-        variant = "colemak_dh";
-      };
     };
-
   };
 }

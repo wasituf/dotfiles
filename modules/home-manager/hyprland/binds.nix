@@ -16,6 +16,9 @@
     ];
 
     bind = [
+      # fcitx
+      "SUPER_CTRL,space,execr,fcitx5-remote -t"
+
       # Scroll through existing workspaces with mainMod + scroll
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up, workspace, e-1"

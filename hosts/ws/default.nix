@@ -11,6 +11,7 @@
   modules = {
     system = {
       i18n.enable = true;
+      keyboard.enable = true;
       shell = {
         enable = true;
         shell = "fish";

@@ -1,6 +1,12 @@
 { ... }:
 {
   wayland.windowManager.hyprland.settings = {
+    exec-once = [
+      "fcitx5-remote -r"
+      "fcitx5 -d --replace &"
+      "fcitx5-remote -r"
+    ];
+
     env = [
       # "XCURSOR_SIZE,32"
       "QT_QPA_PLATFORMTHEME,qt5ct"
