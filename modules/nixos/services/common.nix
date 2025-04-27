@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 with lib;
 let
   cfg = config.modules.services.common;
@@ -17,7 +22,10 @@ in
         pulse.enable = true;
         jack.enable = true;
       };
-      printing.enable = true;
+      printing = {
+        enable = true;
+        drivers = [ pkgs.hplipWithPlugin ];
+      };
       openssh.enable = true;
       libinput = {
         enable = true;
