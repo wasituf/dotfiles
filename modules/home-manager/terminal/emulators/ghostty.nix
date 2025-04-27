@@ -34,8 +34,8 @@ in
         font-style-bold-italic = "Bold Italic";
         window-decoration = false;
         window-padding-x = 4;
-        window-padding-y = 4;
-        window-padding-balance = true;
+        window-padding-y = "4,0";
+        window-padding-balance = false;
         theme = cfg.theme;
         background-opacity = 1;
         background-blur-radius = 20;
