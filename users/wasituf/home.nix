@@ -99,7 +99,7 @@
   home.sessionVariables = {
     TERMINAL = "ghostty";
     BROWSER = "zen-browser";
-    FLAKE = "$HOME/dotfiles";
+    NH_FLAKE = "$HOME/dotfiles";
   };
 
   programs.home-manager.enable = true;
