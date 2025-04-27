@@ -29,6 +29,7 @@
     duf
     fd
     gum
+    jq
     mpvpaper
     nitch
     p7zip
@@ -73,6 +74,7 @@
         bat.enable = true;
         btop.enable = true;
         eza.enable = true;
+        fzf.enable = true;
         tmux = {
           enable = true;
           theme = "kanagawa";
