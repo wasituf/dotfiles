@@ -17,14 +17,28 @@ in
     fonts.fontconfig = {
       enable = true;
       defaultFonts = {
-        sansSerif = [ "Satoshi" ];
-        serif = [ "Merriweather" ];
-        monospace = [ "JetBrainsMono NF" ];
+        sansSerif = [
+          "Satoshi"
+          "M+1 Nerd Font"
+        ];
+        serif = [
+          "Merriweather"
+          "Noto Serif CJK JP"
+        ];
+        monospace = [
+          "JetBrainsMono NF"
+          "M+1Code Nerd Font"
+        ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
 
     home.packages = with pkgs; [
+      # Japanese
+      nerd-fonts.mplus
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+
       # Icon Fonts
       noto-fonts-color-emoji
       weather-icons
