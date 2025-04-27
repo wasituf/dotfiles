@@ -18,7 +18,7 @@ in
       enable = true;
       defaultFonts = {
         sansSerif = [
-          "Satoshi"
+          "Satoshi Variable"
           "M+1 Nerd Font"
         ];
         serif = [
