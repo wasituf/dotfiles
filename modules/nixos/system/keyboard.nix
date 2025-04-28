@@ -15,6 +15,7 @@ in
 
   config = mkIf cfg.enable {
     services.xserver = {
+      desktopManager.runXdgAutostartIfNone = true;
       xkb = {
         layout = "us";
         variant = "colemak_dh";
@@ -29,9 +30,8 @@ in
         addons = with pkgs; [
           fcitx5-mozc
           fcitx5-gtk
-          fcitx5-mellow-themes
+          kdePackages.fcitx5-qt
           fcitx5-fluent
-          fcitx5-material-color
           kdePackages.fcitx5-configtool
         ];
       };
