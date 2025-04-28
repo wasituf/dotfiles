@@ -15,11 +15,12 @@
 
   home.packages = with pkgs; [
     # desktop
+    calibre
     gimp-with-plugins
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.system}.default
-    telegram-desktop
     loupe
+    telegram-desktop
     vlc
 
     # file managers
