@@ -35,7 +35,7 @@ in
         result-spacing = 16;
 
         width = 320;
-        height = 308;
+        height = 317;
         background-color = "#1F1F28";
         outline-width = 0;
         outline-color = "#54546D";

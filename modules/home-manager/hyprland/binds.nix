@@ -5,7 +5,7 @@
     "$alt" = "ALT";
     "$terminal" = "ghostty";
     "$fileManager" = "org.gnome.Nautilus";
-    "$menu" = "tofi-drun | xargs hyprctl dispatch exec --";
+    "$menu" = "tofi-run | xargs hyprctl dispatch exec --";
 
     bindm = [
       # Mouse bindings
