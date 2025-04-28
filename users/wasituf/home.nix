@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     # desktop
+    anki-bin
     calibre
     gimp-with-plugins
     inkscape-with-extensions
