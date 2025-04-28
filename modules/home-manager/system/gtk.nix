@@ -36,7 +36,7 @@ in
       font = {
         name = "Satoshi Variable";
         package = null;
-        size = 11;
+        size = 10;
       };
     };
   };
