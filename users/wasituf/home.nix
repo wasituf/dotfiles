@@ -31,6 +31,7 @@
     duf
     fd
     jq
+    mpv
     mpvpaper
     nitch
     p7zip
