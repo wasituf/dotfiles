@@ -9,7 +9,7 @@
         preset = "helix";
         win = {
           border = "rounded";
-          wo.winblend = 25;
+          wo.winblend = 0;
         };
         spec = [
           {
