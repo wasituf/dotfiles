@@ -36,6 +36,8 @@
     nitch
     p7zip
     rar
+    tldr
+    tokei
     waytrogen
     zip
 
