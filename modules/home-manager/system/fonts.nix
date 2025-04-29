@@ -35,7 +35,7 @@ in
 
     home.packages = with pkgs; [
       # Japanese
-      nerd-fonts.mplus
+      nerd-fonts."m+"
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
 
