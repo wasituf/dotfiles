@@ -26,7 +26,7 @@ in
     gtk = {
       enable = true;
       theme = {
-        name = "orchis-dark";
+        name = "Orchis-Grey-Dark";
         package = pkgs.orchis-theme;
       };
       iconTheme = {
