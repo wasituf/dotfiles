@@ -34,9 +34,9 @@ in
         package = pkgs.tela-icon-theme;
       };
       font = {
-        name = "Satoshi Variable";
+        name = "Jost*";
         package = null;
-        size = 10;
+        size = 11;
       };
     };
   };
