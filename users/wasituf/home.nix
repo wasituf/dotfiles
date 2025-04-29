@@ -61,10 +61,6 @@
 
     # desktop
     desktop = {
-      emacs = {
-        enable = true;
-        enableDaemon = true;
-      };
       spicetify.enable = true;
       tofi.enable = true;
       zathura.enable = true;
