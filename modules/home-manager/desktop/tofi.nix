@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 let
   cfg = config.modules.desktop.tofi;
@@ -12,12 +17,13 @@ in
     programs.tofi = {
       enable = true;
       settings = {
-        font = "$HOME/.local/share/fonts/Satoshi-Variable.ttf";
-        font-size = 10;
+        font = "${pkgs.jost}/share/fonts/opentype/Jost-400-Book.otf";
+        font-size = 11;
         font-variations = "wght 400";
         hint-font = false;
 
         text-color = "#DCD7BA";
+        prompt-color = "#1F1F28";
         input-color = "#727169";
         input-background-padding = "24,-1,24,-1";
         default-result-background = "#1F1F28";
@@ -29,13 +35,13 @@ in
 
         text-cursor-style = "bar";
 
-        prompt-text = "⠀";
-        prompt-padding = 0;
-        num-results = 8;
+        prompt-text = "/";
+        prompt-padding = 3;
+        num-results = 7;
         result-spacing = 16;
 
-        width = 320;
-        height = 317;
+        width = 260;
+        height = 301;
         background-color = "#1F1F28";
         outline-width = 0;
         outline-color = "#54546D";
@@ -51,7 +57,7 @@ in
 
         # matching-algorithm = "fuzzy";
         drun-launch = false;
-        ascii-input = true;
+        ascii-input = false;
       };
     };
   };
