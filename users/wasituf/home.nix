@@ -54,6 +54,7 @@
     # services
     services = {
       swww.enable = true;
+      windowizer.enable = true;
     };
 
     # desktop
