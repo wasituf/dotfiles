@@ -1,5 +1,6 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [ spotify-cli-linux ];
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$alt" = "ALT";
@@ -17,7 +18,13 @@
 
     bind = [
       # fcitx
-      "SUPER_CTRL,space,execr,fcitx5-remote -t"
+      "$alt,backslash,execr,fcitx5-remote -t"
+      ", code:172, exec, spotifycli --playpause"
+      ", code:171, exec, spotifycli --next"
+      ", code:173, exec, spotifycli --prev"
+      "SUPER_CTRL, space, exec, spotifycli --playpause"
+      "SUPER_CTRL, Right, exec, spotifycli --next"
+      "SUPER_CTRL, Left, exec, spotifycli --prev"
 
       # Scroll through existing workspaces with mainMod + scroll
       "$mod, mouse_down, workspace, e+1"
