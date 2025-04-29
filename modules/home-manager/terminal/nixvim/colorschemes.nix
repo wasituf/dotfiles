@@ -10,7 +10,7 @@
             dark = "wave";
           };
           theme = "wave";
-          transparent = false;
+          transparent = true;
           dimInactive = false;
           colors = {
             theme = {
