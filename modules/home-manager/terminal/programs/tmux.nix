@@ -137,11 +137,11 @@ in
           extraConfig = ''
             set -g @minimal-tmux-fg "#1F1F28"
             set -g @minimal-tmux-bg "#7E9CD8"
-            # set -g @minimal-tmux-justify "centre"
-            set -g @minimal-tmux-justify "left"
+            set -g @minimal-tmux-justify "centre"
+            # set -g @minimal-tmux-justify "left"
             set -g @minimal-tmux-indicator-str " "
             set -g @minimal-tmux-indicator true
-            set -g @minimal-tmux-status "bottom"
+            set -g @minimal-tmux-status "top"
 
             # Enables or disables the left and right status bar
             set -g @minimal-tmux-right true
@@ -199,9 +199,9 @@ in
             TMUX_FZF_LAUNCH_KEY="f"
           '';
         }
-        # {
-        #   plugin = resurrect;
-        # }
+        {
+          plugin = resurrect;
+        }
         {
           plugin = continuum;
           extraConfig = ''
