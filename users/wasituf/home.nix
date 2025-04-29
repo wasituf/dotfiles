@@ -42,6 +42,7 @@
     zip
 
     # tooling
+    gcc
     libgcc
     gnumake
   ];
