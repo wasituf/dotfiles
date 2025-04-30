@@ -24,7 +24,7 @@ in
         decorations = "always";
       };
       themes = {
-        dracula = {
+        kanagawa = {
           src = pkgs.fetchFromGitHub {
             owner = "rebelot";
             repo = "kanagawa.nvim";
