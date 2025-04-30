@@ -33,8 +33,8 @@ in
         font-style-italic = "Medium Italic";
         font-style-bold-italic = "Bold Italic";
         window-decoration = false;
-        window-padding-x = 8;
-        window-padding-y = "8,0";
+        window-padding-x = 0;
+        window-padding-y = "0,0";
         window-padding-balance = true;
         theme = cfg.theme;
         background-opacity = 0.98;
