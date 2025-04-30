@@ -197,6 +197,11 @@ in
           plugin = tmux-fzf;
           extraConfig = ''
             TMUX_FZF_LAUNCH_KEY="f"
+            TMUX_FZF_OPTIONS="-p -w 30% -h 38% -m"
+            TMUX_FZF_PREVIEW=0
+            TMUX_FZF_SESSION_FORMAT="#{session_windows} windows"
+            bind-key "s" run-shell -b "${pkgs.tmuxPlugins.tmux-fzf}/share/tmux-plugins/tmux-fzf/scripts/session.sh switch"
+            bind-key "w" run-shell -b "${pkgs.tmuxPlugins.tmux-fzf}/share/tmux-plugins/tmux-fzf/scripts/window.sh switch"
           '';
         }
         {

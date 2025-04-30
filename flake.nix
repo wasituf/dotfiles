@@ -49,6 +49,7 @@
     let
       user = "wasituf";
       system-ws = "x86_64-linux";
+      tmuxPluginsOverlay = import ./overlays/tmux-plugins.nix;
     in
     {
       nixosConfigurations = {
@@ -61,6 +62,7 @@
           };
           modules = [
             ./hosts/ws
+            { nixpkgs.overlays = [ tmuxPluginsOverlay ]; }
 
             home-manager.nixosModules.home-manager
             {
