@@ -37,7 +37,7 @@ in
         window-padding-y = "0,0";
         window-padding-balance = true;
         theme = cfg.theme;
-        background-opacity = 0.98;
+        background-opacity = 0.97;
         background-blur-radius = 24;
 
         keybind = [
