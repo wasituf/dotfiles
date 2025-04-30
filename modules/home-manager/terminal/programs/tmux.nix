@@ -213,6 +213,7 @@ in
             set -g @continuum-save-interval "5"
             set -g @continuum-boot "on"
             set -g @continuum-restore "on"
+            set -g @continuum-systemd-start-cmd "start-server"
           '';
         }
       ];
