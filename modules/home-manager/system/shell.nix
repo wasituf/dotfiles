@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 with lib;
@@ -9,6 +10,8 @@ let
   cfg = config.modules.system.shell;
 in
 {
+  imports = [ inputs.nix-index-database.hmModules.nix-index ];
+
   options.modules.system.shell = {
     enable = mkEnableOption "shell";
     shell = mkOption {
@@ -25,6 +28,10 @@ in
     (mkIf (cfg.enable && cfg.shell == "fish") {
       home.packages = with pkgs; [ any-nix-shell ];
       home.shell.enableFishIntegration = true;
+      programs.nix-index = {
+        enable = true;
+        enableFishIntegration = true;
+      };
       programs.fish = {
         enable = true;
         interactiveShellInit = ''
@@ -78,6 +85,10 @@ in
         generateCompletions = true;
         plugins = [
           {
+            name = "bang-bang";
+            src = pkgs.fishPlugins.bang-bang.src;
+          }
+          {
             name = "colored-man-pages";
             src = pkgs.fishPlugins.colored-man-pages.src;
           }
@@ -102,10 +113,6 @@ in
             src = pkgs.fishPlugins.pure.src;
           }
           {
-            name = "sponge";
-            src = pkgs.fishPlugins.sponge.src;
-          }
-          {
             name = "z";
             src = pkgs.fishPlugins.z.src;
           }
@@ -119,6 +126,8 @@ in
           tksv = "tmux kill-server";
           sesh = "tmux-sessionizer";
           ft = "flake-init";
+          nhrb = "nh os switch -H ws";
+          nhrbu = "nh os switch -H ws -u";
         };
       };
     })
