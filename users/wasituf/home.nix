@@ -22,6 +22,7 @@
     inputs.zen-browser.packages.${pkgs.system}.default
     loupe
     telegram-desktop
+    vivaldi
     vlc
 
     # file managers
