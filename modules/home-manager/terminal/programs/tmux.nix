@@ -206,11 +206,16 @@ in
         }
         {
           plugin = resurrect;
+          extraConfig = ''
+            resurrect_dir="$HOME/.tmux/resurrect"
+            set -g @resurrect-dir $resurrect_dir
+            set -g @resurrect-hook-post-save-all "sed -i 's| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/nix/store/.*/bin/||g' $(readlink -f $resurrect_dir/last)"
+          '';
         }
         {
           plugin = continuum;
           extraConfig = ''
-            set -g @continuum-save-interval "5"
+            set -g @continuum-save-interval "0"
             set -g @continuum-boot "on"
             set -g @continuum-restore "on"
             set -g @continuum-systemd-start-cmd "start-server"
