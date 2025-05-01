@@ -6,6 +6,7 @@
       "float,class:^(org.gnome.Nautilus)$"
       "float,class:^(org.gnome.Loupe)$"
       "float,initialTitle:Zen Browser"
+      "float,class:.*xdg-desktop-portal.*"
       "pseudo,class:^(fcitx)$"
     ];
   };
