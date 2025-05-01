@@ -33,7 +33,7 @@
     };
 
     decoration = {
-      rounding = 12;
+      rounding = 10;
       shadow = {
         enabled = false;
       };
