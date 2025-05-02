@@ -92,6 +92,7 @@
       fonts.enable = true;
       gtk.enable = true;
       nh.enable = true;
+      notifications.enable = true;
       pointer.enable = true;
       shell = {
         enable = true;

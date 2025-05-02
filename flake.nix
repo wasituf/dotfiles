@@ -33,6 +33,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    wired.url = "github:Toqozz/wired-notify";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -62,7 +63,12 @@
           };
           modules = [
             ./hosts/ws
-            { nixpkgs.overlays = [ tmuxPluginsOverlay ]; }
+            {
+              nixpkgs.overlays = [
+                tmuxPluginsOverlay
+                inputs.wired.overlays.default
+              ];
+            }
 
             home-manager.nixosModules.home-manager
             {
@@ -70,6 +76,8 @@
               home-manager.useUserPackages = true;
 
               home-manager.users.wasituf = import ./users/wasituf/home.nix;
+
+              home-manager.sharedModules = [ inputs.wired.homeManagerModules.default ];
 
               home-manager.extraSpecialArgs = {
                 inherit inputs;
