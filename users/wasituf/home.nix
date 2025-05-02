@@ -21,6 +21,7 @@
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.system}.default
     loupe
+    nicotine-plus
     telegram-desktop
     vivaldi
     vlc
