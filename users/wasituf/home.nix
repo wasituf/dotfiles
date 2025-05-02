@@ -37,7 +37,6 @@
     nitch
     p7zip
     rar
-    tldr
     tokei
     waytrogen
     zip
@@ -78,6 +77,7 @@
         btop.enable = true;
         eza.enable = true;
         fzf.enable = true;
+        tealdeer.enable = true;
         tmux = {
           enable = true;
           theme = "kanagawa";
