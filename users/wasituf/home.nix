@@ -64,6 +64,7 @@
     desktop = {
       spicetify.enable = true;
       tofi.enable = true;
+      vesktop.enable = true;
       zathura.enable = true;
     };
 
