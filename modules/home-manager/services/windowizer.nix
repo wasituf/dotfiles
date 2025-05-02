@@ -14,10 +14,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      jq
-      socat
-    ];
     systemd.user.services.windowizer = {
       Unit = {
         Description = "Manage window states in hyprland.";
@@ -36,7 +32,7 @@ in
               if [[ "$title" =~ ^Zen ]]; then
                 sleep 0.5
                 hyprctl clients -j |
-                  jq --arg addr "0x$address" '.[] | select(.address == $addr) | .title' |
+                  ${pkgs.jq}/bin/jq --arg addr "0x$address" '.[] | select(.address == $addr) | .title' |
                   while IFS= read -r window_title; do
                     if [[ "$window_title" =~ .*Extension:.* ]]; then
                       return
@@ -49,7 +45,7 @@ in
             esac
           }
 
-          socat -U - UNIX-CONNECT:"$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
+          ${pkgs.socat}/bin/socat -U - UNIX-CONNECT:"$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
         ''}";
       };
     };

@@ -4,6 +4,7 @@
     exec-once = [
       "fcitx5 -d -r"
       "fcitx5-remote -r"
+      "systemctl --user restart windowizer.service"
     ];
 
     env = [
