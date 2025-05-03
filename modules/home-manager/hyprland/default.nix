@@ -13,6 +13,15 @@ in
 
   options.modules.hyprland = {
     enable = mkEnableOption "hyprland";
+    theme = mkOption {
+      type = types.enum [
+        "kanagawa"
+        "rose-pine"
+      ];
+      default = "kanagawa";
+      description = "The theme applied to hyprland.";
+      example = "rose-pine";
+    };
   };
 
   config = mkIf cfg.enable {
@@ -22,6 +31,16 @@ in
       package = null;
       portalPackage = null;
       systemd.variables = [ "--all" ];
+      settings.general = mkMerge [
+        (mkIf (cfg.theme == "rose-pine") {
+          "col.active_border" = "0xff403d52";
+          "col.inactive_border" = "0xff26233a";
+        })
+        (mkIf (cfg.theme == "kanagawa") {
+          "col.active_border" = "0xff54546D";
+          "col.inactive_border" = "0xff363646";
+        })
+      ];
     };
   };
 }

@@ -113,11 +113,14 @@ in
         (mkIf (cfg.theme == "rose-pine") {
           plugin = rose-pine;
           extraConfig = ''
+            set-option -g status-position top
             set -g @rose_pine_variant 'main'
             set -g @rose_pine_host 'on'
-            set -g @rose_pine_user 'on'
-            set -g @rose_pine_date_time '%a, %d %b'
-            set -g @rose_pine_directory 'on'
+            set -g @rose_pine_user 'off'
+            set -g @rose_pine_date_time '%H:%M - %a, %d %b'
+            set -g @rose_pine_directory 'off'
+            set -g @rose_pine_bar_bg_disable 'on'
+            set -g @rose_pine_bar_bg_disabled_color_option 'default'
 
             set -g @rose_pine_disable_active_window_menu 'on'
 
@@ -127,7 +130,7 @@ in
             set -g @rose_pine_folder_icon ''
             set -g @rose_pine_username_icon '  '
             set -g @rose_pine_hostname_icon '  '
-            set -g @rose_pine_date_time_icon ''
+            set -g @rose_pine_date_time_icon '󰃰'
             set -g @rose_pine_window_status_separator "  "
             set -g @rose_pine_status_left_append_section ' '
           '';

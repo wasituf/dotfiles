@@ -126,12 +126,18 @@
           dim_inactive_windows = false;
 
           styles = {
-            transparency = false;
+            transparency = true;
           };
 
           highlight_groups = {
             MiniIndentscopeSymbol = {
               fg = "highlight_med";
+            };
+            SnacksIndent = {
+              fg = "#26233a";
+            };
+            SnacksIndentScope = {
+              fg = "#6e6a86";
             };
             WhichKeyNormal = {
               bg = "none";

@@ -51,7 +51,10 @@
   # Modules
   modules = {
     # Hyprland
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      theme = "rose-pine";
+    };
     # scripts
     scripts.enable = true;
 
@@ -72,7 +75,10 @@
     # terminal
     terminal = {
       emulators = {
-        ghostty.enable = true;
+        ghostty = {
+          enable = true;
+          theme = "rose-pine";
+        };
       };
       programs = {
         bat.enable = true;
@@ -82,10 +88,13 @@
         tealdeer.enable = true;
         tmux = {
           enable = true;
-          theme = "kanagawa";
+          theme = "rose-pine";
         };
       };
-      nixvim.enable = true;
+      nixvim = {
+        enable = true;
+        colorscheme = "rose-pine";
+      };
     };
 
     # system
