@@ -117,7 +117,7 @@ in
             set -g @rose_pine_variant 'main'
             set -g @rose_pine_host 'on'
             set -g @rose_pine_user 'off'
-            set -g @rose_pine_date_time '%H:%M - %a, %d %b'
+            set -g @rose_pine_date_time '%I:%M - %a, %d %b'
             set -g @rose_pine_directory 'off'
             set -g @rose_pine_bar_bg_disable 'on'
             set -g @rose_pine_bar_bg_disabled_color_option 'default'
