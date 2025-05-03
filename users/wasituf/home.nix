@@ -66,6 +66,7 @@
 
     # desktop
     desktop = {
+      mangohud.enable = true;
       spicetify.enable = true;
       tofi.enable = true;
       vesktop.enable = true;
