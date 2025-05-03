@@ -86,6 +86,7 @@
         btop.enable = true;
         eza.enable = true;
         fzf.enable = true;
+        git.enable = true;
         tealdeer.enable = true;
         tmux = {
           enable = true;
