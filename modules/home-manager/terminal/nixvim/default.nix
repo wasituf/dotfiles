@@ -36,7 +36,7 @@ in
     programs.nixvim = {
       enable = true;
       defaultEditor = true;
-      diagnostic.config = {
+      diagnostic.settings = {
         virtual_lines = {
           current_line = true;
         };
