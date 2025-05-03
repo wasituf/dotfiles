@@ -22,6 +22,7 @@
       keyd.enable = true;
       transmission.enable = true;
     };
+    gaming.enable = true;
     graphics = {
       nvidia.enable = true;
       qt.enable = true;
