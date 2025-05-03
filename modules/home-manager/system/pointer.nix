@@ -19,12 +19,12 @@ in
       enable = true;
       package = inputs.banana-cursor-catppuccin.packages.${pkgs.system}.banana-cursor-catppuccin;
       name = "Banana-Catppuccin-Mocha";
-      size = 32;
+      size = 24;
       dotIcons.enable = true;
       gtk.enable = true;
       hyprcursor = {
         enable = true;
-        size = 32;
+        size = 24;
       };
       x11 = {
         enable = true;

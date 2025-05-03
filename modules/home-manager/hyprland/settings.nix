@@ -8,7 +8,6 @@
     ];
 
     env = [
-      # "XCURSOR_SIZE,32"
       "QT_QPA_PLATFORMTHEME,qt5ct"
       "NIXOS_OZONE_WL,1"
       "WLR_NO_HARDWARE_CURSORS,1"
