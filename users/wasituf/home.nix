@@ -104,7 +104,10 @@
       fonts.enable = true;
       gtk.enable = true;
       nh.enable = true;
-      notifications.enable = true;
+      notifications = {
+        enable = true;
+        theme = "rose-pine";
+      };
       pointer.enable = true;
       shell = {
         enable = true;
