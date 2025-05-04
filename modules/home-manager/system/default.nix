@@ -9,6 +9,6 @@
     ./notifications
     ./pointer.nix
     ./secrets.nix
-    ./shell.nix
+    ./shell
   ];
 }

@@ -113,6 +113,7 @@
       shell = {
         enable = true;
         shell = "fish";
+        theme = "rose-pine";
       };
     };
   };
