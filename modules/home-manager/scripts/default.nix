@@ -10,6 +10,7 @@ in
 {
   imports = [
     ./flake-init.nix
+    ./spotify-lookup.nix
     ./theme-switch.nix
     ./tmux-sessionizer.nix
   ];
@@ -22,6 +23,7 @@ in
     home.packages = [
       # scripts
       config.custom-pkgs.flake-init.package
+      config.custom-pkgs.spotify-lookup.package
       config.custom-pkgs.theme-switch.package
       config.custom-pkgs.tmux-sessionizer.package
     ];
