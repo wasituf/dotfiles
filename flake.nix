@@ -9,6 +9,10 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     banana-cursor-catppuccin = {
       url = "github:wasituf/banana-cursor-catppuccin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,6 +67,7 @@
           };
           modules = [
             ./hosts/ws
+            inputs.agenix.nixosModules.default
             {
               nixpkgs.overlays = [
                 tmuxPluginsOverlay
@@ -77,7 +82,10 @@
 
               home-manager.users.wasituf = import ./users/wasituf/home.nix;
 
-              home-manager.sharedModules = [ inputs.wired.homeManagerModules.default ];
+              home-manager.sharedModules = [
+                inputs.wired.homeManagerModules.default
+                inputs.agenix.homeManagerModules.default
+              ];
 
               home-manager.extraSpecialArgs = {
                 inherit inputs;

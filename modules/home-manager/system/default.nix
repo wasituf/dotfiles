@@ -8,6 +8,7 @@
     ./nh.nix
     ./notifications
     ./pointer.nix
+    ./secrets.nix
     ./shell.nix
   ];
 }
