@@ -32,6 +32,7 @@ in
           fcitx5-gtk
           kdePackages.fcitx5-qt
           fcitx5-fluent
+          fcitx5-rose-pine
           kdePackages.fcitx5-configtool
         ];
       };
