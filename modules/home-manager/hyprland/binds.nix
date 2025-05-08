@@ -18,7 +18,6 @@
 
     bind = [
       # fcitx
-      "$alt,backslash,execr,fcitx5-remote -t"
       ", code:172, exec, spotifycli --playpause"
       ", code:171, exec, spotifycli --next"
       ", code:173, exec, spotifycli --prev"
