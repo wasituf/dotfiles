@@ -18,20 +18,20 @@ in
       settings = {
         appBadge = false;
         arRPC = true;
-        checkUpdates = false;
+        checkUpdates = true;
         discordBranch = "stable";
         transparencyOption = "acrylic";
-        tray = false;
-        minimizeToTray = false;
+        tray = true;
+        minimizeToTray = true;
         hardwareAcceleration = true;
         splashTheming = true;
-        splashBackground = "#1F1F28";
-        splashColor = "#DCD7BA";
+        splashBackground = "#191724";
+        splashColor = "#ebbcba";
       };
       vencord = {
         settings = {
-          autoUpdate = false;
-          autoUpdateNotification = false;
+          autoUpdate = true;
+          autoUpdateNotification = true;
           enabledThemes = [ "midnight.css" ];
           frameless = true;
           transparent = true;

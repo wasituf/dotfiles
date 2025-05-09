@@ -9,6 +9,7 @@ in
     ./plugins.nix
     ./settings.nix
     ./windowrules.nix
+    ./waybar
   ];
 
   options.modules.hyprland = {
