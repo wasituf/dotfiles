@@ -10,6 +10,8 @@ let
   cfg = config.modules.gaming;
 in
 {
+  imports = [ ./terraria ];
+
   options.modules.gaming = {
     enable = mkEnableOption "gaming";
   };
