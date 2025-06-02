@@ -25,7 +25,7 @@
     };
     gaming = {
       enable = true;
-      # terraria.enable = true;
+      terraria.enable = true;
     };
     graphics = {
       nvidia.enable = true;
@@ -100,11 +100,15 @@
     rtkit.enable = true;
   };
 
+  # Virtualisation
+  virtualisation.docker.enable = true;
+
   users.users.wasituf = {
     isNormalUser = true;
     extraGroups = [
-      "wheel"
+      "docker"
       "networkmanager"
+      "wheel"
     ];
   };
 

@@ -23,8 +23,8 @@
     loupe
     nicotine-plus
     telegram-desktop
-    vivaldi
     vlc
+    yacreader
 
     # file managers
     nautilus
