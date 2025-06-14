@@ -31,7 +31,7 @@
         # fish_lsp.enable = true;
         # gdscript.enable = true;
         # gdshader_lsp.enable = true;
-        gleam.enable = true;
+        # gleam.enable = true;
         # glsl_analyzer.enable = true;
         gopls = {
           enable = true;
