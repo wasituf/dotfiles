@@ -9,6 +9,7 @@ let
 in
 {
   imports = [
+    ./album-art.nix
     ./flake-init.nix
     ./spotify-lookup.nix
     ./theme-switch.nix
@@ -22,6 +23,7 @@ in
   config = mkIf cfg.enable {
     home.packages = [
       # scripts
+      config.custom-pkgs.album-art.package
       config.custom-pkgs.flake-init.package
       config.custom-pkgs.spotify-lookup.package
       config.custom-pkgs.theme-switch.package
