@@ -20,7 +20,7 @@
     services = {
       common.enable = true;
       keyd.enable = true;
-      tailscale.enable = true;
+      tailscale.enable = false;
       transmission.enable = true;
     };
     gaming = {
