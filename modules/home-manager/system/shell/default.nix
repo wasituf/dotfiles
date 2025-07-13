@@ -10,7 +10,7 @@ let
   cfg = config.modules.system.shell;
 in
 {
-  imports = [ inputs.nix-index-database.hmModules.nix-index ];
+  imports = [ inputs.nix-index-database.homeModules.nix-index ];
 
   options.modules.system.shell = {
     enable = mkEnableOption "shell";
