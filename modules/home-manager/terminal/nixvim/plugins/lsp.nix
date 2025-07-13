@@ -94,23 +94,18 @@
           rust = [ "rustfmt" ];
           javascript = [
             "biome-check"
-            "biome-organize-imports"
           ];
           typescript = [
             "biome-check"
-            "biome-organize-imports"
           ];
           javascriptreact = [
             "biome-check"
-            "biome-organize-imports"
           ];
           typescriptreact = [
             "biome-check"
-            "biome-organize-imports"
           ];
           vue = [
             "biome-check"
-            "biome-organize-imports"
           ];
           markdown = [
             "prettierd"
@@ -120,39 +115,30 @@
           ];
           css = [
             "biome-check"
-            "biome-organize-imports"
           ];
           json = [
             "biome-check"
-            "biome-organize-imports"
           ];
           jsonc = [
             "biome-check"
-            "biome-organize-imports"
           ];
           scss = [
             "biome-check"
-            "biome-organize-imports"
           ];
           less = [
             "biome-check"
-            "biome-organize-imports"
           ];
           yaml = [
             "biome-check"
-            "biome-organize-imports"
           ];
           graphql = [
             "biome-check"
-            "biome-organize-imports"
           ];
           html = [
             "biome-check"
-            "biome-organize-imports"
           ];
           astro = [
             "biome-check"
-            "biome-organize-imports"
             "tailwind_sort"
           ];
           lua = [ "stylua" ];
@@ -174,7 +160,6 @@
           shfmt.command = lib.getExe pkgs.shfmt;
           rustfmt.command = lib.getExe pkgs.rustfmt;
           biome-check.command = lib.getExe pkgs.biome;
-          biome-organize-imports.command = lib.getExe pkgs.biome;
           black.command = lib.getExe pkgs.black;
           prettierd.command = lib.getExe pkgs.prettierd;
           # prettier.command = lib.getExe pkgs.nodePackages_latest.prettier;
