@@ -86,6 +86,7 @@
         };
         gamemode = {
           format = "{glyph}";
+          format-alt = "{glyph}";
           use-icon = false;
           hide-not-running = false;
           glyph = "󰓅 ";
