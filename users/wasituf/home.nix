@@ -17,7 +17,7 @@
     # desktop
     anki-bin
     calibre
-    gimp-with-plugins
+    gimp3-with-plugins
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.system}.default
     loupe
