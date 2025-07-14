@@ -1,6 +1,11 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ playerctl ];
+  home.packages = with pkgs; [
+    playerctl
+    hyprshot
+    satty
+    wl-clipboard
+  ];
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$alt" = "ALT";
@@ -24,6 +29,11 @@
       "SUPER_CTRL, space, exec, playerctl play-pause"
       "SUPER_CTRL, Right, exec, playerctl next"
       "SUPER_CTRL, Left, exec, playerctl previous"
+
+      # Screenshot
+      ", PRINT, exec, hyprshot --clipboard-only --raw -m region | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
+      "$mod, PRINT, exec, hyprshot --clipboard-only --raw -m output -m active | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
+      "SHIFT, PRINT, exec, hyprshot --clipboard-only --raw -m window | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
 
       # Scroll through existing workspaces with mainMod + scroll
       "$mod, mouse_down, workspace, e+1"
