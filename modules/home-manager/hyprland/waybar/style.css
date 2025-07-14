@@ -42,6 +42,32 @@ window#waybar {
   padding: 0;
 }
 
+#tools {
+  background: alpha(@base, 0.95);
+  border-radius: 8px;
+  border: 1px solid @highlightMed;
+  padding-left: 8px;
+}
+
+#screenshot {
+  border-left: 1px solid @highlightMed;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#custom-screenshot-window, #custom-screenshot-region {
+  padding-left: 16px;
+}
+
+#custom-screenshot-output {
+  color: @gold;
+}
+
+#image {
+  padding-right: 8px;
+}
+
+
 #workspaces {
   background: alpha(@base, 0.95);
   border-radius: 8px;
@@ -53,6 +79,7 @@ window#waybar {
   background: transparent;
   padding: 3px 4px;
   border-radius: 0;
+  color: @subtle;
 }
 
 #workspaces button:hover {
@@ -84,7 +111,7 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  color: @love;
+  color: @gold;
 }
 
 #system-info {
@@ -95,7 +122,6 @@ window#waybar {
   color: @subtle;
 }
 
-
 #cpu {
   padding-right: 8px;
   border-right: 1px solid @highlightMed;
@@ -103,6 +129,17 @@ window#waybar {
 
 #memory {
   padding-left: 8px;
+  padding-right: 8px;
+  border-right: 1px solid @highlightMed;
+}
+
+#gamemode {
+  margin-left: -14px;
+  color: @subtle;
+}
+
+#gamemode.running {
+  color: @pine;
 }
 
 #privacy-item.screenshare {
@@ -130,7 +167,7 @@ window#waybar {
 
 #clock {
   padding-left: 8px;
-  color: @gold;
+  color: @rose;
 }
 
 #tray, #privacy {
