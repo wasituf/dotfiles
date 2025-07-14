@@ -17,16 +17,125 @@
 @define-color highlightMed    #403d52;
 @define-color highlightHigh   #524f67;
 
-* {
-  /* reference the color by using @color-name */
-  background: @base;
-  border: 1px solid @overlay;
+window#waybar {
+  background: transparent;
+  color: @text;
+  font-family: ZedMono NF;
+  font-weight: 600;
+}
+
+.module {
+  background: transparent;
+}
+
+.modules-center {
+  background: transparent;
+  color: @foam;
+  border-radius: 8px;
+  border: none;
+  padding: 0 8px;
+}
+
+.modules-right, .modules-left {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+#workspaces {
+  background: alpha(@base, 0.95);
+  border-radius: 8px;
+  border: 1px solid @highlightMed;
+  padding: 0 4px;
+}
+
+#workspaces button {
+  background: transparent;
+  padding: 3px 4px;
+  border-radius: 0;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#workspaces:first-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+#workspaces:last-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#workspaces button.empty {
+  color: @subtle;
+}
+
+#workspaces button.visible {
+  color: @subtle;
+}
+
+#workspaces button.active {
+  color: @love;
+}
+
+#workspaces button.urgent {
+  color: @love;
+}
+
+#system-info {
+  background: alpha(@base, 0.95);
+  border-radius: 8px;
+  border: 1px solid @highlightMed;
+  padding: 0 8px;
+  color: @subtle;
+}
+
+
+#cpu {
+  padding-right: 8px;
+  border-right: 1px solid @highlightMed;
 }
 
 #memory {
-  color: @foam;
+  padding-left: 8px;
 }
 
-#temperature {
-  color: @rose;
+#privacy-item.screenshare {
+  color: @foam;
+}
+#privacy-item.audio-in {
+  color: @love;
+}
+
+#mpris.paused {
+  color: @muted;
+}
+
+#stats {
+  background: alpha(@base, 0.95);
+  border-radius: 8px;
+  border: 1px solid @highlightMed;
+  padding: 0 8px;
+}
+
+#custom-weather {
+  padding-right: 8px;
+  border-right: 1px solid @highlightMed;
+}
+
+#clock {
+  padding-left: 8px;
+  color: @gold;
+}
+
+#tray, #privacy {
+  background: alpha(@base, 0.95);
+  padding: 0 8px;
+  border-radius: 8px;
+  border: 1px solid @highlightMed;
 }
