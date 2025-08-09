@@ -19,6 +19,7 @@ in
               capslock = "overload(control, esc)";
               esc = "capslock";
               rightalt = "leftalt";
+              volumeup = "f7";
             };
           };
         };
