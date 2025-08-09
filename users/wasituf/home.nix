@@ -32,6 +32,7 @@
     # misc
     duf
     fd
+    glow
     jq
     mpv
     mpvpaper

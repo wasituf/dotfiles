@@ -59,10 +59,6 @@ window#waybar {
   padding-left: 16px;
 }
 
-#custom-screenshot-output {
-  color: @gold;
-}
-
 #image {
   padding-right: 8px;
 }

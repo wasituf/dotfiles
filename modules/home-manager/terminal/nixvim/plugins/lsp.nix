@@ -20,7 +20,7 @@
       servers = {
         astro.enable = true;
         bashls.enable = true;
-        biome.enable = true;
+        # biome.enable = true;
         cssls.enable = true;
         # css_variables.enable = true;
         # denols.enable = true;
@@ -140,6 +140,9 @@
           astro = [
             "biome-check"
             "tailwind_sort"
+          ];
+          svelte = [
+            "prettierd"
           ];
           lua = [ "stylua" ];
           go = [
