@@ -26,6 +26,7 @@
     gaming = {
       enable = true;
       terraria.enable = true;
+      osu.enable = true;
     };
     graphics = {
       nvidia.enable = true;

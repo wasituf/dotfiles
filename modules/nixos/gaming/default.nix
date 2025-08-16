@@ -10,7 +10,10 @@ let
   cfg = config.modules.gaming;
 in
 {
-  imports = [ ./terraria ];
+  imports = [
+    ./terraria
+    ./osu.nix
+  ];
 
   options.modules.gaming = {
     enable = mkEnableOption "gaming";
