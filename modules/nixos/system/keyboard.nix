@@ -29,7 +29,7 @@ in
         waylandFrontend = true;
         addons = with pkgs; [
           fcitx5-mozc
-          fcitx5-openbangla-keyboard
+          # fcitx5-openbangla-keyboard
           fcitx5-gtk
           kdePackages.fcitx5-qt
           fcitx5-fluent
