@@ -62,6 +62,7 @@
     # services
     services = {
       swww.enable = true;
+      syncthing.enable = true;
       windowizer.enable = true;
     };
 
