@@ -21,6 +21,7 @@
       common.enable = true;
       keyd.enable = true;
       minidlna.enable = true;
+      openrgb.enable = true;
       tailscale.enable = false;
       transmission.enable = true;
     };
