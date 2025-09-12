@@ -20,6 +20,7 @@
     services = {
       common.enable = true;
       keyd.enable = true;
+      minidlna.enable = true;
       tailscale.enable = false;
       transmission.enable = true;
     };
