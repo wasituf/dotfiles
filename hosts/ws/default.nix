@@ -16,6 +16,7 @@
         enable = true;
         shell = "fish";
       };
+      virtualisation.enable = true;
     };
     services = {
       common.enable = true;
@@ -102,9 +103,6 @@
     polkit.enable = true;
     rtkit.enable = true;
   };
-
-  # Virtualisation
-  virtualisation.docker.enable = true;
 
   users.users.wasituf = {
     isNormalUser = true;

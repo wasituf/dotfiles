@@ -16,9 +16,9 @@
   home.packages = with pkgs; [
     # desktop
     anki-bin
+    bruno
     calibre
     gimp3-with-plugins
-    httpie-desktop
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.system}.default
     loupe

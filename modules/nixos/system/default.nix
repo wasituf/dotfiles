@@ -5,5 +5,6 @@
     ./keyboard.nix
     ./secrets.nix
     ./shell.nix
+    ./virtualisation.nix
   ];
 }
