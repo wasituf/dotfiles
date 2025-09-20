@@ -16,7 +16,6 @@
   home.packages = with pkgs; [
     # desktop
     anki-bin
-    brave
     bruno
     calibre
     gimp3-with-plugins
