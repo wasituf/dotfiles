@@ -14,11 +14,11 @@ in
       type = types.enum [
         "Kanagawa Wave"
         "catppuccin-mocha"
-        "rose-pine"
+        "Rose Pine"
       ];
       default = "Kanagawa Wave";
       example = "Kanagawa Wave";
-      description = "Theme for ghostty. Kanagawa Wave | catppuccin | rose-pine";
+      description = "Theme for ghostty. Kanagawa Wave | catppuccin | Rose Pine";
     };
   };
 
