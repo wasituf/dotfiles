@@ -16,6 +16,7 @@
   home.packages = with pkgs; [
     # desktop
     anki-bin
+    brave
     bruno
     calibre
     gimp3-with-plugins
@@ -81,7 +82,7 @@
       emulators = {
         ghostty = {
           enable = true;
-          theme = "rose-pine";
+          theme = "Rose Pine";
         };
       };
       programs = {
