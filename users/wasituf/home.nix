@@ -22,8 +22,6 @@
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.system}.default
     loupe
-    lunacy
-    nicotine-plus
     telegram-desktop
     vlc
     yacreader
@@ -34,14 +32,10 @@
     # misc
     duf
     fd
-    glow
     jq
-    mpv
-    mpvpaper
     nitch
     p7zip
     rar
-    tokei
     waytrogen
     zip
 
