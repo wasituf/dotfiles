@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./development
     ./displayManager
     ./gaming
     ./graphics

@@ -26,6 +26,9 @@
       tailscale.enable = false;
       transmission.enable = true;
     };
+    development = {
+      android.enable = true;
+    };
     gaming = {
       enable = true;
       terraria.enable = true;
@@ -110,6 +113,8 @@
       "docker"
       "networkmanager"
       "wheel"
+      "adbusers" # udev rules for android with adb
+      "kvm" # might improve android emulator performance
     ];
   };
 
