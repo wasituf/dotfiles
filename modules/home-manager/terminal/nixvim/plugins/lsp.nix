@@ -110,6 +110,9 @@
           markdown = [
             "prettierd"
           ];
+          kotlin = [
+            "ktfmt"
+          ];
           tex = [
             "tex-fmt"
           ];
@@ -166,6 +169,14 @@
           black.command = lib.getExe pkgs.black;
           prettierd.command = lib.getExe pkgs.prettierd;
           # prettier.command = lib.getExe pkgs.nodePackages_latest.prettier;
+          ktfmt = {
+            command = lib.getExe pkgs.ktfmt;
+            args = [
+              "-"
+              "--do-not-remove-unused-imports"
+              "--google-style"
+            ];
+          };
           tex-fmt.command = lib.getExe pkgs.tex-fmt;
           stylua.command = lib.getExe pkgs.stylua;
           gofumpt.command = lib.getExe pkgs.gofumpt;
