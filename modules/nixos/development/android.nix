@@ -15,5 +15,8 @@ in
 
   config = mkIf cfg.enable {
     programs.adb.enable = true;
+
+    networking.firewall.allowedTCPPorts = [ 5555 ];
   };
+
 }
