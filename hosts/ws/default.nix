@@ -31,7 +31,7 @@
     };
     gaming = {
       enable = true;
-      terraria.enable = true;
+      terraria.enable = false;
       osu.enable = true;
     };
     graphics = {
