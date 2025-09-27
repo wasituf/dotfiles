@@ -126,6 +126,8 @@
           dim_inactive_windows = false;
 
           styles = {
+            bold = true;
+            italic = true;
             transparency = true;
           };
 
