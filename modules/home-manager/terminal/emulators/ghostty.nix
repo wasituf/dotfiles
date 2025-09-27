@@ -28,9 +28,9 @@ in
       settings = {
         font-family = "JetBrainsMono NF";
         font-size = 12;
-        font-style = "Medium";
+        font-style = "Regular";
         font-style-bold = "Bold";
-        font-style-italic = "Medium Italic";
+        font-style-italic = "Italic";
         font-style-bold-italic = "Bold Italic";
         window-decoration = false;
         window-padding-x = 0;
