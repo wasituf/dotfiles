@@ -55,6 +55,7 @@
       user = "wasituf";
       system-ws = "x86_64-linux";
       tmuxPluginsOverlay = import ./overlays/tmux-plugins.nix;
+      binaryChaches = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
     in
     {
       nixosConfigurations = {
@@ -73,6 +74,7 @@
                 tmuxPluginsOverlay
                 inputs.wired.overlays.default
               ];
+              nix.settings.substituters = binaryChaches;
             }
 
             home-manager.nixosModules.home-manager
