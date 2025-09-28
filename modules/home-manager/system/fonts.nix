@@ -18,15 +18,18 @@ in
       enable = true;
       defaultFonts = {
         sansSerif = [
-          "Jost*"
+          "LINE Seed Sans"
+          "LINE Seed JP_TTF"
           "M+1 Nerd Font"
         ];
         serif = [
           "Merriweather"
+          "IPAexMincho"
           "Noto Serif CJK JP"
         ];
         monospace = [
           "JetBrainsMono NF"
+          "LINE Seed JP_TTF"
           "M+1Code Nerd Font"
         ];
         emoji = [ "Noto Color Emoji" ];
