@@ -108,7 +108,7 @@
             "biome-check"
           ];
           markdown = [
-            "prettierd"
+            "mdformat"
           ];
           kotlin = [
             "ktfmt"
@@ -168,7 +168,11 @@
           biome-check.command = lib.getExe pkgs.biome;
           black.command = lib.getExe pkgs.black;
           prettierd.command = lib.getExe pkgs.prettierd;
-          # prettier.command = lib.getExe pkgs.nodePackages_latest.prettier;
+          mdformat.args = [
+            "--wrap"
+            "80"
+            "--number"
+          ];
           ktfmt = {
             command = lib.getExe pkgs.ktfmt;
             args = [
