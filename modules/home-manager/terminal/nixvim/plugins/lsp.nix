@@ -168,11 +168,14 @@
           biome-check.command = lib.getExe pkgs.biome;
           black.command = lib.getExe pkgs.black;
           prettierd.command = lib.getExe pkgs.prettierd;
-          mdformat.args = [
-            "--wrap"
-            "80"
-            "--number"
-          ];
+          mdformat = {
+            command = lib.getExe pkgs.mdformat;
+            args = [
+              "--wrap"
+              "80"
+              "--number"
+            ];
+          };
           ktfmt = {
             command = lib.getExe pkgs.ktfmt;
             args = [
