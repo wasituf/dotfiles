@@ -170,7 +170,7 @@
           prettierd.command = lib.getExe pkgs.prettierd;
           mdformat = {
             command = lib.getExe pkgs.mdformat;
-            args = [
+            prepend_args = [
               "--wrap"
               "80"
               "--number"
