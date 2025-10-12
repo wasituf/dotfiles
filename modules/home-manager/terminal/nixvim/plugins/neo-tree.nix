@@ -3,40 +3,42 @@
   programs.nixvim = {
     plugins.neo-tree = {
       enable = true;
-      closeIfLastWindow = true;
-      popupBorderStyle = "rounded";
-      # useDefaultMappings = false;
-      filesystem = {
-        bindToCwd = false;
-        useLibuvFileWatcher = true;
-      };
-      defaultComponentConfigs = {
-        indent = {
-          withExpanders = true;
-          expanderCollapsed = "";
-          expanderExpanded = "";
-          expanderHighlight = "NeoTreeExpander";
+      settings = {
+        closeIfLastWindow = true;
+        popupBorderStyle = "rounded";
+        # useDefaultMappings = false;
+        filesystem = {
+          bindToCwd = false;
+          useLibuvFileWatcher = true;
         };
-        gitStatus = {
-          symbols = {
-            unstaged = "󰄱";
-            staged = "󰱒";
+        defaultComponentConfigs = {
+          indent = {
+            withExpanders = true;
+            expanderCollapsed = "";
+            expanderExpanded = "";
+            expanderHighlight = "NeoTreeExpander";
+          };
+          gitStatus = {
+            symbols = {
+              unstaged = "󰄱";
+              staged = "󰱒";
+            };
           };
         };
-      };
-      window = {
-        position = "float";
-        width = 50;
-        mappings = {
-          e = "";
+        window = {
+          position = "float";
+          width = 50;
+          mappings = {
+            e = "";
+          };
         };
+        sources = [
+          "filesystem"
+          "buffers"
+          "git_status"
+          "document_symbols"
+        ];
       };
-      sources = [
-        "filesystem"
-        "buffers"
-        "git_status"
-        "document_symbols"
-      ];
     };
     keymaps = [
       {

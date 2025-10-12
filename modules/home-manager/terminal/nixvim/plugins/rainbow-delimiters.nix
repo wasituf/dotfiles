@@ -2,6 +2,8 @@
 {
   programs.nixvim.plugins.rainbow-delimiters = {
     enable = true;
-    blacklist = [ ];
+    settings = {
+      blacklist = [ ];
+    };
   };
 }
