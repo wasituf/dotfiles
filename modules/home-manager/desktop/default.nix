@@ -7,6 +7,7 @@
     ./spicetify.nix
     ./tofi.nix
     ./vesktop.nix
+    ./walker.nix
     ./zathura.nix
   ];
 }

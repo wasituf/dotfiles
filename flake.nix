@@ -38,6 +38,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     wired.url = "github:Toqozz/wired-notify";
+    elephant.url = "github:abenz1267/elephant";
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,7 +60,15 @@
       user = "wasituf";
       system-ws = "x86_64-linux";
       tmuxPluginsOverlay = import ./overlays/tmux-plugins.nix;
-      binaryChaches = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
+      substituters = [
+        "https://aseipp-nix-cache.global.ssl.fastly.net"
+        "https://walker.cachix.org"
+        "https://walker-git.cachix.org"
+      ];
+      trusted-keys = [
+        "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
+        "walker-git.cachix.org-1:vmC0ocfPWh0S/vRAQGtChuiZBTAe4wiKDeyyXM0/7pM="
+      ];
     in
     {
       nixosConfigurations = {
@@ -74,7 +87,10 @@
                 tmuxPluginsOverlay
                 inputs.wired.overlays.default
               ];
-              nix.settings.substituters = binaryChaches;
+              nix.settings = {
+                substituters = substituters;
+                trusted-public-keys = trusted-keys;
+              };
             }
 
             home-manager.nixosModules.home-manager

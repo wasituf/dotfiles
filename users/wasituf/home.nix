@@ -68,6 +68,7 @@
       spicetify.enable = true;
       tofi.enable = true;
       vesktop.enable = true;
+      walker.enable = true;
       zathura.enable = true;
     };
 
