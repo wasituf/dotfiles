@@ -53,6 +53,8 @@
       enable = true;
       theme = "rose-pine";
     };
+    # River
+    river.enable = true;
     # scripts
     scripts.enable = true;
 

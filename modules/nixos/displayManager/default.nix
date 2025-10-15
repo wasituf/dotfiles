@@ -9,13 +9,17 @@ let
   cfg = config.modules.displayManager;
 in
 {
-  imports = [ ./hyprland.nix ];
+  imports = [
+    ./hyprland.nix
+    ./river.nix
+  ];
 
   options.modules.displayManager = {
     enable = mkEnableOption "display manager";
     defaultSession = mkOption {
       type = types.enum [
         "hyprland"
+        "river"
       ];
       default = "hyprland";
     };

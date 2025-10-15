@@ -43,6 +43,7 @@
       enable = true;
       defaultSession = "hyprland";
       hyprland.enable = true;
+      river.enable = true;
     };
   };
 
