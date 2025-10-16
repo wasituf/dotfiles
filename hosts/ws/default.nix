@@ -45,6 +45,9 @@
       hyprland.enable = true;
       river.enable = true;
     };
+    misc = {
+      localsend.enable = true;
+    };
   };
 
   # Nix settings

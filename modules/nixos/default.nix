@@ -5,6 +5,7 @@
     ./displayManager
     ./gaming
     ./graphics
+    ./misc
     ./services
     ./system
   ];
