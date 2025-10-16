@@ -17,19 +17,19 @@ in
     programs.tofi = {
       enable = true;
       settings = {
-        font = "${pkgs.jost}/share/fonts/opentype/Jost-400-Book.otf";
+        font = "${pkgs.jetbrains-mono}/share/fonts/opentype/JetBrainsMono-Regular.otf";
         font-size = 11;
         font-variations = "wght 400";
         hint-font = false;
 
-        text-color = "#DCD7BA";
-        prompt-color = "#1F1F28";
-        input-color = "#727169";
+        text-color = "#e0def4";
+        prompt-color = "#191724";
+        input-color = "#908caa";
         input-background-padding = "24,-1,24,-1";
-        default-result-background = "#1F1F28";
+        default-result-background = "#191724";
         default-result-background-padding = "8,-1,8,-1";
-        selection-color = "#FFA066";
-        selection-background = "#363646";
+        selection-color = "#eb6f92";
+        selection-background = "#26233a";
         selection-background-padding = "8,-1,8,-1";
         selection-background-corner-radius = 6;
 
@@ -37,16 +37,16 @@ in
 
         prompt-text = "/";
         prompt-padding = 3;
-        num-results = 7;
+        num-results = 8;
         result-spacing = 16;
 
         width = 260;
-        height = 301;
-        background-color = "#1F1F28";
+        height = 321;
+        background-color = "#191724";
         outline-width = 0;
-        outline-color = "#54546D";
+        outline-color = "#403d52";
         border-width = 1;
-        border-color = "#54546D";
+        border-color = "#403d52";
         corner-radius = 8;
         padding-top = 8;
         padding-bottom = 3;

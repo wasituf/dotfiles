@@ -11,8 +11,8 @@
     "$alt" = "ALT";
     "$terminal" = "ghostty";
     "$fileManager" = "org.gnome.Nautilus";
-    # "$menu" = "tofi-run | xargs hyprctl dispatch exec --";
-    "$menu" = "nc -U /run/user/1000/walker/walker.sock";
+    "$menu" = "tofi-drun | xargs hyprctl dispatch exec --";
+    # "$menu" = "nc -U /run/user/1000/walker/walker.sock";
 
     bindm = [
       # Mouse bindings
