@@ -37,7 +37,7 @@ with lib;
           if [[ $# -eq 1 ]]; then
               selected=$1
           else
-              selected=$(find $HOME/dev -mindepth 1 -maxdepth 1 -type d | fzf)
+              selected=$( (find $HOME/dev -mindepth 1 -maxdepth 1 -type d; find $HOME/dev/sicp -mindepth 1 -type d) | fzf)
           fi
 
           if [[ -z $selected ]]; then
