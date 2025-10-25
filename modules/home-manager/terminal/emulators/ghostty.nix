@@ -26,7 +26,10 @@ in
     programs.ghostty = {
       enable = true;
       settings = {
-        font-family = "JetBrainsMono NF";
+        font-family = [
+          "JetBrainsMono NF"
+          "LINE Seed JP_TTF"
+        ];
         font-size = 12;
         font-style = "Regular";
         font-style-bold = "Bold";
