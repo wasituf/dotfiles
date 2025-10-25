@@ -119,6 +119,9 @@
         shell = "fish";
         theme = "rose-pine";
       };
+      xdg = {
+        defaultApplications.enable = true;
+      };
     };
   };
 

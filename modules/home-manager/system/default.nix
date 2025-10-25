@@ -10,5 +10,6 @@
     ./pointer.nix
     ./secrets.nix
     ./shell
+    ./xdg
   ];
 }
