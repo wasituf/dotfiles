@@ -25,6 +25,7 @@ in
     i18n.inputMethod = {
       enable = true;
       type = "fcitx5";
+      # NOTE: update system when #455690 is merged
       fcitx5 = {
         waylandFrontend = true;
         addons = with pkgs; [
@@ -34,9 +35,10 @@ in
           kdePackages.fcitx5-qt
           fcitx5-fluent
           fcitx5-rose-pine
-          kdePackages.fcitx5-configtool
         ];
       };
     };
+
+    environment.systemPackages = with pkgs; [ kdePackages.fcitx5-configtool ];
   };
 }
