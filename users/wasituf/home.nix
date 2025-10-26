@@ -120,6 +120,7 @@
         theme = "rose-pine";
       };
       xdg = {
+        enable = true;
         defaultApplications.enable = true;
       };
     };
