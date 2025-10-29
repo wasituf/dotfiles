@@ -18,7 +18,7 @@
     anki-bin
     brave
     bruno
-    calibre
+    # calibre # NOTE: broken build
     gimp3-with-plugins
     hakuneko
     inkscape-with-extensions
