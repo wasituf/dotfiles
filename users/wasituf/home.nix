@@ -16,6 +16,7 @@
   home.packages = with pkgs; [
     # desktop
     anki-bin
+    audacity
     brave
     bruno
     calibre
@@ -24,6 +25,7 @@
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.system}.default
     loupe
+    pavucontrol
     telegram-desktop
     vlc
     yacreader
@@ -32,10 +34,12 @@
     nautilus
 
     # misc
+    deepfilternet
     duf
     fd
     jq
     nitch
+    noise-repellent
     p7zip
     rar
     waytrogen
@@ -61,6 +65,7 @@
 
     # services
     services = {
+      easyeffects.enable = true;
       swww.enable = true;
       syncthing.enable = true;
       windowizer.enable = true;
