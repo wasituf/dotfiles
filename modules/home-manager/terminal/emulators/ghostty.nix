@@ -12,6 +12,7 @@ in
     enable = mkEnableOption "ghostty";
     theme = mkOption {
       type = types.enum [
+        "Kanagawa Dragon"
         "Kanagawa Wave"
         "catppuccin-mocha"
         "Rose Pine"

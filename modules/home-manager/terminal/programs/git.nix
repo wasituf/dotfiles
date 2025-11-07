@@ -15,13 +15,11 @@ in
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-      userEmail = "wasit.allin1@proton.me";
-      userName = "wasituf";
-      # signing = {
-      #   key = "0xF7A4C4E3E8C0D1D2";
-      #   signByDefault = true;
-      # };
-      extraConfig = {
+      settings = {
+        user = {
+          email = "wasit.allin1@proton.me";
+          name = "wasituf";
+        };
         core = {
           editor = "nvim";
           pager = "delta";

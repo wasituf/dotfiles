@@ -17,7 +17,8 @@ in
   config = mkIf cfg.enable {
     home.pointerCursor = {
       enable = true;
-      package = inputs.banana-cursor-catppuccin.packages.${pkgs.system}.banana-cursor-catppuccin;
+      package =
+        inputs.banana-cursor-catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.banana-cursor-catppuccin;
       name = "Banana-Catppuccin-Mocha";
       size = 24;
       dotIcons.enable = true;

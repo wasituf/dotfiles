@@ -2,7 +2,7 @@
 {
   programs.nixvim = {
     plugins.tailwind-tools = {
-      enable = true;
+      enable = false;
       settings = {
         conceal = {
           enabled = false;

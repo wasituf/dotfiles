@@ -23,7 +23,7 @@
     gimp3-with-plugins
     hakuneko
     inkscape-with-extensions
-    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     loupe
     pavucontrol
     telegram-desktop

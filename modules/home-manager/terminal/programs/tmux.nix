@@ -136,7 +136,7 @@ in
           '';
         })
         (mkIf (cfg.theme == "kanagawa") {
-          plugin = inputs.minimal-tmux.packages.${pkgs.system}.default;
+          plugin = inputs.minimal-tmux.packages.${pkgs.stdenv.hostPlatform.system}.default;
           extraConfig = ''
             set -g @minimal-tmux-fg "#1F1F28"
             set -g @minimal-tmux-bg "#7E9CD8"
