@@ -12,12 +12,12 @@
     ./lsp.nix
     ./lualine.nix
     ./lz-n.nix
-    ./markview.nix
+    # ./markview.nix
     ./mini.nix
     ./neo-tree.nix
     ./nvim-ufo.nix
     ./rainbow-delimiters.nix
-    # ./render-markdown.nix
+    ./render-markdown.nix
     ./smart-splits.nix
     ./snacks.nix
     ./tailwind-tools.nix
