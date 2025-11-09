@@ -169,7 +169,14 @@
           black.command = lib.getExe pkgs.black;
           prettierd.command = lib.getExe pkgs.prettierd;
           mdformat = {
-            command = lib.getExe pkgs.mdformat;
+            command = lib.getExe (
+              pkgs.mdformat.withPlugins (
+                ps: with ps; [
+                  mdformat-gfm
+                  mdformat-frontmatter
+                ]
+              )
+            );
             prepend_args = [
               "--wrap"
               "80"
