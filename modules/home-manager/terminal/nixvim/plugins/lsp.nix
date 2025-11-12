@@ -9,9 +9,6 @@
     lsp = {
       enable = true;
       inlayHints = true;
-      # capabilities = '''';
-      # onAttach = '''';
-      # preConfig = '''';
       keymaps = {
         lspBuf = {
           L = "hover";
@@ -20,19 +17,10 @@
       servers = {
         astro.enable = true;
         bashls.enable = true;
-        # biome.enable = true;
         cssls.enable = true;
-        # css_variables.enable = true;
-        # denols.enable = true;
         docker_compose_language_service.enable = true;
         dockerls.enable = true;
         emmet_ls.enable = true;
-        # eslint.enable = true;
-        # fish_lsp.enable = true;
-        # gdscript.enable = true;
-        # gdshader_lsp.enable = true;
-        # gleam.enable = true;
-        # glsl_analyzer.enable = true;
         gopls = {
           enable = true;
           settings = {
@@ -45,17 +33,13 @@
             };
           };
         };
-        # guile_ls.enable = true;
         html.enable = true;
-        # htmx.enable = true;
         jsonls.enable = true;
         lua_ls.enable = true;
         marksman.enable = true;
-        # mdx_analyzer.enable = true;
         nil_ls.enable = true;
         nixd.enable = true;
         nushell.enable = true;
-        # prismals.enable = true;
         pylyzer.enable = true;
         racket_langserver = {
           enable = true;
@@ -72,9 +56,8 @@
         tailwindcss.enable = true;
         templ.enable = true;
         texlab.enable = true;
+        tinymist.enable = true;
         ts_ls.enable = true;
-        # unocss = true;
-        # vala_ls.enable = true;
       };
     };
 
@@ -142,7 +125,6 @@
           ];
           astro = [
             "biome-check"
-            "tailwind_sort"
           ];
           svelte = [
             "prettierd"
@@ -161,6 +143,7 @@
             "trim_whitespace"
             "trim_newlines"
           ];
+          typst = [ "typstyle" ];
         };
         formatters = {
           shfmt.command = lib.getExe pkgs.shfmt;
@@ -191,6 +174,14 @@
               "--google-style"
             ];
           };
+          typstyle = {
+            command = lib.getExe pkgs.typstyle;
+            prepend_args = [
+              "--line-width"
+              "80"
+              "--wrap-text"
+            ];
+          };
           tex-fmt.command = lib.getExe pkgs.tex-fmt;
           stylua.command = lib.getExe pkgs.stylua;
           gofumpt.command = lib.getExe pkgs.gofumpt;
@@ -198,16 +189,15 @@
           golines.command = lib.getExe' pkgs.golines "golines";
           nixfmt.command = lib.getExe pkgs.nixfmt-rfc-style;
           squeeze_blanks.command = lib.getExe' pkgs.coreutils "cat";
-          tailwind_sort.command = {
-            __raw = ''function() return vim.cmd("TailwindSort") end'';
-          };
         };
       };
     };
 
     lsp-format = {
       enable = true;
-      lspServersToEnable = [ "racket_langserver" ];
+      lspServersToEnable = [
+        "racket_langserver"
+      ];
     };
 
     # lsp-lines = {
