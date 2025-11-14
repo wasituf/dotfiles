@@ -25,6 +25,7 @@ in
   config = mkIf cfg.enable {
     programs.superfile = {
       enable = true;
+      firstUseCheck = false;
       pinnedFolders = [
         {
           name = "Downloads";
@@ -49,7 +50,6 @@ in
         auto_check_update = false;
         code_previewer = "bat";
         transparent_background = true;
-        sidebar_width = 15;
         metadata = true;
         zoxide_support = true;
       };
@@ -95,10 +95,12 @@ in
         ];
         next_file_panel = [
           "tab"
+          "alt+i"
           "I"
         ];
         previous_file_panel = [
           "shift+tab"
+          "alt+m"
           "M"
         ];
         toggle_file_preview_panel = [
