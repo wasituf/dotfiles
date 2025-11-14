@@ -105,6 +105,10 @@
           enable = true;
           theme = "rose-pine";
         };
+        yazi = {
+          enable = true;
+          theme = "rose-pine";
+        };
       };
       nixvim = {
         enable = true;
@@ -137,7 +141,7 @@
 
   home.sessionVariables = {
     TERMINAL = "ghostty";
-    BROWSER = "zen-browser";
+    BROWSER = "zen-beta";
     NH_FLAKE = "$HOME/dotfiles";
   };
 

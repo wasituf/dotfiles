@@ -10,5 +10,6 @@
     ./superfile.nix
     ./tealdeer.nix
     ./tmux.nix
+    ./yazi
   ];
 }

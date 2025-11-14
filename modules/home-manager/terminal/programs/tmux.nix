@@ -53,6 +53,9 @@ in
       # String config
       extraConfig = ''
         set-option -g xterm-keys on
+        set -g allow-passthrough on
+        set -ga update-environment TERM
+        set -ga update-environment TERM_PROGRAM
 
         # Unbind defaults
         unbind C-b
