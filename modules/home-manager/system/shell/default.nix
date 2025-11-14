@@ -133,6 +133,7 @@ in
           tksv = "tmux kill-server";
           sesh = "tmux-sessionizer";
           ft = "flake-init";
+          fp = "superfile";
           nhrb = "nh os switch -H ws";
           nhrbu = "nh os switch -H ws -u";
         };
