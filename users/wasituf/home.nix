@@ -96,6 +96,10 @@
         eza.enable = true;
         fzf.enable = true;
         git.enable = true;
+        superfile = {
+          enable = true;
+          theme = "rose-pine";
+        };
         tealdeer.enable = true;
         tmux = {
           enable = true;
