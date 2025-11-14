@@ -15,6 +15,8 @@ in
       enable32Bit = true;
       package = pkgs-unstable.mesa;
       package32 = pkgs-unstable.pkgsi686Linux.mesa;
+      extraPackages = with pkgs-unstable; [ nvidia-vaapi-driver ];
+      extraPackages32 = with pkgs-unstable; [ nvidia-vaapi-driver ];
     };
   };
 }
