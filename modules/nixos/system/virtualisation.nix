@@ -14,7 +14,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    hardware.nvidia-container-toolkit.enable = true;
+    hardware.nvidia-container-toolkit.enable = false; # NOTE: See https://github.com/nixos/nixpkgs/issues/451912
     virtualisation = {
       podman = {
         enable = true;
