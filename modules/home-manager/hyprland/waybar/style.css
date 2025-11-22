@@ -20,7 +20,7 @@
 window#waybar {
   background: transparent;
   color: @text;
-  font-family: ZedMono NF;
+  font-family: "ZedMono Nerd Font", "M+1 Nerd Font";
   font-weight: 600;
 }
 
@@ -125,8 +125,7 @@ window#waybar {
 
 #memory {
   padding-left: 8px;
-  padding-right: 8px;
-  border-right: 1px solid @highlightMed;
+  /* border-right: 1px solid @highlightMed; */
 }
 
 #gamemode {
@@ -149,6 +148,19 @@ window#waybar {
   color: @muted;
 }
 
+#custom-lyrics.lyric {
+  color: @text;
+}
+#custom-lyrics.music {
+  color: @pine;
+}
+#custom-lyrics.getting {
+  color: @gold;
+}
+#custom-lyrics.paused {
+  color: @muted;
+}
+
 #stats {
   background: alpha(@base, 0.95);
   border-radius: 8px;
@@ -166,7 +178,7 @@ window#waybar {
   color: @rose;
 }
 
-#tray, #privacy {
+#tray, #privacy, #custom-lyrics {
   background: alpha(@base, 0.95);
   padding: 0 8px;
   border-radius: 8px;

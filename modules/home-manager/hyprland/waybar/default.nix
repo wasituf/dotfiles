@@ -6,6 +6,7 @@
     hyprshot
     satty
     wl-clipboard
+    waybar-lyric
   ];
   home.file.".config/waybar/nix-logo.png".source = ./nix-logo.png;
   programs.waybar = {
@@ -21,12 +22,12 @@
           "group/tools"
           "hyprland/workspaces"
           "group/system-info"
-          "privacy"
         ];
-        modules-center = [ "mpris" ];
+        modules-center = [ "custom/lyrics" ];
         modules-right = [
-          "group/stats"
+          "privacy"
           "tray"
+          "group/stats"
         ];
         "group/tools" = {
           orientation = "horizontal";
@@ -73,15 +74,15 @@
           modules = [
             "cpu"
             "memory"
-            "gamemode"
+            # "gamemode"
           ];
         };
         cpu = {
-          interval = 2;
+          interval = 1;
           format = "  {usage}%";
         };
         memory = {
-          inverval = 2;
+          inverval = 1;
           format = "  {used:0.1f}G";
         };
         gamemode = {
@@ -118,6 +119,22 @@
             "custom/weather"
             "clock"
           ];
+        };
+        "custom/lyrics" = {
+          return-type = "json";
+          format = "{icon} {0}";
+          hide-empty-text = true;
+          format-icons = {
+            playing = " ";
+            paused = "";
+            lyric = "󰦨 ";
+            music = "󰝚 ";
+            no_lyric = " ";
+            getting = " ";
+          };
+          exec-if = "which waybar-lyric";
+          exec = "waybar-lyric --quiet";
+          on-click = "waybar-lyric play-pause";
         };
         "custom/weather" = {
           format = "{}°";
