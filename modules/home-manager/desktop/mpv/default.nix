@@ -27,6 +27,9 @@ in
           secondary_field = "Sentence";
           audio_field = "SentenceAudio";
           image_field = "Picture";
+          animated_snapshot_enabled = "yes";
+          animated_snapshot_height = "300";
+          animated_snapshot_quality = "25";
           menu_font_name = "LINE Seed JP_TTF";
           use_ffmpeg = "yes";
           snapshot_quality = "80";
