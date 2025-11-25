@@ -59,7 +59,9 @@
     let
       user = "wasituf";
       system-ws = "x86_64-linux";
-      tmuxPluginsOverlay = import ./overlays/tmux-plugins.nix;
+      overlays = [
+        ./overlays/tmux-plugins.nix
+      ];
       substituters = [
         "https://hyprland.cachix.org"
         "https://aseipp-nix-cache.global.ssl.fastly.net"
@@ -85,8 +87,7 @@
             ./hosts/ws
             inputs.agenix.nixosModules.default
             {
-              nixpkgs.overlays = [
-                tmuxPluginsOverlay
+              nixpkgs.overlays = (nixpkgs.lib.map import overlays) ++ [
                 inputs.wired.overlays.default
               ];
               nix.settings = {
