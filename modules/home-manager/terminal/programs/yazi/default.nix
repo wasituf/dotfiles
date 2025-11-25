@@ -59,6 +59,11 @@ in
               for = "unix";
             }
           ];
+          yacreader-open = [
+            {
+              run = ''YACReader "$@"'';
+            }
+          ];
           play = [
             {
               run = ''mpv --force-window "$@"'';
@@ -79,6 +84,7 @@ in
               use = [
                 "open"
                 "browser-open"
+                "yacreader-open"
                 "reveal"
               ];
             }
