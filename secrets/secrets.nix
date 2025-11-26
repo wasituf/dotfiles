@@ -12,4 +12,5 @@ in
 
   "spotify_client_id.age".publicKeys = users;
   "spotify_client_secret.age".publicKeys = users;
+  "owm_api.age".publicKeys = users;
 }

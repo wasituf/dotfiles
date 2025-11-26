@@ -7,8 +7,11 @@
     satty
     wl-clipboard
     waybar-lyric
+    jq
+    bc
   ];
   home.file.".config/waybar/nix-logo.png".source = ./nix-logo.png;
+  home.file.".config/waybar/icon-conv.json".source = ./icon-conv.json;
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -82,7 +85,7 @@
           format = "  {usage}%";
         };
         memory = {
-          inverval = 1;
+          interval = 1;
           format = "  {used:0.1f}G";
         };
         gamemode = {
@@ -116,7 +119,7 @@
         "group/stats" = {
           orientation = "horizontal";
           modules = [
-            "custom/weather"
+            "custom/owm"
             "clock"
           ];
         };
@@ -142,6 +145,13 @@
           interval = 1800;
           exec = "wttrbar --ampm --location Dhaka";
           return-type = "json";
+        };
+        "custom/owm" = {
+          return-type = "json";
+          format = "{}°";
+          exec = "owm-waybar ~/.config/waybar/icon-conv.json";
+          interval = 1800;
+          tooltip = true;
         };
         clock = {
           format = "{:%a %d, %I:%M}";

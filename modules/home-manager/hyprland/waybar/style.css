@@ -49,6 +49,10 @@ window#waybar {
   padding-left: 8px;
 }
 
+#image {
+  padding-right: 8px;
+}
+
 #screenshot {
   border-left: 1px solid @highlightMed;
   padding-left: 8px;
@@ -57,10 +61,6 @@ window#waybar {
 
 #custom-screenshot-window, #custom-screenshot-region {
   padding-left: 16px;
-}
-
-#image {
-  padding-right: 8px;
 }
 
 
@@ -173,6 +173,12 @@ window#waybar {
   border-right: 1px solid @highlightMed;
 }
 
+#custom-owm {
+  border: none;
+  padding-right: 8px;
+  border-right: 1px solid @highlightMed;
+}
+
 #clock {
   padding-left: 8px;
   color: @rose;
@@ -184,3 +190,4 @@ window#waybar {
   border-radius: 8px;
   border: 1px solid @highlightMed;
 }
+
