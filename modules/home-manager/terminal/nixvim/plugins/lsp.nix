@@ -49,8 +49,11 @@
         };
         rust_analyzer = {
           enable = true;
+          installRustc = false;
+          installCargo = false;
           settings = {
-            checkOnSave = {
+            checkOnSave = true;
+            check = {
               command = "clippy";
             };
           };
