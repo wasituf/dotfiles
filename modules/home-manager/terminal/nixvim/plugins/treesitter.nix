@@ -3,7 +3,9 @@
   programs.nixvim.plugins = {
     treesitter = {
       enable = true;
-      folding = false;
+      folding = {
+        enable = false;
+      };
       settings = {
         highlight.enable = true;
         indent.enable = true;
