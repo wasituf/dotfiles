@@ -49,8 +49,11 @@
         };
         rust_analyzer = {
           enable = true;
-          installCargo = true;
-          installRustc = true;
+          settings = {
+            checkOnSave = {
+              command = "clippy";
+            };
+          };
         };
         sqls.enable = true;
         svelte.enable = true;
@@ -148,7 +151,6 @@
         };
         formatters = {
           shfmt.command = lib.getExe pkgs.shfmt;
-          rustfmt.command = lib.getExe pkgs.rustfmt;
           biome-check.command = lib.getExe pkgs.biome;
           black.command = lib.getExe pkgs.black;
           prettierd.command = lib.getExe pkgs.prettierd;
