@@ -7,5 +7,6 @@
     ./openrgb.nix
     ./tailscale.nix
     ./transmission.nix
+    ./zerotier.nix
   ];
 }

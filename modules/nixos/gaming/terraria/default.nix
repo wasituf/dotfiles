@@ -59,9 +59,14 @@ let
       pass = "qwerty";
       difficulty = "master";
     };
+    # alupuri = {
+    #   worldSize = "large";
+    #   pass = "dalpuri";
+    #   difficulty = "normal";
+    # };
   };
 
-  world = worlds.jerrysalem;
+  world = worlds.alupuri;
 
   cfg = config.modules.gaming.terraria;
 in
@@ -103,7 +108,7 @@ in
           "${pkgs.terraria-server}/bin/TerrariaServer"
           "-config"
           # world.config
-          "/var/lib/terraria/config/lebupani.txt"
+          "/var/lib/terraria/config/alupuri.txt"
         ];
 
         StateDirectory = "terraria";

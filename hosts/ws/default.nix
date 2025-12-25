@@ -23,15 +23,16 @@
       keyd.enable = true;
       minidlna.enable = true;
       openrgb.enable = true;
-      tailscale.enable = false;
+      tailscale.enable = true;
       transmission.enable = true;
+      zerotier.enable = true;
     };
     development = {
       android.enable = true;
     };
     gaming = {
       enable = true;
-      terraria.enable = false;
+      terraria.enable = true;
       osu.enable = true;
     };
     graphics = {
@@ -47,6 +48,7 @@
     };
     misc = {
       localsend.enable = true;
+      ydotool.enable = true;
     };
   };
 

@@ -1,4 +1,7 @@
 { ... }:
 {
-  imports = [ ./localsend.nix ];
+  imports = [
+    ./localsend.nix
+    ./ydotool.nix
+  ];
 }

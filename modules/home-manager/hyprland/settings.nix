@@ -71,7 +71,6 @@
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
       animate_manual_resizes = true;
-      new_window_takes_over_fullscreen = 2;
     };
   };
 }
