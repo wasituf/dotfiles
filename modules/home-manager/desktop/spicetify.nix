@@ -19,7 +19,7 @@ in
   config = mkIf cfg.enable {
     programs.spicetify =
       let
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
       in
       {
         enable = true;
@@ -34,7 +34,7 @@ in
             name = "spicetify-playlist-maker";
             src = pkgs.fetchzip {
               url = "https://github.com/Pithaya/spicetify-apps-dist/archive/refs/heads/dist/playlist-maker.zip";
-              hash = "sha256-cKxMbACPfJUaxG5nzPEG5wP0fIYT1QQTpIccW7t6Sz4=";
+              hash = "sha256-EKG0UHoocvDzVaTMkmSI1ZJ295VwFAP8fLp6AHaC0NY=";
             };
           }
         ];

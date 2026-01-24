@@ -193,7 +193,7 @@
           gofumpt.command = lib.getExe pkgs.gofumpt;
           goimports.command = lib.getExe' pkgs.gotools "goimports";
           golines.command = lib.getExe' pkgs.golines "golines";
-          nixfmt.command = lib.getExe pkgs.nixfmt-rfc-style;
+          nixfmt.command = lib.getExe pkgs.nixfmt;
           squeeze_blanks.command = lib.getExe' pkgs.coreutils "cat";
         };
       };

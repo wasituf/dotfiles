@@ -81,7 +81,7 @@ in
 
       # Grotesk
       barlow
-      manrope
+      # manrope
 
       # Monospace
       nerd-fonts.caskaydia-cove
