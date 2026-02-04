@@ -47,7 +47,7 @@ in
       resizeAmount = 3;
       sensibleOnTop = true;
       shortcut = "Space";
-      terminal = "screen-256color";
+      terminal = "tmux-256color";
       tmuxp.enable = true;
 
       # String config
