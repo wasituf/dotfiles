@@ -127,11 +127,14 @@
 
           styles = {
             bold = true;
-            italic = true;
+            italic = false;
             transparency = true;
           };
 
           highlight_groups = {
+            Comment = {
+              italic = true;
+            };
             MiniIndentscopeSymbol = {
               fg = "highlight_med";
             };
