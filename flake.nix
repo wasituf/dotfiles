@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland.url = "github:hyprwm/Hyprland";
 
     agenix = {
@@ -85,6 +89,7 @@
           };
           modules = [
             ./hosts/ws
+            inputs.nur.modules.nixos.default
             inputs.agenix.nixosModules.default
             {
               nixpkgs.overlays = (nixpkgs.lib.map import overlays) ++ [

@@ -47,6 +47,7 @@
       river.enable = true;
     };
     misc = {
+      helium.enable = true;
       localsend.enable = true;
       ydotool.enable = true;
     };
