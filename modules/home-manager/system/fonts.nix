@@ -88,6 +88,7 @@ in
       nerd-fonts.geist-mono
       nerd-fonts.iosevka
       nerd-fonts.jetbrains-mono
+      nerd-fonts.monaspace
       nerd-fonts.roboto-mono
       nerd-fonts.zed-mono
     ];
