@@ -4,7 +4,6 @@
     extraPlugins = with pkgs.vimPlugins; [
       eyeliner-nvim
       numb-nvim
-      supermaven-nvim
       whitespace-nvim
     ];
 
@@ -15,16 +14,6 @@
         max_length = 9999,
         disabled_filetypes = {},
         default_keymaps = true,
-      })
-
-      require("supermaven-nvim").setup({
-        keymaps = {
-          accept_suggestion = "<C-]>",
-          clear_suggestion = "<C-c>",
-          accept_word = "<C-j>",
-        },
-        disable_keymaps = false;
-        ignore_filetypes = { }, -- { cpp = true, } or { "cpp", }
       })
 
       require('whitespace-nvim').setup({
