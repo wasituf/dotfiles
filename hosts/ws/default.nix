@@ -55,6 +55,8 @@
 
   # Nix settings
   nix.settings = {
+    cores = 2;
+    max-jobs = 1;
     auto-optimise-store = true;
     experimental-features = [
       "nix-command"
