@@ -33,11 +33,10 @@ in
           "JetBrainsMono NF"
           "LINE Seed JP_TTF"
         ];
-        font-family-italic = "MonaspiceRn Nerd Font";
         font-size = 12;
         font-style = "Regular";
         font-style-bold = "Bold";
-        font-style-italic = "Italic";
+        font-style-italic = "Light Italic";
         font-style-bold-italic = "Bold Italic";
         font-feature = "calt,ss01,ss02,ss03,ss04,ss05,ss06,ss07,ss08,ss09,ss10,liga";
         window-decoration = false;
