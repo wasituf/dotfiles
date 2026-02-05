@@ -23,7 +23,6 @@ in
     };
   };
 
-  # Hello
   config = mkIf cfg.enable {
     programs.ghostty = {
       enable = true;
@@ -36,7 +35,7 @@ in
         font-size = 12;
         font-style = "Regular";
         font-style-bold = "Bold";
-        font-style-italic = "Light Italic";
+        font-style-italic = "Italic";
         font-style-bold-italic = "Bold Italic";
         font-feature = "calt,ss01,ss02,ss03,ss04,ss05,ss06,ss07,ss08,ss09,ss10,liga";
         window-decoration = false;
