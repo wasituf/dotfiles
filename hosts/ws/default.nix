@@ -29,6 +29,7 @@
     };
     development = {
       android.enable = true;
+      godot.enable = true;
     };
     gaming = {
       enable = true;
