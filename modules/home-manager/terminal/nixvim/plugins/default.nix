@@ -8,6 +8,7 @@
     ./fugitive.nix
     ./fzf-lua.nix
     ./gitsigns.nix
+    ./godot.nix
     ./hmts.nix
     ./lsp.nix
     ./lualine.nix
