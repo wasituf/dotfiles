@@ -9,5 +9,9 @@
       vim.opt.tabstop = 4
       vim.opt.shiftwidth = 4
     '';
+    "ftplugin/gdscript.lua".text = ''
+      vim.opt.tabstop = 4
+      vim.opt.shiftwidth = 4
+    '';
   };
 }

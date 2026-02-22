@@ -21,6 +21,10 @@
         docker_compose_language_service.enable = true;
         dockerls.enable = true;
         emmet_ls.enable = true;
+        gdscript = {
+          enable = true;
+          package = null;
+        };
         gopls = {
           enable = true;
           settings = {
@@ -202,6 +206,7 @@
     lsp-format = {
       enable = true;
       lspServersToEnable = [
+        "gdscrpit"
         "racket_langserver"
       ];
     };

@@ -13,6 +13,7 @@ in
     inputs.nixvim.homeModules.nixvim
 
     ./colorschemes.nix
+    ./extras.nix
     ./ftplugins.nix
     ./keymaps.nix
     ./options.nix
