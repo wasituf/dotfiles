@@ -14,7 +14,7 @@
   home.file.".config/waybar/icon-conv.json".source = ./icon-conv.json;
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    systemd.enable = false; # NOTE: Broken, runs but invisible
     style = ./style.css;
     settings = {
       mainBar = {
@@ -62,15 +62,15 @@
         };
         "custom/screenshot-output" = {
           format = "󰹑 ";
-          on-click = ''hyprshot --clipboard-only --raw -m output -m active | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png'';
+          on-click = "hyprshot --clipboard-only --raw -m output -m active | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png";
         };
         "custom/screenshot-window" = {
           format = " ";
-          on-click = ''hyprshot --clipboard-only --raw -m window | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png'';
+          on-click = "hyprshot --clipboard-only --raw -m window | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png";
         };
         "custom/screenshot-region" = {
           format = " ";
-          on-click = ''hyprshot --clipboard-only --raw -m region | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png'';
+          on-click = "hyprshot --clipboard-only --raw -m region | satty --copy-command 'wl-copy' --filename - --fullscreen --output-filename ~/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png";
         };
         "group/system-info" = {
           orientation = "horizontal";
