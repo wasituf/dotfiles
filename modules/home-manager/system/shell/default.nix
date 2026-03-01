@@ -10,7 +10,7 @@ let
   cfg = config.modules.system.shell;
 in
 {
-  imports = [ inputs.nix-index-database.homeModules.nix-index ];
+  imports = [ inputs.nix-index-database.homeModules.default ];
 
   options.modules.system.shell = {
     enable = mkEnableOption "shell";
@@ -43,6 +43,7 @@ in
         enable = true;
         enableFishIntegration = true;
       };
+      programs.nix-index-database.comma.enable = true;
       programs.fish = {
         enable = true;
         interactiveShellInit = mkMerge [
