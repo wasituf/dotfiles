@@ -135,7 +135,7 @@
             "biome-check"
           ];
           astro = [
-            "biome-check"
+            "prettierd"
           ];
           svelte = [
             "prettierd"
