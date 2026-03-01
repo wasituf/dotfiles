@@ -17,7 +17,16 @@
       servers = {
         astro.enable = true;
         bashls.enable = true;
-        cssls.enable = true;
+        cssls = {
+          enable = true;
+          settings = {
+            css = {
+              line = {
+                unknownAtRules = "ignore";
+              };
+            };
+          };
+        };
         docker_compose_language_service.enable = true;
         dockerls.enable = true;
         emmet_ls.enable = true;
