@@ -14,7 +14,7 @@
   home.file.".config/waybar/icon-conv.json".source = ./icon-conv.json;
   programs.waybar = {
     enable = true;
-    systemd.enable = false; # NOTE: Broken, runs but invisible
+    systemd.enable = true;
     style = ./style.css;
     settings = {
       mainBar = {
@@ -35,7 +35,7 @@
         "group/tools" = {
           orientation = "horizontal";
           modules = [
-            "image#os-logo"
+            # "image#os-logo"
             "group/screenshot"
           ];
           drawer = {
@@ -44,11 +44,12 @@
             click-to-reveal = true;
           };
         };
-        "image#os-logo" = {
-          path = "/home/${user}/.config/waybar/nix-logo.png";
-          size = 16;
-          tooltip = false;
-        };
+        # INFO: Image Broken: fixed in master
+        # "image#os-logo" = {
+        #   path = "/home/${user}/.config/waybar/nix-logo.png";
+        #   size = 16;
+        #   tooltip = false;
+        # };
         "group/screenshot" = {
           orientation = "horizontal";
           modules = [
