@@ -10,7 +10,7 @@ in
 
   config = mkIf cfg.enable {
     services.xserver = {
-      enable = true;
+      enable = false;
       videoDrivers = [ "nvidia" ];
     };
   };

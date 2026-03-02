@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  user,
   ...
 }:
 with lib;
@@ -29,14 +30,24 @@ in
     environment.systemPackages = with pkgs; [
       where-is-my-sddm-theme
     ];
-    services.displayManager = {
-      enable = true;
-      defaultSession = cfg.defaultSession;
-      sddm = {
+    services = {
+      displayManager = {
         enable = true;
-        package = pkgs.kdePackages.sddm;
-        theme = "where_is_my_sddm_theme";
-        wayland.enable = true;
+        defaultSession = cfg.defaultSession;
+        sddm = {
+          enable = false;
+          package = pkgs.kdePackages.sddm;
+          theme = "where_is_my_sddm_theme";
+          wayland.enable = true;
+        };
+      };
+      greetd = {
+        enable = true;
+        settings = {
+          default_session = {
+            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd start-hyprland";
+          };
+        };
       };
     };
   };
