@@ -47,6 +47,7 @@
           };
         };
         html.enable = true;
+        jdtls.enable = true;
         jsonls.enable = true;
         kotlin_language_server.enable = true;
         lua_ls.enable = true;
@@ -215,7 +216,8 @@
     lsp-format = {
       enable = true;
       lspServersToEnable = [
-        "gdscrpit"
+        "gdscript"
+        "jdtls"
         "racket_langserver"
       ];
     };
