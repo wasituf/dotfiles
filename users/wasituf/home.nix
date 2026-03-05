@@ -37,6 +37,7 @@
     # misc
     deepfilternet
     duf
+    exercism
     fd
     jq
     nitch
