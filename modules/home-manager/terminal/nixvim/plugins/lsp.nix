@@ -56,6 +56,7 @@
         nixd.enable = true;
         nushell.enable = true;
         pylyzer.enable = true;
+        qmlls.enable = true;
         racket_langserver = {
           enable = true;
           package = null;
@@ -218,6 +219,7 @@
       lspServersToEnable = [
         "gdscript"
         "jdtls"
+        "qmlls"
         "racket_langserver"
       ];
     };
