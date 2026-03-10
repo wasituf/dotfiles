@@ -17,5 +17,7 @@ in
       enable = true;
       # authKeyFile = config.age.secrets.tailscale_authkey.path;
     };
+
+    systemd.services.tailscaled.wantedBy = mkForce [ ];
   };
 }

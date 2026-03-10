@@ -17,5 +17,7 @@ in
       enable = true;
       joinNetworks = [ "08752e18b169664d" ];
     };
+
+    systemd.services.zerotierone.wantedBy = mkForce [ ];
   };
 }
