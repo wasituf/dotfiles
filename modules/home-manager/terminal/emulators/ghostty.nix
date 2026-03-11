@@ -29,6 +29,7 @@ in
       settings = {
         font-family = [
           "MonaspiceNe Nerd Font"
+          "Noto Sans Bengali"
           "JetBrainsMono NF"
           "LINE Seed JP_TTF"
         ];
