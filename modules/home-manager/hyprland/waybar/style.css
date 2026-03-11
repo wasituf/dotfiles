@@ -20,8 +20,21 @@
 window#waybar {
   background: transparent;
   color: @text;
-  font-family: "ZedMono Nerd Font", "M+1 Nerd Font";
+  font-family: "Noto Sans Bengali", "ZedMono Nerd Font", "M+1 Nerd Font";
   font-weight: 600;
+}
+
+tooltip {
+  background-color: transparent;
+}
+
+tooltip label {
+  background: alpha(@base, 0.75);
+  font-family: "Noto Sans Bengali", "ZedMono Nerd Font", "M+1 Nerd Font";
+  font-weight: 500;
+  padding: 8px 10px;
+  border: 1px solid @highlightMed;
+  border-radius: 6px;
 }
 
 .module {

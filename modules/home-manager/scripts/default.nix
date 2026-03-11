@@ -15,6 +15,7 @@ in
     ./spotify-lookup.nix
     ./theme-switch.nix
     ./tmux-sessionizer.nix
+    ./waybar-lyric-custom.nix
   ];
 
   options.modules.scripts = {
@@ -30,6 +31,7 @@ in
       config.custom-pkgs.spotify-lookup.package
       config.custom-pkgs.theme-switch.package
       config.custom-pkgs.tmux-sessionizer.package
+      config.custom-pkgs.waybar-lyric-custom.package
     ];
   };
 }

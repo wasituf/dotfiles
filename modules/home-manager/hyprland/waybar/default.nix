@@ -1,4 +1,9 @@
-{ pkgs, user, ... }:
+{
+  pkgs,
+  user,
+  config,
+  ...
+}:
 {
   home.packages = with pkgs; [
     playerctl
@@ -137,7 +142,7 @@
             getting = " ";
           };
           exec-if = "which waybar-lyric";
-          exec = "waybar-lyric --quiet";
+          exec = "${config.custom-pkgs.waybar-lyric-custom.package}/bin/waybar-lyric-custom";
           on-click = "waybar-lyric play-pause";
         };
         "custom/weather" = {
