@@ -22,6 +22,7 @@
       common.enable = true;
       keyd.enable = true;
       minidlna.enable = true;
+      noisetorch.enable = true;
       openrgb.enable = true;
       tailscale.enable = true;
       transmission.enable = true;
