@@ -142,7 +142,7 @@
             getting = " ";
           };
           exec-if = "which waybar-lyric";
-          exec = "${config.custom-pkgs.waybar-lyric-custom.package}/bin/waybar-lyric-custom";
+          exec = "waybar-lyric --quiet";
           on-click = "waybar-lyric play-pause";
         };
         "custom/weather" = {

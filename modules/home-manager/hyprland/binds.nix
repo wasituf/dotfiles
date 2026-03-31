@@ -50,7 +50,6 @@
       "$mod, F, fullscreen, "
       "$mod, SPACE, exec, $menu"
       "$alt, R, pseudo" # dwindle
-      "$alt, J, togglesplit" # dwindle
 
       # Move focus with mainMod + arrow keys
       "$mod, M, movefocus, l"
