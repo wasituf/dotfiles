@@ -31,6 +31,9 @@
     vlc
     yacreader
 
+    # TUI
+    spotatui
+
     # file managers
     nautilus
 
