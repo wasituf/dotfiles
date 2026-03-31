@@ -5,6 +5,7 @@
     ./cmp.nix
     ./conjure.nix
     ./extra-plugins.nix
+    ./flutter.nix
     ./fugitive.nix
     ./fzf-lua.nix
     ./gitsigns.nix
