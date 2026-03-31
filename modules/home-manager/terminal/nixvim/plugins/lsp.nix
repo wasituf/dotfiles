@@ -47,6 +47,7 @@
           };
         };
         html.enable = true;
+        htmx.enable = true;
         jdtls.enable = true;
         jsonls.enable = true;
         kotlin_language_server.enable = true;
@@ -157,6 +158,9 @@
             "goimports"
             "golines"
           ];
+          temple = [
+            "templ"
+          ];
           nix = [ "nixfmt" ];
           python = [ "black" ];
 
@@ -193,6 +197,14 @@
               "-"
               "--do-not-remove-unused-imports"
               "--google-style"
+            ];
+          };
+          templ = {
+            command = lib.getExe pkgs.templ;
+            args = [
+              "fmt"
+              "-stdin-filepath"
+              "$FILENAME"
             ];
           };
           typstyle = {
