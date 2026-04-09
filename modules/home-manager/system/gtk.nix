@@ -38,6 +38,8 @@ in
         package = null;
         size = 11;
       };
+
+      gtk4.theme = null;
     };
   };
 }
