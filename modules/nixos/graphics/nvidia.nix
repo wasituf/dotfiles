@@ -12,8 +12,8 @@ in
     hardware.nvidia = {
       modesetting.enable = true;
       open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      nvidiaSettings = false;
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     };
   };
 }
