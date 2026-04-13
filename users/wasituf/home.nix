@@ -17,16 +17,13 @@
     # desktop
     anki-bin
     audacity
-    brave
     bruno
     calibre
     gimp3-with-plugins
-    hakuneko
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     loupe
     pavucontrol
-    pixelorama
     telegram-desktop
     vlc
     yacreader
@@ -102,7 +99,7 @@
         fzf.enable = true;
         git.enable = true;
         superfile = {
-          enable = true;
+          enable = false;
           theme = "rose-pine";
         };
         tealdeer.enable = true;

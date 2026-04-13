@@ -22,7 +22,7 @@
       };
     };
     treesitter-context = {
-      enable = true;
+      enable = false;
       settings = {
         # mode = "topline"; # topline | cursor
         separator = "-";

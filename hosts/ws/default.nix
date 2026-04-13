@@ -22,14 +22,15 @@
       common.enable = true;
       keyd.enable = true;
       minidlna.enable = true;
-      noisetorch.enable = true;
+      nohang.enable = true;
+      noisetorch.enable = false;
       openrgb.enable = true;
-      tailscale.enable = true;
+      tailscale.enable = false;
       transmission.enable = true;
-      zerotier.enable = true;
+      zerotier.enable = false;
     };
     development = {
-      android.enable = true;
+      android.enable = false;
       godot.enable = true;
     };
     gaming = {
@@ -70,7 +71,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 7d";
   };
 
   # Allow unfree packages

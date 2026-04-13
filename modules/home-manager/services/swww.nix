@@ -9,7 +9,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.swww = {
+    services.awww = {
       enable = true;
     };
   };

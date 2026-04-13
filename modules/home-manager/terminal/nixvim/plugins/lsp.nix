@@ -47,7 +47,7 @@
           };
         };
         html.enable = true;
-        htmx.enable = true;
+        # htmx.enable = true;
         jdtls.enable = true;
         jsonls.enable = true;
         kotlin_language_server.enable = true;
