@@ -40,11 +40,12 @@
     exercism
     fd
     jq
+    mpvpaper
     nitch
     noise-repellent
     p7zip
     rar
-    waytrogen
+    waypaper
     zip
 
     # tooling

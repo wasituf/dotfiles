@@ -64,6 +64,7 @@
       user = "wasituf";
       system-ws = "x86_64-linux";
       overlays = [
+        ./overlays/openldap.nix
         ./overlays/tmux-plugins.nix
       ];
       substituters = [
