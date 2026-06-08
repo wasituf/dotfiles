@@ -23,6 +23,7 @@
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     loupe
+    (obs-studio.override { cudaSupport = true; })
     pavucontrol
     telegram-desktop
     vlc
