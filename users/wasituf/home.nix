@@ -79,7 +79,7 @@
     desktop = {
       mangohud.enable = true;
       mpv.enable = true;
-      spicetify.enable = true;
+      spicetify.enable = false;
       tofi.enable = true;
       vesktop.enable = true;
       walker.enable = false;
