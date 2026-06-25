@@ -3,13 +3,9 @@
   programs.nixvim.plugins = {
     treesitter = {
       enable = true;
-      folding = {
-        enable = false;
-      };
-      settings = {
-        highlight.enable = true;
-        indent.enable = true;
-      };
+      folding.enable = false;
+      highlight.enable = true;
+      indent.enable = true;
     };
     ts-autotag = {
       enable = true;

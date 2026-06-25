@@ -79,7 +79,6 @@
 
   # Boot
   boot = {
-    bootspec.enable = true;
     loader.systemd-boot.enable = true;
     initrd.kernelModules = [ "nvidia" ];
     kernelPackages = pkgs.linuxPackages_latest;

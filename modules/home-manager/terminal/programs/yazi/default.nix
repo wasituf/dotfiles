@@ -102,13 +102,15 @@ in
           prepend_fetchers = [
             {
               id = "git";
-              name = "*";
+              url = "*";
               run = "git";
+              group = "hover";
             }
             {
               id = "git";
-              name = "*/";
+              url = "*/";
               run = "git";
+              group = "hover";
             }
           ];
           prepend_previewers = [
