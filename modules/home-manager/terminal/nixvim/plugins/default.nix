@@ -10,7 +10,7 @@
     ./fzf-lua.nix
     ./gitsigns.nix
     ./godot.nix
-    ./hmts.nix
+    # ./hmts.nix
     ./lsp.nix
     ./lualine.nix
     ./lz-n.nix

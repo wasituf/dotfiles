@@ -124,6 +124,7 @@
       "wheel"
       "adbusers" # udev rules for android with adb
       "kvm" # might improve android emulator performance
+      "ydotool"
     ];
   };
 
