@@ -64,7 +64,7 @@ in
 
       # Serif
       alegreya
-      crimson-pro
+      # crimson-pro
       eb-garamond
       libre-baskerville
       libre-bodoni
