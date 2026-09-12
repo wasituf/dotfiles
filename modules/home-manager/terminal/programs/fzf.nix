@@ -17,8 +17,8 @@ in
     programs.fzf = {
       enable = true;
       defaultCommand = "fd --type f";
-      changeDirWidgetCommand = "fd --type d";
-      fileWidgetCommand = "fd --type f";
+      changeDirWidget.command = "fd --type d";
+      fileWidget.command = "fd --type f";
       defaultOptions = [
         "--border='rounded'"
         "--preview-window='border-rounded'"
