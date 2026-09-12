@@ -25,9 +25,9 @@
       nohang.enable = true;
       noisetorch.enable = false;
       openrgb.enable = true;
-      tailscale.enable = false;
+      tailscale.enable = true;
       transmission.enable = true;
-      zerotier.enable = false;
+      zerotier.enable = true;
     };
     development = {
       android.enable = false;
