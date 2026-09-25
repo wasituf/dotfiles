@@ -4,10 +4,16 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = "auto",
+	output = "HDMI-A-1",
+	mode = "1920x1080@75",
+	position = "0x0",
+	scale = "1",
+})
+hl.monitor({
+	output = "HDMI-A-3",
+	mode = "1366x768@60",
+	position = "1920x608",
+	scale = "1",
 })
 
 ---------------------
@@ -356,8 +362,10 @@ hl.window_rule({
 })
 hl.window_rule({
 	name = "zen-browser",
-	match = { initial_class = "Zen Browser", class = ".*zen-beta.*" },
+	match = { initial_title = "Zen Browser", class = ".*zen-beta.*" },
+	center = true,
 	float = true,
+	size = { "(monitor_w*0.275)", "(monitor_h*0.35)" },
 })
 hl.window_rule({
 	name = "xdg-desktop-portal",

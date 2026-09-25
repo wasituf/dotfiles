@@ -5,83 +5,135 @@
   ...
 }:
 {
-  programs.nixvim.plugins = {
-    lsp = {
-      enable = true;
-      inlayHints = true;
-      keymaps = {
-        lspBuf = {
-          L = "hover";
+  programs.nixvim.lsp = {
+    codelens.enable = true;
+    completion.enable = true;
+    documentColor.enable = true;
+    inlayHints.enable = true;
+    inlineCompletion.enable = true;
+    linkedEditingRange.enable = true;
+    onTypeFormatting.enable = true;
+    semanticTokens.enable = true;
+    keymaps = [
+      {
+        key = "L";
+        lspBufAction = "hover";
+      }
+    ];
+    servers = {
+      "*" = {
+        config = {
+          capabilities = {
+            textDocument = {
+              semanticTokens = {
+                multilineTokenSupport = true;
+              };
+            };
+          };
+          root_markers = [
+            ".git"
+          ];
         };
       };
-      servers = {
-        astro.enable = true;
-        bashls.enable = true;
-        cssls = {
-          enable = true;
-          settings = {
-            css = {
-              line = {
-                unknownAtRules = "ignore";
-              };
+      astro = {
+        enable = true;
+        config = {
+          init_options = {
+            typescript = {
+              tsdk = "${pkgs.typescript_5}/lib/node_modules/typescript/lib";
             };
           };
         };
-        docker_compose_language_service.enable = true;
-        dockerls.enable = true;
-        emmet_ls.enable = true;
-        gdscript = {
-          enable = true;
-          package = null;
-        };
-        gopls = {
-          enable = true;
-          settings = {
-            gopls = {
-              analyses = {
-                unusedparams = true;
-              };
-              staticcheck = true;
-              gofumpt = true;
+      };
+      bashls.enable = true;
+      clangd.enable = true;
+      cssls = {
+        enable = true;
+        config = {
+          css = {
+            validate = true;
+            lint = {
+              unknownAtRules = "ignore";
             };
           };
         };
-        html.enable = true;
-        # htmx.enable = true;
-        jdtls.enable = true;
-        jsonls.enable = true;
-        kotlin_language_server.enable = true;
-        lua_ls.enable = true;
-        marksman.enable = true;
-        nil_ls.enable = true;
-        nixd.enable = true;
-        nushell.enable = true;
-        pylyzer.enable = true;
-        qmlls.enable = true;
-        racket_langserver = {
-          enable = true;
-          package = null;
+      };
+      docker_compose_language_service.enable = true;
+      docker_language_server.enable = true;
+      emmet_language_server.enable = true;
+      gdscript = {
+        enable = true;
+        package = null;
+      };
+      gopls = {
+        enable = true;
+        config = {
+          gopls = {
+            analyses = {
+              unusedparams = true;
+            };
+            staticcheck = true;
+            gofumpt = true;
+          };
+        };
+      };
+      jsonls.enable = true;
+      lua_ls.enable = true;
+      marksman.enable = true;
+      nil_ls.enable = true;
+      nixd.enable = true;
+      racket_langserver = {
+        enable = true;
+        package = null;
+        config = {
           cmd = [ "racket -l racket-langserver" ];
         };
-        rust_analyzer = {
-          enable = true;
-          installRustc = false;
-          installCargo = false;
-          settings = {
-            checkOnSave = true;
-            check = {
-              command = "clippy";
+      };
+      ruff.enable = true;
+      rust_analyzer = {
+        enable = true;
+        config = {
+          checkOnSave = true;
+          check = {
+            command = "clippy";
+          };
+        };
+      };
+      sqruff.enable = true;
+      superhtml.enable = true;
+      svelte.enable = true;
+      tailwindcss = {
+        enable = true;
+        config = {
+          tailwindCSS = {
+            lint = {
+              invalidApply = false;
             };
           };
         };
-        sqls.enable = true;
-        svelte.enable = true;
-        tailwindcss.enable = true;
-        templ.enable = true;
-        texlab.enable = true;
-        tinymist.enable = true;
-        ts_ls.enable = true;
       };
+      templ.enable = true;
+      texlab.enable = true;
+      tinymist.enable = true;
+      tsc = {
+        enable = true;
+        package = pkgs.typescript;
+      };
+      ty.enable = true;
+    };
+  };
+  programs.nixvim.plugins = {
+    lspconfig = {
+      enable = true;
+      package = pkgs.vimPlugins.nvim-lspconfig.overrideAttrs (old: {
+        version = "unstable-2026-09-22";
+        src = pkgs.fetchFromGitHub {
+          owner = "neovim";
+          repo = "nvim-lspconfig";
+          rev = "ffd261c09c3dabd0bf1a438f47a8ae3b22f3c3ff";
+          hash = "sha256-zHc0w8uExt7+5U3YrGT+Eg815htZXtWFOkT2Tm172V4=";
+        };
+      });
     };
 
     conform-nvim = {
@@ -98,78 +150,47 @@
           shell = [ "shfmt" ];
           sh = [ "shfmt" ];
           rust = [ "rustfmt" ];
-          javascript = [
-            "biome-check"
-          ];
-          typescript = [
-            "biome-check"
-          ];
-          javascriptreact = [
-            "biome-check"
-          ];
-          typescriptreact = [
-            "biome-check"
-          ];
-          vue = [
-            "biome-check"
-          ];
-          markdown = [
-            "mdformat"
-          ];
-          kotlin = [
-            "ktfmt"
-          ];
-          tex = [
-            "tex-fmt"
-          ];
-          css = [
-            "biome-check"
-          ];
-          json = [
-            "biome-check"
-          ];
-          jsonc = [
-            "biome-check"
-          ];
-          scss = [
-            "biome-check"
-          ];
-          less = [
-            "biome-check"
-          ];
-          yaml = [
-            "biome-check"
-          ];
-          graphql = [
-            "biome-check"
-          ];
-          html = [
-            "biome-check"
-          ];
-          astro = [
-            "prettierd"
-          ];
-          svelte = [
-            "prettierd"
-          ];
+          javascript = [ "biome-check" ];
+          typescript = [ "biome-check" ];
+          javascriptreact = [ "biome-check" ];
+          typescriptreact = [ "biome-check" ];
+          vue = [ "biome-check" ];
+          markdown = [ "mdformat" ];
+          kotlin = [ "ktfmt" ];
+          tex = [ "tex-fmt" ];
+          css = [ "biome-check" ];
+          c = [ "clang-format" ];
+          cpp = [ "clang-format" ];
+          json = [ "biome-check" ];
+          jsonc = [ "biome-check" ];
+          scss = [ "biome-check" ];
+          less = [ "biome-check" ];
+          yaml = [ "biome-check" ];
+          graphql = [ "biome-check" ];
+          sql = [ "sqruff" ];
+          html = [ "superhtml" ];
+          astro = [ "biome-check" ];
+          svelte = [ "biome-check" ];
           lua = [ "stylua" ];
           go = [
             "gofumpt"
             "goimports"
             "golines"
           ];
-          temple = [
-            "templ"
-          ];
+          temple = [ "templ" ];
           nix = [ "nixfmt" ];
-          python = [ "black" ];
+          python = [
+            "ruff_fix"
+            "ruff_format"
+            "ruff_organize_imports"
+          ];
+          typst = [ "typstyle" ];
 
           "_" = [
             "squeeze_blanks"
             "trim_whitespace"
             "trim_newlines"
           ];
-          typst = [ "typstyle" ];
         };
         formatters = {
           shfmt.command = lib.getExe pkgs.shfmt;
@@ -230,14 +251,8 @@
       enable = true;
       lspServersToEnable = [
         "gdscript"
-        "jdtls"
-        "qmlls"
         "racket_langserver"
       ];
     };
-
-    # lsp-lines = {
-    #   enable = true;
-    # };
   };
 }

@@ -37,7 +37,7 @@ in
                     if [[ "$window_title" =~ .*Extension:.* ]]; then
                       return
                     else
-                      hyprctl dispatch settiled address:"0x$address"
+                      hyprctl dispatch "hl.dsp.window.float({window = \"address:0x$address\"})"
                     fi
                   done
               fi
