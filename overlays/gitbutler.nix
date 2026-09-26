@@ -63,10 +63,17 @@ let
       zlib
     ];
 
+  gitbutler-run = prev.writeShellScript "gitbutler-run" ''
+    # Avoid WebKitGTK's broken DMA-BUF/EGL path on the NVIDIA setup.
+    export WEBKIT_DISABLE_DMABUF_RENDERER=1
+    export WEBKIT_DISABLE_COMPOSITING_MODE=1
+    exec "${gitbutler-unwrapped}/usr/bin/gitbutler-tauri" "$@"
+  '';
+
   gitbutler-fhs = prev.buildFHSEnv {
     name = "gitbutler";
     targetPkgs = fhsPackages;
-    runScript = "${gitbutler-unwrapped}/usr/bin/gitbutler-tauri";
+    runScript = gitbutler-run;
 
     extraInstallCommands = ''
       if [ -d "${gitbutler-unwrapped}/usr/share/applications" ]; then
