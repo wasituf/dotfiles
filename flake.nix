@@ -63,6 +63,7 @@
       user = "wasituf";
       system-ws = "x86_64-linux";
       overlays = [
+        ./overlays/gitbutler.nix
         ./overlays/openldap.nix
         ./overlays/tmux-plugins.nix
       ];
@@ -107,6 +108,8 @@
 
             home-manager.nixosModules.home-manager
             {
+              nixpkgs.overlays = (nixpkgs.lib.map import overlays);
+
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 

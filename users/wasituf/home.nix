@@ -20,6 +20,7 @@
     bruno
     calibre
     gimp3-with-plugins
+    gitbutler
     inkscape-with-extensions
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     loupe
