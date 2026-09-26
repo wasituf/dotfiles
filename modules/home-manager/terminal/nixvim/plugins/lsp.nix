@@ -6,7 +6,7 @@
 }:
 {
   programs.nixvim.lsp = {
-    codelens.enable = true;
+    codelens.enable = false;
     completion.enable = true;
     documentColor.enable = true;
     inlayHints.enable = true;
