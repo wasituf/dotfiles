@@ -36,7 +36,6 @@
     nixvim = {
       url = "github:nix-community/nixvim";
     };
-    omp.url = "github:can1357/oh-my-pi";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
