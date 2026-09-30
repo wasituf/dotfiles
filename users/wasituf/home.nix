@@ -101,6 +101,7 @@
         eza.enable = true;
         fzf.enable = true;
         git.enable = true;
+        omp.enable = true;
         superfile = {
           enable = false;
           theme = "rose-pine";

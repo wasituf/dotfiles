@@ -7,6 +7,7 @@
     ./fzf.nix
     ./git.nix
     ./gitui.nix
+    ./omp.nix
     ./superfile.nix
     ./tealdeer.nix
     ./tmux.nix
