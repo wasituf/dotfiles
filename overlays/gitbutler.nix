@@ -7,7 +7,7 @@ let
 
     src = prev.fetchurl {
       url = "https://app.gitbutler.com/downloads/release/linux/x86_64/deb";
-      hash = "sha256-RYP6aVS9myO8bVvna3Yn65SnE8r1ztC5TBtWPujElzw=";
+      hash = "sha256-iT9RSf0bJvVPPggFjY5dEcAMoMn2MbcLk9rvFdhEEAw=";
     };
 
     nativeBuildInputs = [ prev.dpkg ];
